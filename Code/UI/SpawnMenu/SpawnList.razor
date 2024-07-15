@@ -1,0 +1,57 @@
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+<root>
+    @* @foreach (EntityInfo iteminfo in _EntitiesRepository)
+    {
+
+      
+    } *@
+
+    @for (var index = 0; index < _EntitiesRepository.Count; index++)
+    {
+         EntityInfo info = _EntitiesRepository[index];
+        @* <EntityIcon entInfo=@info /> *@
+
+        <div class="ent" onclick=@(() => SpawnEnt(info))>
+            <div class="background" />
+            <div class="item">
+                <img src=@info.Icon.ResourcePath />
+            </div>
+
+            @* <text class="name">@(info.Name)</text> *@
+            <text class="name">@(info.Name)</text>
+        </div>
+    }
+</root>
+
+@code {
+
+   
+   public List<EntityInfo> _EntitiesRepository { get; set; }
+
+    public void SpawnEnt(EntityInfo info)
+    {
+       
+        PlayerBase.GetLocal().SpawnEntity(info.PrefabPath);
+    }
+
+    public SpawnList()
+    {
+        _EntitiesRepository = PrefabLibrary.FindByComponent<SpawnMenuComponent>()
+            //.Where(prefab => !prefab.GetComponent<SpawnMenuComponent>())
+            .Select(prefab =>
+            {
+
+                var spawnMenuComponent = prefab.GetComponent<SpawnMenuComponent>();
+                return new EntityInfo(
+                    prefab.Path,
+                    spawnMenuComponent.Get<string>("Name"),
+                    spawnMenuComponent.Get<string>("Description"),
+                    Texture.Load(FileSystem.Mounted, spawnMenuComponent.Get<IconSettings>("Icon").Path)
+                );
+            }).ToList();
+    }
+
+}

@@ -1,0 +1,258 @@
+{
+  "__guid": "7cf1148b-a0f4-4ee8-b4c8-c820dbad4956",
+  "GameObjects": [
+    {
+      "__guid": "8b3cd142-6acb-47f1-b4e0-6b00f75f7355",
+      "Flags": 0,
+      "Name": "WeaponRegistry",
+      "Position": "94.58017,127.1334,73.5171",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "GeneralGame.WeaponRegistry",
+          "__guid": "f328f8ca-7b21-4aa6-9bdd-e7bee1635e5e",
+          "WeaponPrefabs": []
+        },
+        {
+          "__type": "GeneralGame.WeaponSettings",
+          "__guid": "48a4c454-4b38-44d3-9b1b-c1750fa5441f",
+          "AutoReload": true,
+          "Customization": true
+        },
+        {
+          "__type": "GeneralGame.PrefabInitializer",
+          "__guid": "d6defc57-ba33-4862-a195-c8483ca27ec4"
+        }
+      ]
+    },
+    {
+      "__guid": "4944da2a-c921-497f-a68a-898f20007476",
+      "Flags": 0,
+      "Name": "Player (just for editing)",
+      "Tags": "player",
+      "__Prefab": "prefabs/player.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "c988658d-a998-405a-b169-e1711fe59578",
+      "Flags": 0,
+      "Name": "ExampleNetworkManager",
+      "Position": "73.25323,515.2476,-156.4206",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "GeneralGame.DemoNetworkManager",
+          "__guid": "e2d36775-e195-461c-9fa6-154ca128be43",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player.prefab"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "6cb541bc-26e0-4bf8-9c45-9a62a51f8cb8",
+      "Flags": 0,
+      "Name": "swb_colt",
+      "Position": "96,-24.72099,192",
+      "Rotation": "0.7071067,0,0,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/colt.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "90eec9cd-4cbd-4768-869a-bc00c70ebf95",
+      "Flags": 0,
+      "Name": "MapObjects",
+      "Position": "-16.73947,-29.02401,131.4671",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "c350e119-ffa4-4972-ba38-b5390c31ae54",
+          "Flags": 0,
+          "Name": "Point Light",
+          "Position": "91.39154,6.178549,156.5329",
+          "Tags": "light_point,light",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.PointLight",
+              "__guid": "de6025c9-8a7b-49ca-b0ad-b4d0eaa5be6d",
+              "Attenuation": 1,
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "1,0.81767,0.47907,1",
+              "Radius": 400,
+              "Shadows": true
+            }
+          ]
+        },
+        {
+          "__guid": "96100c89-c2ca-460c-bb88-4a1451833448",
+          "Flags": 0,
+          "Name": "Object",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.MapInstance",
+              "__guid": "cafefe84-5f21-447c-86f9-e6df86e5812f",
+              "__version": 1,
+              "MapName": "maps/testbase.vmap",
+              "NoOrigin": false,
+              "UseMapFromLaunch": false
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "e9c2da28-6b39-4f04-92b7-23be7a7df969",
+          "Flags": 0,
+          "Name": "Object",
+          "Position": "128.7395,61.02401,44.5329",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "0bd98830-fbd6-4a77-ad5f-d6a56b26481c",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "af074376-bac7-4647-a0f8-f1dc08c62e6b",
+          "Flags": 0,
+          "Name": "2D Skybox",
+          "Position": "0,0,108.5329",
+          "Tags": "skybox",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkyBox2D",
+              "__guid": "1ff3a0c0-9387-4500-b87c-8c3c4093c33f",
+              "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "4f7db652-3fe6-4a19-b76b-67dd14df30be",
+          "Flags": 0,
+          "Name": "Sun",
+          "Position": "0,0,108.5329",
+          "Tags": "light_directional,light",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "86920de1-dec8-4acf-bd34-51aed89ee1cd",
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.91373,0.98039,1,1",
+              "Shadows": true,
+              "SkyColor": "0,0,0,0"
+            }
+          ]
+        },
+        {
+          "__guid": "e0fbc366-1843-4b91-9a36-fecf36e72425",
+          "Flags": 0,
+          "Name": "Gradient Fog",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.GradientFog",
+              "__guid": "21913479-ab86-4fd1-9a59-104fd7896971",
+              "__enabled": false,
+              "Color": "0.88837,0.71152,0.44625,1",
+              "EndDistance": 5912,
+              "FalloffExponent": 1,
+              "Height": 128,
+              "StartDistance": 504,
+              "VerticalFalloffExponent": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "724783a0-5ad8-45fc-9278-2144344dec2e",
+      "Flags": 0,
+      "Name": "ammo_pistol",
+      "Position": "7.582961,-12.78228,209.1502",
+      "Rotation": "-0.0008586794,0.002144158,0.3714533,0.9284487",
+      "Enabled": true,
+      "__Prefab": "prefabs/items/ammo_pistol.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "a7586c32-8390-4b02-bdd2-a90d9aa61657",
+      "Flags": 0,
+      "Name": "ammo_rifle",
+      "Position": "20.34793,-50.29714,207.5901",
+      "Rotation": "-0.0008586794,0.002144158,0.3714533,0.9284487",
+      "Enabled": true,
+      "__Prefab": "prefabs/items/ammo_rifle.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "5bd0dbed-6389-4ddf-af56-3c2255e541fa",
+      "Flags": 0,
+      "Name": "ammo_sniper",
+      "Position": "49.43664,-24.23428,174.8498",
+      "Rotation": "0,0,0.8598986,0.5104648",
+      "Enabled": true,
+      "__Prefab": "prefabs/items/ammo_sniper.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "8fa21eb6-2176-4872-9619-47fbb92ae9ed",
+      "Flags": 0,
+      "Name": "ammo_shotgun",
+      "Position": "67.68821,-29.35768,174.8498",
+      "Rotation": "0,0,0.8598986,0.5104648",
+      "Enabled": true,
+      "__Prefab": "prefabs/items/ammo_shotgun.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "9bde5ee7-bc2f-4faf-848c-e7ac36acec6b",
+      "Flags": 0,
+      "Name": "remington870",
+      "Position": "102.9073,-45.53913,208",
+      "Rotation": "0,0,0.9152805,-0.4028172",
+      "Tags": "weapon",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/remington870.prefab",
+      "__PrefabVariables": {}
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "minimal",
+  "Description": "",
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

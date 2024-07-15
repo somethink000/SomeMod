@@ -1,0 +1,39 @@
+{
+  "RootObject": {
+    "__guid": "933586e0-191a-4d8e-a4f5-84e70d5646d4",
+    "Flags": 0,
+    "Name": "zombiespawner",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "GeneralGame.ZombieSpawner",
+        "__guid": "ea3f79cb-f329-4734-9ea2-73bb8bfc99b0",
+        "RespawnTime": 20,
+        "ZombiePrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/npcs/zombie.prefab"
+        }
+      },
+      {
+        "__type": "GeneralGame.SpawnMenuComponent",
+        "__guid": "eb9d8c53-b61e-4e04-81f4-ba18bb40e94c",
+        "Icon": {
+          "Model": "models/citizen/citizen.vmdl",
+          "MaterialGroup": "",
+          "Colour": "0.33735,0,0,1",
+          "Rotation": "0,0,0,1",
+          "Guid": "ae2057bc-24b1-491c-9a5a-84917892b095"
+        },
+        "Name": "Sombie Spawner"
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

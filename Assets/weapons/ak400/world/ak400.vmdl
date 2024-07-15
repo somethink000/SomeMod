@@ -1,0 +1,111 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "ak400.vmat"
+								to = "weapons/ak400/ak400.vmat"
+							},
+							{
+								from = "ak400_mag.vmat"
+								to = "weapons/ak400/ak400_mag.vmat"
+							},
+							{
+								from = "ak400_stock.vmat"
+								to = "weapons/ak400/ak400_stock.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = "weapons/ak400/ak400.vmat"
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsHullFile"
+						name = "ak400_physics"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_tags = "solid"
+						recenter_on_parent_bone = false
+						offset_origin = [ -15.0, 4.0, -4.0 ]
+						offset_angles = [ -15.0, 180.0, 0.0 ]
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						filename = "weapons/ak400/world/ak400_physics.smd"
+						import_scale = 1.0
+						faceMergeAngle = 10.0
+						maxHullVertices = 0
+						import_mode = "SingleHull"
+						optimization_algorithm = "QEM"
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "weapons/ak400/world/ak400.smd"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = true
+							exception_list = 
+							[
+								"ak400",
+							]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						filename = "weapons/ak400/world/30rnd.smd"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+		base_model_name = ""
+	}
+}

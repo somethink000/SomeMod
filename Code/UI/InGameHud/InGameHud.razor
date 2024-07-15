@@ -1,0 +1,35 @@
+
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+@* Anything that is always active and displayed to the player when ingame. *@
+<root>
+	
+	<InteractionHint />
+
+    @if ( PlayerBase.GetLocal().Inventory.Deployed != null )
+    {
+        <div class="ammo">@PlayerBase.GetLocal().Inventory.Deployed.Primary.Ammo</div>
+    }
+    
+    <div class="health">@PlayerBase.GetLocal().Health</div>
+</root>
+
+@code {
+    public static InGameHud Instance { get; private set; }
+
+    public InGameHud()
+    {
+        Instance = this;
+    }
+
+    public override void Tick()
+    {
+        base.Tick();
+       
+
+    }
+
+    protected override int BuildHash() => HashCode.Combine(PlayerBase.GetLocal().Health, PlayerBase.GetLocal().Inventory.Deployed, PlayerBase.GetLocal().Inventory.Deployed?.Primary.Ammo);
+}
