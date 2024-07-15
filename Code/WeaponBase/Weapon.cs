@@ -19,6 +19,7 @@ public partial class Weapon : Component, IInventoryItem
 		//Tags.Add( TagsHelper.Weapon );
 		Attachments = Components.GetAll<Attachment>( FindMode.EverythingInSelf ).OrderBy( att => att.Name ).ToList();
 
+		WorldModelRenderer = Components.GetInDescendantsOrSelf<SkinnedModelRenderer>();
 		Settings = WeaponSettings.Instance;
 		InitialPrimaryStats = StatsModifier.FromShootInfo( Primary );
 		InitialSecondaryStats = StatsModifier.FromShootInfo( Primary );
@@ -32,8 +33,10 @@ public partial class Weapon : Component, IInventoryItem
 	protected override void OnEnabled()
 	{
 		if ( IsProxy ) return;
-		if ( ViewModelRenderer?.GameObject is not null )
-			ViewModelRenderer.GameObject.Enabled = true;
+
+		
+		if ( ViewModelRenderer?.GameObject is not null ) ViewModelRenderer.GameObject.Enabled = true;
+
 		if (Owner != null)
 		{
 			CreateUI();
@@ -43,12 +46,15 @@ public partial class Weapon : Component, IInventoryItem
 
 	protected override void OnDisabled()
 	{
+
 		if ( IsProxy ) return;
 		if ( ViewModelRenderer?.GameObject is not null )
 			ViewModelRenderer.GameObject.Enabled = false;
 
 		if ( ViewModelHandler is not null )
 			ViewModelHandler.ShouldDraw = false;
+
+		
 
 		IsReloading = false;
 		IsScoping = false;
@@ -62,13 +68,22 @@ public partial class Weapon : Component, IInventoryItem
 	public void OnCarryStart()
 	{
 		CreateModels();
+
+		
+			
+		
+
 		GameObject.Enabled = true;
+
 	}
 
 	[Broadcast]
 	public void OnCarryStop()
 	{
+		
 		GameObject.Enabled = false;
+		
+
 	}
 
 	public bool CanCarryStop()
@@ -78,8 +93,9 @@ public partial class Weapon : Component, IInventoryItem
 
 	public void OnDeploy()
 	{
+		
 		var delay = 0f;
-
+		
 		if ( Primary.Ammo == 0 && !string.IsNullOrEmpty( DrawEmptyAnim ) )
 		{
 			ViewModelRenderer?.Set( DrawEmptyAnim, true );
@@ -213,6 +229,8 @@ public partial class Weapon : Component, IInventoryItem
 
 	void CreateModels()
 	{
+		
+
 		if ( !IsProxy && ViewModel is not null && ViewModelRenderer is null )
 		{
 			var viewModelGO = new GameObject( true, "Viewmodel" );
@@ -253,17 +271,11 @@ public partial class Weapon : Component, IInventoryItem
 			ViewModelHandler.ViewModelHandsRenderer = ViewModelHandsRenderer;
 		}
 
-		if ( WorldModel is not null && WorldModelRenderer is null )
-		{
-			WorldModelRenderer = Components.Create<SkinnedModelRenderer>();
-			WorldModelRenderer.Model = WorldModel;
-			WorldModelRenderer.AnimationGraph = WorldModel.AnimGraph;
-			WorldModelRenderer.CreateBoneObjects = true;
-
+		
+			
 			var bodyRenderer = Owner.Body.Components.Get<SkinnedModelRenderer>();
 			ModelUtil.ParentToBone( GameObject, bodyRenderer, "hold_R" );
 			Network.ClearInterpolation();
-		}
 	}
 
 	// Temp fix until https://github.com/Facepunch/sbox-issues/issues/5247 is fixed

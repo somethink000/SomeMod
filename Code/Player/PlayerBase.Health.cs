@@ -6,7 +6,7 @@ namespace GeneralGame;
 
 public partial class PlayerBase
 {
-	[Sync, Property] public float MaxHealth { get; private set; } = 100f;
+	[Sync, Property] public float MaxHealth { get; set; } = 100f;
 	[Sync] public LifeState LifeState { get; private set; } = LifeState.Alive;
 	[Sync] public float Health { get; private set; } = 100f;
 

@@ -1,0 +1,47 @@
+{
+  "RootObject": {
+    "__guid": "087cc65d-9421-48d6-b051-6adb3cad2e58",
+    "Flags": 0,
+    "Name": "Camera",
+    "Position": "126.5706,165.5491,-215.7948",
+    "Tags": "maincamera",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.CameraComponent",
+        "__guid": "37293709-9bee-4a57-9de7-b6da4c5a9c10",
+        "BackgroundColor": "0.33333,0.46275,0.52157,1",
+        "ClearFlags": "All",
+        "FieldOfView": 60,
+        "IsMainCamera": true,
+        "Orthographic": false,
+        "OrthographicHeight": 1204,
+        "Priority": 1,
+        "RenderExcludeTags": "",
+        "RenderTags": "",
+        "TargetEye": "None",
+        "Viewport": "0,0,1,1",
+        "ZFar": 10000,
+        "ZNear": 10
+      },
+      {
+        "__type": "Sandbox.ScreenPanel",
+        "__guid": "3a88d9c8-e240-4851-aa51-8ffcb9b2d5ab",
+        "AutoScreenScale": true,
+        "Opacity": 1,
+        "Scale": 1,
+        "ZIndex": 100
+      },
+      {
+        "__type": "GeneralGame.StartLobby",
+        "__guid": "5193c508-5add-459f-bd9b-89ceffd83a3a"
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

@@ -1,0 +1,19 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "ak400_magout",
+      "Type": "sound",
+      "Org": "local",
+      "Ident": "ak400_magout",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "weapons/ak400/ak400_magout.sound"
+      }
+    }
+  }
+}

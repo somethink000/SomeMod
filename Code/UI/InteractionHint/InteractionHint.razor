@@ -8,9 +8,17 @@
     <image src="ui/hud/itnteract_hand.png" class="icon" />
 
 
-	<div class="content">
-		<text class="title">@DisplayName</text>
-
+	<div class="content txt">
+        <text class="title ttl">@DisplayName</text>
+        @if (Item != null){
+            <div class="dopinfo">
+                @if (Item.Count > 0)
+                {
+                    <text class="txt">Count: @Item.Count </text>
+                }
+                <text class="txt">Weight: @Item.totalWeight.ToKilograms()kg</text>
+            </div>
+        }
        
 		<div class="interactions">
 			@foreach(var interaction in _interactions)
@@ -43,17 +51,19 @@
 </root>
 
 @code {
-  
+
     private string DisplayName => _targetObject?.Components?.Get<ItemComponent>()?.Name ?? _targetObject?.Name;
+    private ItemComponent Item { get; set; }
+
     private GameObject _targetObject => PlayerBase.GetLocal()?.TargetedGameObject;
 
     private static Dictionary<string, Interaction> priorityList = new();
     private IEnumerable<Interaction> _interactions => _targetObject?.GetInteractions() ?? new List<Interaction>();
-	private bool WithinBounds(Interaction interaction) => !interaction.HasBounds || GetInteractionBounds(interaction).Contains(PlayerBase.GetLocal().InteractionTrace.EndPosition);
+    private bool WithinBounds(Interaction interaction) => !interaction.HasBounds || GetInteractionBounds(interaction).Contains(PlayerBase.GetLocal().InteractionTrace.EndPosition);
     private bool HasPriority( string key ) => !priorityList.ContainsKey( key.ToLower() );
     private BBox GetInteractionBounds(Interaction interaction)
         => new BBox(interaction.Position - interaction.Extents / 2f, interaction.Position + interaction.Extents / 2f)
-			.Transform(PlayerBase.GetLocal().TargetedGameObject.Transform.World);
+            .Transform(PlayerBase.GetLocal().TargetedGameObject.Transform.World);
 
     private int TimerIndex( Interaction interaction )
         => (int)(MathX.Remap( interaction.CooldownTimer.Passed, 0, interaction.CooldownTime, 8, 0 ) + 0.5f);
@@ -73,75 +83,81 @@
 
     public override void Tick() 
     {	
-  
-       
+
+
         SetClass( "visible", ShowHint() );
-		if (!HasClass("visible"))
-			return;
-       
-		var pos = (PlayerBase.GetLocal().InteractionBounds == null ? PlayerBase.GetLocal().TargetedGameObject.Transform.Position : PlayerBase.GetLocal().TargetedGameObject.Transform.World.PointToWorld(PlayerBase.GetLocal().InteractionBounds.Value.Center));
+        if (!HasClass("visible"))
+            return;
+
+        var pos = (PlayerBase.GetLocal().InteractionBounds == null ? PlayerBase.GetLocal().TargetedGameObject.Transform.Position : PlayerBase.GetLocal().TargetedGameObject.Transform.World.PointToWorld(PlayerBase.GetLocal().InteractionBounds.Value.Center));
 
         foreach ( var interaction in _interactions )
-		{
-			if ( interaction is null || !WithinBounds(interaction) || !IsAccessible(interaction) )
-				continue;
+        {
+            if ( interaction is null || !WithinBounds(interaction) || !IsAccessible(interaction) )
+                continue;
 
-			var canInteract = !interaction.Disabled.InvokeOrDefault();
-			if ( canInteract )
-				AddToPriority( interaction );
+            var canInteract = !interaction.Disabled.InvokeOrDefault();
+            if ( canInteract )
+                AddToPriority( interaction );
 
-			if ( !HasPriority( interaction.Keybind ) )
-				continue;
+            if ( !HasPriority( interaction.Keybind ) )
+                continue;
 
-			if ( interaction.HasBounds )
-				pos = PlayerBase.GetLocal().TargetedGameObject.Transform.Position + interaction.Position * PlayerBase.GetLocal().TargetedGameObject.Transform.Rotation;
+            if ( interaction.HasBounds )
+                pos = PlayerBase.GetLocal().TargetedGameObject.Transform.Position + interaction.Position * PlayerBase.GetLocal().TargetedGameObject.Transform.Rotation;
 
             var coolDown = !interaction.Cooldown || interaction.CooldownTimer;
 
             if (canInteract && interaction.InputFunction(interaction.Keybind) && coolDown)
             {
-				_targetObject?.Network.TakeOwnership();
-				interaction.Action?.Invoke(PlayerBase.GetLocal(), _targetObject);
+                _targetObject?.Network.TakeOwnership();
+                interaction.Action?.Invoke(PlayerBase.GetLocal(), _targetObject);
 
                 interaction.CooldownTimer = interaction.CooldownTime;
 
-				
-				if (!_targetObject.IsValid())
-					return;
 
-				if (interaction.InputMode != InputMode.Down)
-					Input.Clear(interaction.Keybind);
+                if (!_targetObject.IsValid())
+                    return;
+
+                if (interaction.InputMode != InputMode.Down)
+                    Input.Clear(interaction.Keybind);
 
 
-				var vector = (pos - PlayerBase.GetLocal().Transform.Position) * PlayerBase.GetLocal().Transform.Rotation.Inverse;
-				PlayerBase.GetLocal().BroadcastInteraction(
+                var vector = (pos - PlayerBase.GetLocal().Transform.Position) * PlayerBase.GetLocal().Transform.Rotation.Inverse;
+                PlayerBase.GetLocal().BroadcastInteraction(
                     vector, 
-					Rotation.LookAt( vector.Normal ), 
-					interaction.Animation, 
-					_targetObject.Id, 
-					interaction.Sound?.InvokeOrDefault()?.ResourceId ?? -1,
-					interaction.PlaySoundFromPlayer
-				);
-			}
-		}
+                    Rotation.LookAt( vector.Normal ), 
+                    interaction.Animation, 
+                    _targetObject.Id, 
+                    interaction.Sound?.InvokeOrDefault()?.ResourceId ?? -1,
+                    interaction.PlaySoundFromPlayer
+                );
+            }
+        }
 
-		pos = Scene.Camera.PointToScreenPixels( pos );
-		pos *= ScaleFromScreen;
+        pos = Scene.Camera.PointToScreenPixels( pos );
+        pos *= ScaleFromScreen;
 
-		Style.Position = PositionMode.Absolute;
-		Style.Left = Length.Pixels( pos.x );
+        Style.Position = PositionMode.Absolute;
+        Style.Left = Length.Pixels( pos.x );
         Style.Top = Length.Pixels( pos.y );
-        
+
         StateHasChanged();
-	}
+    }
 
-	private bool ShowHint()
-	{
-		if (!_targetObject.IsValid())
-			return false;
+    private bool ShowHint()
+    {
+        if (!_targetObject.IsValid())
+            return false;
 
-		if (!_targetObject.Components.TryGet<Interactions>( out var interactions ))
-			return false;
+        if (!_targetObject.Components.TryGet<Interactions>( out var interactions ))
+            return false;
+
+        if (_targetObject.Components.TryGet<ItemComponent>(out var item))
+        {
+            Item = _targetObject.Components.Get<ItemComponent>();
+        }
+
 
 		var interactionsAvailable = interactions.AllInteractions.Any( i => WithinBounds(i) && WithinRange(i) );
 		if (!interactionsAvailable && interactions.HideOnEmpty)

@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("real_fps_base.editor")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("some_mod.editor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f86955ef68a615837c5ffa9cf8c84715f547dc3")]
-[assembly: System.Reflection.AssemblyProductAttribute("real_fps_base.editor")]
-[assembly: System.Reflection.AssemblyTitleAttribute("real_fps_base.editor")]
+[assembly: System.Reflection.AssemblyProductAttribute("some_mod.editor")]
+[assembly: System.Reflection.AssemblyTitleAttribute("some_mod.editor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.

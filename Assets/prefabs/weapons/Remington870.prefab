@@ -46,7 +46,7 @@
           "component_type": "ShootInfo"
         },
         "ReloadAnim": "reload",
-        "ReloadEmptyAnim": "reload_empty",
+        "ReloadEmptyAnim": "",
         "ReloadEmptyTime": -1,
         "ReloadTime": 3.67,
         "RunAnimData": {
@@ -91,7 +91,7 @@
         "HitFlinch": 2.5,
         "InfiniteAmmo": "disabled",
         "MuzzleFlashParticle": "particles/swb/muzzle/flash.vpcf",
-        "Recoil": 2,
+        "Recoil": 5,
         "RPM": 100,
         "ShootAimedAnim": "",
         "ShootAnim": "fire",
@@ -163,14 +163,6 @@
         "StartAsleep": false
       },
       {
-        "__type": "Sandbox.ModelRenderer",
-        "__guid": "08d32a7f-0eae-49e0-af85-9daded767625",
-        "BodyGroups": 18446744073709551615,
-        "Model": "weapons/remington/world/w_remington870_tact.vmdl",
-        "RenderType": "On",
-        "Tint": "1,1,1,1"
-      },
-      {
         "__type": "GeneralGame.SpawnMenuComponent",
         "__guid": "8dac9426-dd67-4451-b8cf-26f5e5f8767c",
         "Icon": {
@@ -182,6 +174,16 @@
           "Guid": "664d89de-5c3c-4ce7-a82f-0433c38db82d"
         },
         "Name": "Remington"
+      },
+      {
+        "__type": "Sandbox.SkinnedModelRenderer",
+        "__guid": "f60bd105-2df7-406f-937a-a3ac18ec7d68",
+        "BodyGroups": 18446744073709551615,
+        "CreateBoneObjects": false,
+        "Model": "weapons/remington/world/w_remington870_tact.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1",
+        "UseAnimGraph": true
       }
     ],
     "Children": [],

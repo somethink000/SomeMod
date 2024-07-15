@@ -15,3 +15,24 @@ $fullscreen-blur: blur( 20px );
 $fullscreen-bg: #00000068;
 
 $black-bg: #000000d4;
+
+.stxt {
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 16px;
+    text-shadow: 2px 1px 4px white;
+}
+.txt {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: white;
+    font-weight: 500;
+    text-shadow: 2px 1px 4px white;
+}
+.ttl {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    color: white;
+    font-weight: 500;
+    text-shadow: 2px 1px 4px white;
+}

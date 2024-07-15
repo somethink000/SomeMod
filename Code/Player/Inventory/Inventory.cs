@@ -113,7 +113,10 @@ public partial class Inventory : Component
 		if ( firstFreeSlot == -1 )
 			return false;
 
-		
+		//Some day i find out
+		/*item.GameObject.Components.Get<ModelCollider>().Enabled = false;
+		item.GameObject.Components.Get<Rigidbody>().Enabled = false;*/
+
 
 		SetOwner( item );
 		GiveBackpackItem( item, firstFreeSlot );
@@ -216,6 +219,8 @@ public partial class Inventory : Component
 	/// </summary>
 	public bool DropItem( ItemComponent item )
 	{
+		
+
 		if ( item is ItemEquipment equipment && equipment.Equipped )
 			RemoveEquipmentItem( equipment, true );
 		else

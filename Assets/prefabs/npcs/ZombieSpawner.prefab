@@ -25,6 +25,14 @@
           "Guid": "ae2057bc-24b1-491c-9a5a-84917892b095"
         },
         "Name": "Sombie Spawner"
+      },
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "f811130f-2521-4b61-8d19-9b145e76a7a3",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/empty.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
       }
     ],
     "Children": [],

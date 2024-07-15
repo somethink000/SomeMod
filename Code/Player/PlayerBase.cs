@@ -137,6 +137,7 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IPlayerBas
 
 		HandleFlinch();
 		UpdateClothes();
+		SpawnMenuUpdate();
 	}
 
 	protected override void OnFixedUpdate()

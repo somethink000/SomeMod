@@ -23,43 +23,51 @@
 </root>
 
 @code {
-	public static FullScreenManager Instance { get; private set; }
+    public static FullScreenManager Instance { get; private set; }
 
-	public enum FullScreenPanel
-	{
-		InGameHud,
-		Inventory,
-		PauseMenu,
+    public enum FullScreenPanel
+    {
+        InGameHud,
+        Inventory,
+        PauseMenu,
         SpawnMenu,
-	}
+    }
 
-	public FullScreenPanel ActivePanel { get; private set; } = FullScreenPanel.InGameHud;
+    public FullScreenPanel ActivePanel { get; private set; } = FullScreenPanel.InGameHud;
+    
 
-	public FullScreenManager()
-	{
-		Instance = this;
-	}
 
-	public void Display( FullScreenPanel panel )
-	{
-		ActivePanel = panel;
-	}
+    public FullScreenManager()
+    {
+        Instance = this;
+    }
 
-	public override void Tick()
-	{
-        
-		
+    public void Display( FullScreenPanel panel )
+    {
+        ActivePanel = panel;
+    }
+
+    public override void Tick()
+    {
+
+      
 
 		if (Input.Pressed(InputButtonHelper.Inventory))
 		{
 			Toggle( FullScreenPanel.Inventory );
             
         }
-        if (Input.Pressed(InputButtonHelper.SpawnMenu))
+        if (Input.Down(InputButtonHelper.SpawnMenu) && ActivePanel != FullScreenPanel.SpawnMenu)
         {
+             
             Toggle(FullScreenPanel.SpawnMenu);
 
         }
+        else if (!Input.Down(InputButtonHelper.SpawnMenu) && ActivePanel == FullScreenPanel.SpawnMenu)
+        {
+            Toggle(FullScreenPanel.SpawnMenu);
+        }
+        
     }
 
 	private void Toggle( FullScreenPanel panel )

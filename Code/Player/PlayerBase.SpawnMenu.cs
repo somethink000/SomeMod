@@ -26,8 +26,19 @@ public partial class PlayerBase
 	
 			obj.NetworkMode = NetworkMode.Object;
 			obj.NetworkSpawn();
-			
+
+
+			Undo.AddEntity( this, obj, obj.Name );
 		}
+	}
+
+	public void SpawnMenuUpdate()
+	{
+		if ( Input.Pressed( InputButtonHelper.Undo ) )
+		{
+			Undo.DoUndo( this, false );
+		}
+		
 	}
 
 }

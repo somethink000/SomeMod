@@ -28,6 +28,9 @@ public partial class Inventory
 			nextWeapon.Owner = Player;
 			Deployed = nextWeapon;
 
+
+			
+
 			nextWeapon.OnCarryStart();
 
 			nextWeapon.GameObject.Enabled = true;

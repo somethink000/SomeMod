@@ -1,11 +1,11 @@
 {
-  "Title": "Some FPS base",
+  "Title": "Some Mod",
   "Type": "game",
   "Org": "evilinc",
   "Ident": "real_fps_base",
   "Schema": 1,
-  "IncludeSourceFiles": false,
-  "Resources": null,
+  "IncludeSourceFiles": true,
+  "Resources": "\nui/hud/*\nui/icons/*",
   "PackageReferences": [],
   "EditorReferences": null,
   "Metadata": {
@@ -21,7 +21,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/lobby.scene",
+    "StartupScene": "scenes/load.scene",
     "ProjectTemplate": null,
     "LaunchMode": "Normal",
     "ControlModes": {},
@@ -212,9 +212,30 @@
           "KeyboardCode": "enter",
           "GamepadCode": "None",
           "GroupName": "Other"
+        },
+        {
+          "Name": "Undo",
+          "KeyboardCode": "Z",
+          "GamepadCode": "None",
+          "GroupName": "Other"
         }
       ],
       "__guid": "24003099-00eb-450b-b1b4-4b1faa85eeb1"
+    },
+    "MapStartupScene": "scenes/construct.scene",
+    "Compiler": {
+      "RootNamespace": "Sandbox",
+      "DefineConstants": "SANDBOX;ADDON;DEBUG",
+      "NoWarn": "1701;1702;1591;",
+      "WarningsAsErrors": "",
+      "Whitelist": true,
+      "ReleaseMode": "Release",
+      "AssemblyReferences": [],
+      "IgnoreFolders": [
+        "editor",
+        "unittest"
+      ],
+      "DistinctAssemblyReferences": []
     }
   }
 }

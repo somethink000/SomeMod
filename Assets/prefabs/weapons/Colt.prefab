@@ -5,14 +5,6 @@
     "Name": "colt",
     "Components": [
       {
-        "__type": "Sandbox.ModelRenderer",
-        "__guid": "828695b0-0f67-401d-929c-e94d1e139f4e",
-        "BodyGroups": 18446744073709551615,
-        "Model": "weapons/coolt/world/w_m1911.vmdl",
-        "RenderType": "On",
-        "Tint": "1,1,1,1"
-      },
-      {
         "__type": "Sandbox.ModelCollider",
         "__guid": "db06a5e8-81be-4e4f-8e70-3d4a79dfddec",
         "IsTrigger": false,
@@ -118,7 +110,7 @@
         "HitFlinch": 1.25,
         "InfiniteAmmo": "reserve",
         "MuzzleFlashParticle": "particles/swb/muzzle/flash.vpcf",
-        "Recoil": 0.35,
+        "Recoil": 4,
         "RPM": 700,
         "ShootAimedAnim": "",
         "ShootAnim": "b_attack",
@@ -195,6 +187,16 @@
           "Guid": "6de3b4f6-ee31-4fc2-a6e1-fc58f719702d"
         },
         "Name": "m1911 Colt "
+      },
+      {
+        "__type": "Sandbox.SkinnedModelRenderer",
+        "__guid": "9d529283-654e-4a5b-9f49-6a3a1a778660",
+        "BodyGroups": 18446744073709551615,
+        "CreateBoneObjects": false,
+        "Model": "weapons/coolt/world/w_m1911.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1",
+        "UseAnimGraph": true
       }
     ],
     "Children": [],

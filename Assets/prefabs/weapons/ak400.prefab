@@ -47,9 +47,9 @@
           "component_type": "ShootInfo"
         },
         "ReloadAnim": "b_reload",
-        "ReloadEmptyAnim": "reload_empty",
-        "ReloadEmptyTime": -1,
-        "ReloadTime": 4.38,
+        "ReloadEmptyAnim": "b_reload",
+        "ReloadEmptyTime": 3.2,
+        "ReloadTime": 2.9,
         "RunAnimData": {
           "Angle": "18.28,44.18,0",
           "Pos": "2.79,-3,0.36"
@@ -92,7 +92,7 @@
         "HitFlinch": 2,
         "InfiniteAmmo": "disabled",
         "MuzzleFlashParticle": "particles/swb/muzzle/flash.vpcf",
-        "Recoil": 0.35,
+        "Recoil": 3,
         "RPM": 600,
         "ShootAimedAnim": "",
         "ShootAnim": "b_attack",
@@ -122,14 +122,6 @@
         "ShootSound": "weapons/ak400/ak400_suppressed_fire1.sound",
         "ViewModelScale": "1,1,1",
         "WorldModelScale": "1,1,1"
-      },
-      {
-        "__type": "Sandbox.ModelRenderer",
-        "__guid": "43f1f05f-395d-40b8-9751-a7ca54437eb7",
-        "BodyGroups": 18446744073709551615,
-        "Model": "weapons/ak400/world/ak400.vmdl",
-        "RenderType": "On",
-        "Tint": "1,1,1,1"
       },
       {
         "__type": "Sandbox.ModelCollider",
@@ -182,6 +174,16 @@
           "Guid": "8d20f095-42d2-4a65-8140-307de2eefd14"
         },
         "Name": "AK 400"
+      },
+      {
+        "__type": "Sandbox.SkinnedModelRenderer",
+        "__guid": "383445c6-7b6a-4b53-9990-3b2d0850f9e1",
+        "BodyGroups": 18446744073709551615,
+        "CreateBoneObjects": false,
+        "Model": "weapons/ak400/world/ak400.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1",
+        "UseAnimGraph": true
       }
     ],
     "Children": [],
