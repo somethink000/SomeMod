@@ -1,30 +1,54 @@
+
 @namespace GeneralGame.UI
 @attribute [StyleSheet]
 @inherits Panel
 
 <root>
    
-    <SpawnList/>
-        
+    <div class="categories txt">
+
+        <div class="button" onclick=@( () => ChangeCategory(SpawnMenuCategories.Props) )>
+            <text>Props</text>
+        </div>
+
+        <div class="button" onclick=@( () => ChangeCategory(SpawnMenuCategories.Entities) )>
+            <text>Entities</text>
+        </div>
+
+    </div>
+
+    <div class="content">
+     
+        @switch (ActiveCategory)
+        {
+            case SpawnMenuCategories.Entities:
+                <SpawnList/>
+                break;
+            case SpawnMenuCategories.Props:
+                <PropList/>
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+
+    </div>
+
+
 </root>
 
 @code {
 
-   
+    public SpawnMenuCategories ActiveCategory { get; private set; } = SpawnMenuCategories.Entities;
 
-   // public record EntityInfo(
-   //    string PrefabPath,
-    //    string Name,
-   //     string Description,
-    //    Texture Icon
-    //);
+    public void ChangeCategory(SpawnMenuCategories category)
+    {
+        ActiveCategory = category;
+        PlayerBase.GetLocal().ActiveSpawnCategory = category;
+    }
 
-    //private EntityInfo SelectedEntityInfo { get; set; }
+    public SpawnMenu() 
+    {
+        ActiveCategory = PlayerBase.GetLocal().ActiveSpawnCategory;
+    }
 
-
-    // protected override void OnMouseDown(MousePanelEvent e)
-    //{
-     //   Log.Info("efef");
-    //}
-    //protected override int BuildHash() => ;
 }

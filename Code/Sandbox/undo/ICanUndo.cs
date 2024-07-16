@@ -26,3 +26,4 @@ public interface ICanUndo
 	/// <returns>Object with content</returns>
 	object GetUndoContent();
 }
+//Package

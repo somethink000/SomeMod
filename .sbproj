@@ -5,7 +5,7 @@
   "Ident": "real_fps_base",
   "Schema": 1,
   "IncludeSourceFiles": true,
-  "Resources": "\nui/hud/*\nui/icons/*",
+  "Resources": "\nui/hud/*\nui/icons/*\nui/load/*",
   "PackageReferences": [],
   "EditorReferences": null,
   "Metadata": {

@@ -238,10 +238,10 @@
     "TimeScale": 1,
     "UseFixedUpdate": true,
     "NavMesh": {
-      "Enabled": false,
+      "Enabled": true,
       "IncludeStaticBodies": true,
       "IncludeKeyframedBodies": true,
-      "EditorAutoUpdate": true,
+      "EditorAutoUpdate": false,
       "AgentHeight": 64,
       "AgentRadius": 16,
       "AgentStepSize": 18,

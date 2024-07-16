@@ -1,0 +1,52 @@
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+<root>
+
+    @if (IsRefreshing)
+    {
+        <label class="ttl">Refreshing the server list, please wait...</label>
+    }
+    else if (Servers.Count == 0)
+    {
+        <label class="ttl">No servers were found, create one to play.</label>
+    }
+    else
+    {
+        <div class="button-list">
+            @foreach (var lobby in Servers)
+            {
+                <div class="button" onclick=@( () => OpenLobby( lobby ) )>
+                    <div class="title">
+                        @lobby.Name
+                    </div>
+
+                    <div class="meta">
+                        <div class="map">
+                            @lobby.Map
+                        </div>
+
+                        <div class="count">
+                            @lobby.Members / @lobby.MaxMembers
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+        
+</root>
+
+@code {
+    public bool IsRefreshing { get; set; }
+    public List<LobbyInformation> Servers { get; set; } = new();
+
+    private void OpenLobby(LobbyInformation lobby)
+    {
+        GameNetworkSystem.Connect(lobby.LobbyId);
+    }
+    
+    
+}

@@ -72,6 +72,10 @@
         "JumpForce": 350,
         "MaxForce": 50,
         "MaxHealth": 100,
+        "PhysicsPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/physics_prefab.prefab"
+        },
         "RagdollPhysics": {
           "_type": "component",
           "component_id": "fb5d8b8c-8bc7-4ecb-be40-75cf5191cde1",

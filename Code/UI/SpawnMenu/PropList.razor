@@ -1,0 +1,28 @@
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+<root>
+   
+    <div class="txt">
+        <PackageList ShowFilters="@true" Query="type:ModelList sort:trending" OnSelected="@OnPackageSelected" Take=@(70)></PackageList>
+    </div>
+
+</root>
+
+@code {
+
+    async void OnPackageSelected(Package package)
+    {
+
+        var player = PlayerBase.GetLocal();
+        if (player is null) return;
+
+
+
+        player.SpawnMenuPackage(package);
+    }
+
+
+    protected override int BuildHash() => System.HashCode.Combine(Time.Now);
+}

@@ -1,0 +1,103 @@
+﻿
+@using GeneralGame
+@inherits PanelComponent
+@namespace GeneralGame.UI
+
+<root>
+    <div class="blur"></div>
+
+	<div class="center"> 
+
+		 <div class="left">
+
+			<div class="ttl">
+				Some Mod
+			</div>
+
+			
+			<div class="button-list">
+
+                <div class="button txt" onclick=@( () => ActivePanel = MenuPanels.CreateGame )>
+					Start game
+				</div>
+
+                <div class="button txt" onclick=@( () => ActivePanel = MenuPanels.ServerList )>
+                    <text>Find Server @Servers.Count</text>
+                </div>
+
+                <div class="button txt" onclick=@( () => Quit() )>
+					Quit
+				</div>
+                
+			</div>
+		</div>
+
+
+        <div class="right">
+
+
+            @switch ( ActivePanel )
+		    {
+                case MenuPanels.CreateGame:
+				    <CreateGame/>
+				    break;
+                case MenuPanels.ServerList:
+				    <FindServer IsRefreshing=@IsRefreshing Servers=@Servers/>
+				    break;
+			    default:
+				    throw new ArgumentOutOfRangeException();
+		    }
+
+        </div>
+    	
+	 </div> 
+</root>
+
+@code
+{
+    public bool IsRefreshing { get; set; }
+    public List<LobbyInformation> Servers { get; set; } = new();
+
+	
+    public enum MenuPanels
+    {
+        ServerList,
+        CreateGame
+    }
+
+    public MenuPanels ActivePanel { get; private set; } = MenuPanels.CreateGame;
+
+	
+    public Load()
+    {
+
+        _ = RefreshLobbyList();
+    }
+
+
+    private void Quit()
+    {
+        Game.Close();
+    }
+
+
+    protected override int BuildHash() => HashCode.Combine(RealTime.Now);
+
+    private async Task RefreshLobbyList()
+    {
+        while (true)
+        {
+            IsRefreshing = true;
+            StateHasChanged();
+
+            Servers = await Networking.QueryLobbies();
+
+            IsRefreshing = false;
+            StateHasChanged();
+
+            await Task.DelayRealtimeSeconds(5f);
+        }
+    }
+
+    
+}

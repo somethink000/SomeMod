@@ -1,0 +1,76 @@
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+<root>
+    
+    <div class="creating">
+        
+        <div class="info">
+
+            <div class="mapIcon">
+            @if (CurrentMap != null)
+            {
+                <img src=@CurrentMap.Thumb />
+            }
+            </div>
+
+            <div class="txt">
+                @if (CurrentMap != null)
+                {
+                    <text>@CurrentMap.Title</text>
+
+                    <text>@CurrentMap.Description</text>
+
+                }
+            </div>
+
+           
+
+        </div>
+
+
+        <div class="variables">
+
+
+            <div class="button txt" onclick=@( () => NewGame() )>
+                <text>Create Game</text>
+            </div>
+
+
+            <div class="button txt" onclick=@( () => CurrentMap = null )>
+                <text>Default scene</text>
+            </div>
+
+        </div>
+        
+
+    </div> 
+
+    <div class="mapsearch txt">
+        <PackageList ShowFilters="@true" Query="type:map sort:trending" OnSelected="@OnPackageSelected" Take=@(70)></PackageList>
+    </div>
+
+</root>
+
+@code {
+
+    private Package CurrentMap { get; set; }
+
+
+    public void NewGame()
+    {
+        if (CurrentMap != null) 
+        {
+            LaunchArguments.Map = CurrentMap.FullIdent;
+            GameManager.ActiveScene.LoadFromFile("scenes/empty.scene");
+        }else {
+            GameManager.ActiveScene.LoadFromFile("scenes/construct.scene");
+        }
+    }
+
+    void OnPackageSelected(Package package)
+    {
+        CurrentMap = package;
+    }
+}

@@ -30,9 +30,8 @@
 	private float _scrollDelta;
 	private float _distance;
 
-	private bool HasDescription => !String.IsNullOrEmpty(_item.Description);
 
-	public InspectItem(ItemComponent item)
+    public InspectItem(ItemComponent item)
 	{
 		_instance?.Delete();
 		_instance = null;

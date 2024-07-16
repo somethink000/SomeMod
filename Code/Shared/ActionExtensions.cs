@@ -1,4 +1,3 @@
-using System;
 
 namespace GeneralGame;
 
@@ -11,3 +10,4 @@ public static class ActionExtensions
 			: func.Invoke();
 	}
 }
+
