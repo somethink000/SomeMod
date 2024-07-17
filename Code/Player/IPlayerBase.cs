@@ -5,7 +5,6 @@ namespace GeneralGame;
 
 public interface IPlayerBase : IValid
 {
-	public CameraComponent ViewModelCamera { get; set; }
 	public CameraComponent Camera { get; set; }
 	public GameObject Body { get; set; }
 	public SkinnedModelRenderer BodyRenderer { get; set; }

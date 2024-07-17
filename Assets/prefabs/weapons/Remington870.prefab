@@ -69,7 +69,7 @@
         "Slot": 3,
         "TuckRange": 30,
         "ViewModel": "weapons/remington/view/v_remington870_tact.vmdl",
-        "ViewModelHands": "weapons/handes/pmm_ref_hand_red.vmdl",
+        "ViewModelHands": "weapons/handes/pmm_ref_hand_blue.vmdl",
         "WorldModel": "weapons/remington/world/w_remington870_tact.vmdl"
       },
       {

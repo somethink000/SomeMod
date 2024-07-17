@@ -70,7 +70,7 @@
         "Slot": 5,
         "TuckRange": 30,
         "ViewModel": "weapons/ak400/view/v_ak400.vmdl",
-        "ViewModelHands": "weapons/handes/pmm_ref_hand_red.vmdl",
+        "ViewModelHands": "weapons/handes/pmm_ref_hand_blue.vmdl",
         "WorldModel": "weapons/ak400/world/ak400.vmdl"
       },
       {

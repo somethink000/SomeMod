@@ -44,7 +44,7 @@ public partial class Weapon : Component
 	[Broadcast]
 	public void Holster()
 	{
-		if ( !CanCarryStop() ) return;
+		//if ( !CanCarryStop() ) return;
 
 		GameObject.Enabled = false;
 
@@ -111,7 +111,7 @@ public partial class Weapon : Component
 		//Log.Info(  );
 		if ( !IsProxy && ViewModel is not null && ViewModelRenderer is null )
 		{
-			Log.Info("eff");
+
 			var viewModelGO = new GameObject( true, "Viewmodel" );
 			viewModelGO.SetParent( Owner.GameObject, false );
 			viewModelGO.Tags.Add( TagsHelper.ViewModel );
@@ -133,7 +133,7 @@ public partial class Weapon : Component
 			ViewModelHandler = viewModelGO.Components.Create<ViewModelHandler>();
 			ViewModelHandler.Weapon = this;
 			ViewModelHandler.ViewModelRenderer = ViewModelRenderer;
-			ViewModelHandler.Camera = Owner.ViewModelCamera;
+			ViewModelHandler.Camera = Owner.Camera;
 
 			if ( ViewModelHands is not null )
 			{

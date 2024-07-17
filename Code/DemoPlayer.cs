@@ -23,15 +23,6 @@ public class DemoPlayer : PlayerBase
 		return null;
 	}*/
 
-	public override void Respawn()
-	{
-		base.Respawn();
-
-		if (IsProxy)
-			return;
-
-		MaxCarryWeight = Inventory.MAX_WEIGHT_IN_GRAMS;
-	}
 
 	public override void OnDeath( Vector3 force, Vector3 origin )
 	{

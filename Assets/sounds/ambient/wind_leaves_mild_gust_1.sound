@@ -5,7 +5,7 @@
   "Decibels": 70,
   "SelectionMode": "Random",
   "Sounds": [
-    "weapons/ak400/ak400_boltback.vsnd"
+    "sounds/ambient/wind_leaves_mild_gust_1.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,

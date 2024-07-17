@@ -48,6 +48,8 @@
 			}
 		</div>
 	</div>
+    
+ 
 </root>
 
 @code {
@@ -70,19 +72,19 @@
 
     private void AddToPriority( Interaction interaction, bool forced = false )
     {
-        if ( !forced ) 
+        if ( !forced )
             return;
 
         var key = interaction.Keybind.ToLower();
         var contains = priorityList.ContainsKey( key );
-        if ( contains ) 
+        if ( contains )
             return;
 
         priorityList.Add( key, interaction );
     }
 
-    public override void Tick() 
-    {	
+    public override void Tick()
+    {
 
 
         SetClass( "visible", ShowHint() );
@@ -125,10 +127,10 @@
 
                 var vector = (pos - PlayerBase.GetLocal().Transform.Position) * PlayerBase.GetLocal().Transform.Rotation.Inverse;
                 PlayerBase.GetLocal().BroadcastInteraction(
-                    vector, 
-                    Rotation.LookAt( vector.Normal ), 
-                    interaction.Animation, 
-                    _targetObject.Id, 
+                    vector,
+                    Rotation.LookAt( vector.Normal ),
+                    interaction.Animation,
+                    _targetObject.Id,
                     interaction.Sound?.InvokeOrDefault()?.ResourceId ?? -1,
                     interaction.PlaySoundFromPlayer
                 );
@@ -168,7 +170,7 @@
 
 	private bool IsAccessible(Interaction interaction)
 	{
-		
+
 		if (interaction.Accessibility.HasFlag(AccessibleFrom.World))
 			return true;
 
@@ -184,9 +186,9 @@
 	{
 		return HashCode.Combine
 		(
-			DisplayName, 
+			DisplayName,
 			_targetObject.IsValid(),
 			_interactions.HashCombine(i => HashCode.Combine(i.Text, i.Disabled.InvokeOrDefault(), (bool)i.CooldownTimer, TimerIndex(i), WithinBounds(i), HasPriority(i.Keybind)))
 		);
-	}
+	} 
 }

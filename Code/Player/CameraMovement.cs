@@ -16,12 +16,7 @@ public class CameraMovement : Component
 
 	protected override void OnAwake() { }
 
-	protected override void OnStart()
-	{
-		if ( Player.IsBot )
-			Enabled = false;
-	}
-
+	
 	protected override void OnUpdate()
 	{
 		if ( IsProxy ) return;

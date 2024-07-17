@@ -11,10 +11,8 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IPlayerBas
 	[Property] public GameObject Body { get; set; }
 	[Property] public SkinnedModelRenderer BodyRenderer { get; set; }
 	[Property] public CameraComponent Camera { get; set; }
-	[Property] public CameraComponent ViewModelCamera { get; set; }
 	[Property] public PanelComponent RootDisplay { get; set; }
     [Property] public Inventory Inventory { get; set; }
-	[Sync] public bool IsBot { get; set; }
 
 	public int MaxCarryWeight { get; set; }
 	public bool IsEncumbered => Inventory.Weight > MaxCarryWeight;
@@ -36,10 +34,9 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IPlayerBas
 
 	protected override void OnAwake()
 	{
+		
 		//Inventory = new Inventory( this );
 		cameraMovement = Components.GetInChildren<CameraMovement>();
-
-		if ( IsBot ) return;
 
 		OnMovementAwake();
 	}
@@ -51,25 +48,22 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IPlayerBas
 
 	protected override void OnStart()
 	{
-		if ( IsProxy || IsBot )
+		
+
+		if ( IsProxy )
 		{
 			if ( Camera is not null )
 				Camera.Enabled = false;
-
-			if ( ViewModelCamera is not null )
-				ViewModelCamera.Enabled = false;
-		}
-
-		if ( IsBot )
-		{
-			var screenPanel = Components.GetInChildrenOrSelf<ScreenPanel>();
-
-			if ( screenPanel is not null )
-				screenPanel.Enabled = false;
 		}
 
 		if ( !IsProxy )
+		{
+
 			Respawn();
+		}
+
+
+		base.OnStart();
 	}
 
 	[Broadcast]
@@ -93,19 +87,17 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IPlayerBas
 
 	public virtual void Respawn()
 	{
+		//Log.Info( IsProxy );
+		MaxCarryWeight = Inventory.MAX_WEIGHT_IN_GRAMS;
+
 		Unragdoll();
 		Health = MaxHealth;
-
+		
 		var spawnLocation = GetSpawnLocation();
 		Transform.Position = spawnLocation.Position;
 		EyeAngles = spawnLocation.Rotation.Angles();
 		Network.ClearInterpolation();
 
-		if ( IsBot )
-		{
-			Body.Transform.Rotation = new Angles( 0, EyeAngles.ToRotation().Yaw(), 0 ).ToRotation();
-			AnimationHelper.WithLook( EyeAngles.ToRotation().Forward, 1f, 0.75f, 0.5f );
-		}
 	}
 
 	public virtual Transform GetSpawnLocation()
@@ -121,19 +113,15 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IPlayerBas
 		return randomSpawnPoint.Transform.World;
 	}
 
-	public static PlayerBase GetLocal()
-	{
-		var players = Game.ActiveScene.GetAllComponents<PlayerBase>();
-		return players.First( ( player ) => !player.IsProxy && !player.IsBot );
-	}
-
+	
 	protected override void OnUpdate()
 	{
-		if ( IsBot ) return;
-		if ( !IsProxy ) ViewModelCamera.Enabled = IsFirstPerson && IsAlive;
 
-		if ( IsAlive )
+		//if ( !IsProxy ) ViewModelCamera.Enabled = IsFirstPerson && IsAlive;
+
+		if ( IsAlive ) { 
 			OnMovementUpdate();
+		}
 
 		HandleFlinch();
 		UpdateClothes();
@@ -142,7 +130,7 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IPlayerBas
 
 	protected override void OnFixedUpdate()
 	{
-		if ( !IsAlive || IsBot ) return;
+		if ( !IsAlive ) return;
 		OnMovementFixedUpdate();
 
 		if (IsProxy)
