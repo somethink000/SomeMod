@@ -113,10 +113,6 @@ public partial class Inventory : Component
 		if ( firstFreeSlot == -1 )
 			return false;
 
-		//Some day i find out
-		/*item.GameObject.Components.Get<ModelCollider>().Enabled = false;
-		item.GameObject.Components.Get<Rigidbody>().Enabled = false;*/
-
 
 		SetOwner( item );
 		GiveBackpackItem( item, firstFreeSlot );

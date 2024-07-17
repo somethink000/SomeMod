@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace GeneralGame;
 
-public partial class Weapon : Component, IInventoryItem
+public partial class Weapon : Component
 {
 	public IPlayerBase Owner { get; set; }
 	public ViewModelHandler ViewModelHandler { get; private set; }
@@ -25,71 +25,54 @@ public partial class Weapon : Component, IInventoryItem
 		InitialSecondaryStats = StatsModifier.FromShootInfo( Primary );
 	}
 
-	protected override void OnDestroy()
-	{
-		ViewModelRenderer?.GameObject?.Destroy();
-	}
 
-	protected override void OnEnabled()
+	[Broadcast]
+	public void Deploy(PlayerBase player)
 	{
+		Owner = player;
+
+		SetupModels();
+
+		GameObject.Enabled = true;
+
 		if ( IsProxy ) return;
 
-		
-		if ( ViewModelRenderer?.GameObject is not null ) ViewModelRenderer.GameObject.Enabled = true;
+		CreateUI();
 
-		if (Owner != null)
-		{
-			CreateUI();
-		}
-		
 	}
 
-	protected override void OnDisabled()
+	[Broadcast]
+	public void Holster()
 	{
+		if ( !CanCarryStop() ) return;
+
+		GameObject.Enabled = false;
+
+		ViewModelHandler.OnHolster();
+		
+		Owner = null;
 
 		if ( IsProxy ) return;
-		if ( ViewModelRenderer?.GameObject is not null )
-			ViewModelRenderer.GameObject.Enabled = false;
 
-		if ( ViewModelHandler is not null )
-			ViewModelHandler.ShouldDraw = false;
-
-		
+		WorldModelRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
+		ViewModelRenderer.GameObject.Destroy();
+		ViewModelHandler = null;
+		ViewModelRenderer = null;
+		ViewModelHandsRenderer = null;
 
 		IsReloading = false;
 		IsScoping = false;
 		IsAiming = false;
 		IsCustomizing = false;
-
 		DestroyUI();
-	}
-
-	[Broadcast]
-	public void OnCarryStart()
-	{
-		CreateModels();
-
 		
-			
-		
-
-		GameObject.Enabled = true;
-
-	}
-
-	[Broadcast]
-	public void OnCarryStop()
-	{
-		
-		GameObject.Enabled = false;
-		
-
 	}
 
 	public bool CanCarryStop()
 	{
 		return TimeSinceDeployed > 0;
 	}
+
 
 	public void OnDeploy()
 	{
@@ -121,19 +104,68 @@ public partial class Weapon : Component, IInventoryItem
 			AsyncBoltBack( delay );
 	}
 
+
+	void SetupModels()
+	{
+
+		//Log.Info(  );
+		if ( !IsProxy && ViewModel is not null && ViewModelRenderer is null )
+		{
+			Log.Info("eff");
+			var viewModelGO = new GameObject( true, "Viewmodel" );
+			viewModelGO.SetParent( Owner.GameObject, false );
+			viewModelGO.Tags.Add( TagsHelper.ViewModel );
+			viewModelGO.Flags |= GameObjectFlags.NotNetworked;
+
+			ViewModelRenderer = viewModelGO.Components.Create<SkinnedModelRenderer>();
+			ViewModelRenderer.Model = ViewModel;
+			ViewModelRenderer.AnimationGraph = ViewModel.AnimGraph;
+			ViewModelRenderer.CreateBoneObjects = true;
+			ViewModelRenderer.Enabled = false;
+			ViewModelRenderer.OnComponentEnabled += () =>
+			{
+				// Prevent flickering when enabling the component, this is controlled by the ViewModelHandler
+				ViewModelRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
+				ResetViewModelAnimations();
+				OnDeploy();
+			};
+
+			ViewModelHandler = viewModelGO.Components.Create<ViewModelHandler>();
+			ViewModelHandler.Weapon = this;
+			ViewModelHandler.ViewModelRenderer = ViewModelRenderer;
+			ViewModelHandler.Camera = Owner.ViewModelCamera;
+
+			if ( ViewModelHands is not null )
+			{
+				ViewModelHandsRenderer = viewModelGO.Components.Create<SkinnedModelRenderer>();
+				ViewModelHandsRenderer.Model = ViewModelHands;
+				ViewModelHandsRenderer.BoneMergeTarget = ViewModelRenderer;
+				ViewModelHandsRenderer.OnComponentEnabled += () =>
+				{
+					// Prevent flickering when enabling the component, this is controlled by the ViewModelHandler
+					ViewModelHandsRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
+				};
+			}
+
+			ViewModelHandler.ViewModelHandsRenderer = ViewModelHandsRenderer;
+		}
+
+
+
+		var bodyRenderer = Owner.Body.Components.Get<SkinnedModelRenderer>();
+		ModelUtil.ParentToBone( GameObject, bodyRenderer, "hold_R" );
+		Network.ClearInterpolation();
+	}
+
+
+
 	protected override void OnStart()
 	{
-		Owner = Components.GetInAncestors<IPlayerBase>();
-		//if (Owner == null) return;
-		
-
-		// Attachments (load for clients joining late)
 		if ( IsProxy )
 		{
-			// Log.Info( "Checking -> " + Network.OwnerConnection.DisplayName + "'s " + DisplayName + " for attachments" );
+			
 			Attachments.ForEach( att =>
 			{
-				// Log.Info( "[" + att.Name + "] equipped ->" + att.Equipped );
 				if ( att is not null && att.Equipped )
 					att.Equip();
 			} );
@@ -227,57 +259,7 @@ public partial class Weapon : Component, IInventoryItem
 		}
 	}
 
-	void CreateModels()
-	{
-		
-
-		if ( !IsProxy && ViewModel is not null && ViewModelRenderer is null )
-		{
-			var viewModelGO = new GameObject( true, "Viewmodel" );
-			viewModelGO.SetParent( Owner.GameObject, false );
-			viewModelGO.Tags.Add( TagsHelper.ViewModel );
-			viewModelGO.Flags |= GameObjectFlags.NotNetworked;
-
-			ViewModelRenderer = viewModelGO.Components.Create<SkinnedModelRenderer>();
-			ViewModelRenderer.Model = ViewModel;
-			ViewModelRenderer.AnimationGraph = ViewModel.AnimGraph;
-			ViewModelRenderer.CreateBoneObjects = true;
-			ViewModelRenderer.Enabled = false;
-			ViewModelRenderer.OnComponentEnabled += () =>
-			{
-				// Prevent flickering when enabling the component, this is controlled by the ViewModelHandler
-				ViewModelRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
-				ResetViewModelAnimations();
-				OnDeploy();
-			};
-
-			ViewModelHandler = viewModelGO.Components.Create<ViewModelHandler>();
-			ViewModelHandler.Weapon = this;
-			ViewModelHandler.ViewModelRenderer = ViewModelRenderer;
-			ViewModelHandler.Camera = Owner.ViewModelCamera;
-
-			if ( ViewModelHands is not null )
-			{
-				ViewModelHandsRenderer = viewModelGO.Components.Create<SkinnedModelRenderer>();
-				ViewModelHandsRenderer.Model = ViewModelHands;
-				ViewModelHandsRenderer.BoneMergeTarget = ViewModelRenderer;
-				ViewModelHandsRenderer.OnComponentEnabled += () =>
-				{
-					// Prevent flickering when enabling the component, this is controlled by the ViewModelHandler
-					ViewModelHandsRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
-				};
-			}
-
-			ViewModelHandler.ViewModelHandsRenderer = ViewModelHandsRenderer;
-		}
-
-		
-			
-			var bodyRenderer = Owner.Body.Components.Get<SkinnedModelRenderer>();
-			ModelUtil.ParentToBone( GameObject, bodyRenderer, "hold_R" );
-			Network.ClearInterpolation();
-	}
-
+	
 	// Temp fix until https://github.com/Facepunch/sbox-issues/issues/5247 is fixed
 	void ResetViewModelAnimations()
 	{

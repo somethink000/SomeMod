@@ -110,7 +110,7 @@
           "__guid": "e9c2da28-6b39-4f04-92b7-23be7a7df969",
           "Flags": 0,
           "Name": "Object",
-          "Position": "128.7395,61.02401,44.5329",
+          "Position": "437.2858,-684.2064,44.5329",
           "Enabled": true,
           "Components": [
             {
@@ -221,7 +221,7 @@
       "__guid": "9bde5ee7-bc2f-4faf-848c-e7ac36acec6b",
       "Flags": 0,
       "Name": "remington870",
-      "Position": "102.9073,-45.53913,208",
+      "Position": "411.4536,-790.7695,208",
       "Rotation": "0,0,0.9152805,-0.4028172",
       "Tags": "weapon",
       "Enabled": true,

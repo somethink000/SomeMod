@@ -20,20 +20,12 @@ public partial class Inventory
 		if (item.GameObject.Components.GetInDescendantsOrSelf<Weapon>(true) != null)
 		{
 			Weapon nextWeapon = item.GameObject.Components.GetInDescendantsOrSelf<Weapon>(true);
-			//Log.Info( nextWeapon );
-
-			//nextWeapon.GameObject.SetParent(WeaponBone);
-			//nextWeapon.GameObject.Transform.Position = WeaponBone.Transform.Position;
-			//nextWeapon.GameObject.Transform.Rotation = WeaponBone.Transform.Rotation;
-			nextWeapon.Owner = Player;
+			
+			
 			Deployed = nextWeapon;
 
+			nextWeapon.Deploy( Player );
 
-			
-
-			nextWeapon.OnCarryStart();
-
-			nextWeapon.GameObject.Enabled = true;
 		}
 
 	}
@@ -54,7 +46,7 @@ public partial class Inventory
 	public void RemoveEquipUpdate( EquipSlot slot, bool drop = false)
 	{
 		if ( CurrentWeaponSlot == slot ) { 
-			Deployed.OnCarryStop();
+			Deployed.Holster();
 			Deployed = null;
 		}
 		
@@ -67,8 +59,11 @@ public partial class Inventory
 	
 	public void Next()
 	{
-		Deployed?.OnCarryStop();
+		
+		Deployed?.Holster();
 		Deployed = null;
+
+
 		if ( CurrentWeaponSlot == EquipSlot.FirstWeapon )
 		{
 			CurrentWeaponSlot = EquipSlot.SeccondWeapon;

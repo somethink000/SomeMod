@@ -98,10 +98,7 @@ public class ItemComponent : Component
 	private void UpdateState()
 	{
 		GameObject.Enabled = State == ItemState.None;
-
 		
-		//Components.GetInDescendantsOrSelf<ModelCollider>( true ).Enabled = State == ItemState.None;
-
 		
 		if ( this is ItemEquipment equipment )
 			equipment.UpdateEquipped();

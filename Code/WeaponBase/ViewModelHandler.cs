@@ -47,9 +47,10 @@ public class ViewModelHandler : Component
 	Vector3 localVel;
 	bool isAiming;
 
-	protected override void OnDestroy()
+	public void OnHolster()
 	{
 		player.Camera.FieldOfView = Screen.CreateVerticalFieldOfView( Preferences.FieldOfView );
+		Destroy();
 	}
 
 	protected override void OnDisabled()
@@ -60,6 +61,9 @@ public class ViewModelHandler : Component
 
 	protected override void OnUpdate()
 	{
+		
+		if ( player == null ) return;
+
 		var renderType = ShouldDraw ? ModelRenderer.ShadowRenderType.Off : ModelRenderer.ShadowRenderType.ShadowsOnly;
 		ViewModelRenderer.Enabled = player.IsFirstPerson;
 		ViewModelRenderer.RenderType = renderType;
@@ -72,7 +76,6 @@ public class ViewModelHandler : Component
 
 		if ( !player.IsFirstPerson ) return;
 
-		
 
 		// For particles & lighting
 		Camera.Transform.Position = Scene.Camera.Transform.Position;
