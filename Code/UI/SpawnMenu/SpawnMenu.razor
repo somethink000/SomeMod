@@ -38,7 +38,7 @@
 
 @code {
 
-    public SpawnMenuCategories ActiveCategory { get; private set; } = SpawnMenuCategories.Entities;
+    private SpawnMenuCategories ActiveCategory { get; set; } = SpawnMenuCategories.Entities;
 
     public void ChangeCategory(SpawnMenuCategories category)
     {

@@ -1,0 +1,22 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "construct",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "construct",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "evilinc.forest_4_grass#48937",
+        "rustextended.terrain_blend_a#43398"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/construct.vmap"
+      }
+    }
+  }
+}

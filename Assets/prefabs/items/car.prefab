@@ -1,0 +1,405 @@
+{
+  "RootObject": {
+    "__guid": "64e6d012-6c20-4ee3-87f2-d8c31c433a28",
+    "Flags": 0,
+    "Name": "car",
+    "Tags": "localcar",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "d6899696-c482-490d-a4dc-7f9f85f88e87",
+        "IsTrigger": false,
+        "Model": "cars/digby_voyager/models/digby_voyager.vmdl",
+        "Static": false,
+        "Surface": "data/physics/car.surface"
+      },
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "05fdf2b6-c72c-4d6a-b3eb-a3fe9c901e14",
+        "BodyGroups": 18446744073709551615,
+        "Model": "cars/digby_voyager/models/digby_voyager.vmdl",
+        "RenderType": "On",
+        "Tint": "0.3814,0.47419,1,1"
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "b95dc4e1-f806-4df7-9b4c-932bd2f720d8",
+        "AngularDamping": 1,
+        "Gravity": true,
+        "LinearDamping": 1,
+        "Locking": {},
+        "MassOverride": 2000,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "GeneralGame.HapticController",
+        "__guid": "58b1049a-4c5c-4ff7-adef-f9f9bbf05cac"
+      },
+      {
+        "__type": "GeneralGame.Vehicle",
+        "__guid": "d22ead39-dd6b-45b4-8ef1-1fc87838947a",
+        "DriverSeat": {
+          "_type": "gameobject",
+          "go": "2205d0bb-02c0-4226-9aba-c8b7928171ba"
+        },
+        "frontWheels": [
+          {
+            "_type": "gameobject",
+            "go": "e5a1b3cb-b59d-4018-94f9-33fa5d045c18"
+          },
+          {
+            "_type": "gameobject",
+            "go": "723b0b5d-0ec1-40fc-a2ee-ad1d8029b7b6"
+          }
+        ],
+        "MaxSteeringAngle": 20,
+        "PasangerSeats": [],
+        "SteeringSmoothness": 10,
+        "Torque": 30000
+      },
+      {
+        "__type": "GeneralGame.SpawnMenuComponent",
+        "__guid": "936235ec-59c9-4410-bd2f-434935d5543c",
+        "Icon": {
+          "Model": "cars/digby_voyager/models/digby_voyager.vmdl",
+          "MaterialGroup": "",
+          "Colour": "1,1,1,1",
+          "Position": "20,1,13",
+          "Rotation": "0.6408563,0.2988362,-0.1830127,0.6830127",
+          "Guid": "1e8107b8-b754-468a-9863-ea3bc91f3619"
+        },
+        "Name": "Car"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "83d4a371-8329-4b6b-81c1-06de8c4e987b",
+        "Flags": 0,
+        "Name": "Camera Target",
+        "Position": "0,0,16",
+        "Enabled": true
+      },
+      {
+        "__guid": "c928337f-caaf-4047-b70f-510d3e7114cb",
+        "Flags": 0,
+        "Name": "Front Axle",
+        "Position": "33.61161,0.000001907349,0",
+        "Enabled": true,
+        "Children": [
+          {
+            "__guid": "e5a1b3cb-b59d-4018-94f9-33fa5d045c18",
+            "Flags": 0,
+            "Name": "Front Right Wheel",
+            "Position": "0,-25,-17.06138",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "GeneralGame.Wheel",
+                "__guid": "13db013c-d27b-4a47-aa8f-1f9079f7926a",
+                "ForwardFriction": {
+                  "ExtremumSlip": 1,
+                  "ExtremumValue": 10000,
+                  "AsymptoteSlip": 2,
+                  "AsymptoteValue": 20000,
+                  "Stiffness": 1
+                },
+                "MaxSuspensionLength": 1,
+                "MinSuspensionLength": 0,
+                "SideFriction": {
+                  "ExtremumSlip": 1,
+                  "ExtremumValue": 10000,
+                  "AsymptoteSlip": 2,
+                  "AsymptoteValue": 20000,
+                  "Stiffness": 1
+                },
+                "SuspensionDamping": 100,
+                "SuspensionStiffness": 5000,
+                "WheelRadius": 10
+              }
+            ],
+            "Children": [
+              {
+                "__guid": "12327001-795c-43df-8c6c-055c57c5e4ab",
+                "Flags": 0,
+                "Name": "Model",
+                "Position": "0,0,0",
+                "Rotation": "0.000000000001987302,-0.0000000003439105,1,-0.0000006397578",
+                "Scale": "0.75,0.75,0.75",
+                "Enabled": true,
+                "Components": [
+                  {
+                    "__type": "Sandbox.ModelRenderer",
+                    "__guid": "69b795d0-53a8-44d3-9db9-dff0266b502f",
+                    "BodyGroups": 18446744073709551615,
+                    "Model": "cars/digby_voyager/models/digby_voyager_wheel.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  },
+                  {
+                    "__type": "GeneralGame.WheelMover",
+                    "__guid": "ae317e32-50ea-44e5-a343-7e8141b611a1",
+                    "ReverseRotation": true,
+                    "Speed": 3.1415927,
+                    "Target": {
+                      "_type": "component",
+                      "component_id": "13db013c-d27b-4a47-aa8f-1f9079f7926a",
+                      "go": "e5a1b3cb-b59d-4018-94f9-33fa5d045c18",
+                      "component_type": "Wheel"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "__guid": "723b0b5d-0ec1-40fc-a2ee-ad1d8029b7b6",
+            "Flags": 0,
+            "Name": "Front Left Wheel",
+            "Position": "-0.0004806519,25,-17.06138",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "GeneralGame.Wheel",
+                "__guid": "a83a7826-1a54-4f83-8b44-18ad61a00a94",
+                "ForwardFriction": {
+                  "ExtremumSlip": 1,
+                  "ExtremumValue": 10000,
+                  "AsymptoteSlip": 2,
+                  "AsymptoteValue": 20000,
+                  "Stiffness": 1
+                },
+                "MaxSuspensionLength": 1,
+                "MinSuspensionLength": 0,
+                "SideFriction": {
+                  "ExtremumSlip": 1,
+                  "ExtremumValue": 10000,
+                  "AsymptoteSlip": 2,
+                  "AsymptoteValue": 20000,
+                  "Stiffness": 1
+                },
+                "SuspensionDamping": 100,
+                "SuspensionStiffness": 5000,
+                "WheelRadius": 10
+              }
+            ],
+            "Children": [
+              {
+                "__guid": "52101f22-ff6b-4147-9703-13ecb60eed5a",
+                "Flags": 0,
+                "Name": "Model",
+                "Position": "0,0,0",
+                "Scale": "0.75,0.75,0.75",
+                "Enabled": true,
+                "Components": [
+                  {
+                    "__type": "Sandbox.ModelRenderer",
+                    "__guid": "3bdc36c1-42fb-45cf-8e34-5cac093b676a",
+                    "BodyGroups": 18446744073709551615,
+                    "Model": "cars/digby_voyager/models/digby_voyager_wheel.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  },
+                  {
+                    "__type": "GeneralGame.WheelMover",
+                    "__guid": "1385b3c5-a9d7-473e-8143-407e58d8ad6e",
+                    "ReverseRotation": false,
+                    "Speed": 3.1415927,
+                    "Target": {
+                      "_type": "component",
+                      "component_id": "a83a7826-1a54-4f83-8b44-18ad61a00a94",
+                      "go": "723b0b5d-0ec1-40fc-a2ee-ad1d8029b7b6",
+                      "component_type": "Wheel"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "98e6243c-6526-4e02-b9de-bc66aeea459d",
+        "Flags": 0,
+        "Name": "Rear Axle",
+        "Position": "-33.57894,-0.000004768372,0",
+        "Enabled": true,
+        "Children": [
+          {
+            "__guid": "e7b14f5f-c0f0-4e87-aa2c-887214112637",
+            "Flags": 0,
+            "Name": "Back Right Wheel",
+            "Position": "0.0003318787,-25,-17.06138",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "GeneralGame.Wheel",
+                "__guid": "0b4cc22f-9431-446e-8bbc-0ba2b70df0b8",
+                "ForwardFriction": {
+                  "ExtremumSlip": 1,
+                  "ExtremumValue": 10000,
+                  "AsymptoteSlip": 2,
+                  "AsymptoteValue": 20000,
+                  "Stiffness": 1
+                },
+                "MaxSuspensionLength": 1,
+                "MinSuspensionLength": 0,
+                "SideFriction": {
+                  "ExtremumSlip": 1,
+                  "ExtremumValue": 10000,
+                  "AsymptoteSlip": 2,
+                  "AsymptoteValue": 20000,
+                  "Stiffness": 1
+                },
+                "SuspensionDamping": 100,
+                "SuspensionStiffness": 5000,
+                "WheelRadius": 10
+              }
+            ],
+            "Children": [
+              {
+                "__guid": "c09dc61c-55e1-4197-bbac-4570f5e2a492",
+                "Flags": 0,
+                "Name": "Model",
+                "Position": "0,0,0",
+                "Rotation": "0.000000000001987302,-0.0000000003439105,1,-0.0000006397578",
+                "Scale": "0.75,0.75,0.75",
+                "Enabled": true,
+                "Components": [
+                  {
+                    "__type": "Sandbox.ModelRenderer",
+                    "__guid": "0e91d6a1-42a9-4dbc-a4c9-f5e16b650d27",
+                    "BodyGroups": 18446744073709551615,
+                    "Model": "cars/digby_voyager/models/digby_voyager_wheel.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  },
+                  {
+                    "__type": "GeneralGame.WheelMover",
+                    "__guid": "15f4942f-171c-48d3-853d-74c9f5b8acf0",
+                    "ReverseRotation": true,
+                    "Speed": 3.1415927,
+                    "Target": {
+                      "_type": "component",
+                      "component_id": "0b4cc22f-9431-446e-8bbc-0ba2b70df0b8",
+                      "go": "e7b14f5f-c0f0-4e87-aa2c-887214112637",
+                      "component_type": "Wheel"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "__guid": "fcb121a3-127e-4c1a-bb34-0141fd8b8fdf",
+            "Flags": 0,
+            "Name": "Back Left Wheel",
+            "Position": "0.0003356934,25,-17.06138",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "GeneralGame.Wheel",
+                "__guid": "50100fc4-d588-4029-aaff-fae4bad61a5d",
+                "ForwardFriction": {
+                  "ExtremumSlip": 1,
+                  "ExtremumValue": 10000,
+                  "AsymptoteSlip": 2,
+                  "AsymptoteValue": 20000,
+                  "Stiffness": 1
+                },
+                "MaxSuspensionLength": 1,
+                "MinSuspensionLength": 0,
+                "SideFriction": {
+                  "ExtremumSlip": 1,
+                  "ExtremumValue": 10000,
+                  "AsymptoteSlip": 2,
+                  "AsymptoteValue": 20000,
+                  "Stiffness": 1
+                },
+                "SuspensionDamping": 100,
+                "SuspensionStiffness": 5000,
+                "WheelRadius": 10
+              }
+            ],
+            "Children": [
+              {
+                "__guid": "e90377a6-c98f-4757-a367-75c2c9956c01",
+                "Flags": 0,
+                "Name": "Model",
+                "Position": "0,0,0",
+                "Scale": "0.75,0.75,0.75",
+                "Enabled": true,
+                "Components": [
+                  {
+                    "__type": "Sandbox.ModelRenderer",
+                    "__guid": "517bc404-3ba0-44c9-af32-dc51bc2d0ed4",
+                    "BodyGroups": 18446744073709551615,
+                    "Model": "cars/digby_voyager/models/digby_voyager_wheel.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  },
+                  {
+                    "__type": "GeneralGame.WheelMover",
+                    "__guid": "dd196bc2-fcdc-4aeb-9ba8-003076d8193b",
+                    "ReverseRotation": false,
+                    "Speed": 3.1415927,
+                    "Target": {
+                      "_type": "component",
+                      "component_id": "50100fc4-d588-4029-aaff-fae4bad61a5d",
+                      "go": "fcb121a3-127e-4c1a-bb34-0141fd8b8fdf",
+                      "component_type": "Wheel"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "8df33c11-0ede-4fed-bae3-ac277adbe740",
+        "Flags": 0,
+        "Name": "Car Envmap",
+        "Rotation": "0,0,0,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.EnvmapProbe",
+            "__guid": "c492936c-fa57-4dbb-a101-a4b5714924a0",
+            "Texture": "textures/cubemaps/default2.vtex",
+            "Bounds": {
+              "Mins": "-64,-64,-64",
+              "Maxs": "64,64,64"
+            },
+            "DelayBetweenUpdates": 0.1,
+            "Feathering": 0.02,
+            "FrameInterval": 16,
+            "MaxDistance": 2048,
+            "Projection": "Box",
+            "RenderDynamically": true,
+            "TintColor": "1,1,1,1",
+            "UpdateStrategy": "FrameInterval",
+            "ZFar": 2048,
+            "ZNear": 64
+          }
+        ]
+      },
+      {
+        "__guid": "2205d0bb-02c0-4226-9aba-c8b7928171ba",
+        "Flags": 0,
+        "Name": "Seat",
+        "Position": "-48,0,0",
+        "Enabled": true
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

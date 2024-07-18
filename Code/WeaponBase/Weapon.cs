@@ -108,7 +108,6 @@ public partial class Weapon : Component
 	void SetupModels()
 	{
 
-		//Log.Info(  );
 		if ( !IsProxy && ViewModel is not null && ViewModelRenderer is null )
 		{
 

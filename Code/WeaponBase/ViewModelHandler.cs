@@ -49,7 +49,8 @@ public class ViewModelHandler : Component
 
 	public void OnHolster()
 	{
-		player.Camera.FieldOfView = Screen.CreateVerticalFieldOfView( Preferences.FieldOfView );
+		Camera.FieldOfView = Screen.CreateVerticalFieldOfView( Preferences.FieldOfView );
+		
 		Destroy();
 	}
 
@@ -67,7 +68,7 @@ public class ViewModelHandler : Component
 		var renderType = ShouldDraw ? ModelRenderer.ShadowRenderType.Off : ModelRenderer.ShadowRenderType.ShadowsOnly;
 		ViewModelRenderer.Enabled = player.IsFirstPerson;
 		ViewModelRenderer.RenderType = renderType;
-
+		Log.Info( ShouldDraw );
 		if ( ViewModelHandsRenderer is not null )
 		{
 			ViewModelHandsRenderer.Enabled = player.IsFirstPerson;
