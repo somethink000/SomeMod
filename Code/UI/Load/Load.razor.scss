@@ -11,7 +11,6 @@ Load {
 	background: url('/ui/load/GUNS2.png');
 	background-size: 100%;
 	background-repeat: repeat-y;
-	background-color: rgba( 20, 20, 20);
 	pointer-events: all;
 	flex-direction: row;
 	justify-content: center;
@@ -22,22 +21,19 @@ Load {
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		backdrop-filter: blur(5px);
+		backdrop-filter: blur(1px);
 	}
 
 	.center {
-		//position: absolute;
 		width: 90%;
 		height: 90%;
 		justify-content: space-between;
-		//
 
 
 		.left {
 			flex-direction: column;
 			width: 20%;
 			border-radius: 10px;
-			background-color: $fullscreen-bg;
 			padding: 22px;
 
 
@@ -75,9 +71,12 @@ Load {
 		.right {
 			width: 79%;
 			border-radius: 10px;
-			background-color: $fullscreen-bg;
+			//background-color: $fullscreen-bg;
 			flex-direction: column;
 			padding: 22px;
 		}
 	}
+
+
+
 }

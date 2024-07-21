@@ -31,9 +31,9 @@ public partial class Weapon : Component
 	{
 		Owner = player;
 
-		SetupModels();
-
 		GameObject.Enabled = true;
+
+		SetupModels();
 
 		if ( IsProxy ) return;
 
@@ -48,24 +48,24 @@ public partial class Weapon : Component
 
 		GameObject.Enabled = false;
 
-		ViewModelHandler.OnHolster();
-		
+		if ( !IsProxy ) { 
+
+			ViewModelHandler.OnHolster();
+
+			WorldModelRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
+			ViewModelRenderer.GameObject.Destroy();
+			ViewModelHandler = null;
+			ViewModelRenderer = null;
+			ViewModelHandsRenderer = null;
+
+			IsReloading = false;
+			IsScoping = false;
+			IsAiming = false;
+			IsCustomizing = false;
+			DestroyUI();
+		}
+
 		Owner = null;
-
-		if ( IsProxy ) return;
-
-		WorldModelRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
-		ViewModelRenderer.GameObject.Destroy();
-		ViewModelHandler = null;
-		ViewModelRenderer = null;
-		ViewModelHandsRenderer = null;
-
-		IsReloading = false;
-		IsScoping = false;
-		IsAiming = false;
-		IsCustomizing = false;
-		DestroyUI();
-		
 	}
 
 	public bool CanCarryStop()

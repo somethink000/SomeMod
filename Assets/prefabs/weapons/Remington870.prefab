@@ -4,6 +4,7 @@
     "Flags": 0,
     "Name": "remington870",
     "Tags": "weapon",
+    "NetworkMode": 1,
     "Components": [
       {
         "__type": "GeneralGame.Weapon",

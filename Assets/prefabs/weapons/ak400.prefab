@@ -4,6 +4,7 @@
     "Flags": 0,
     "Name": "ak400",
     "Tags": "weapon",
+    "NetworkMode": 1,
     "Components": [
       {
         "__type": "GeneralGame.Weapon",

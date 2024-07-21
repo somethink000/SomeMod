@@ -33,10 +33,15 @@
 			</div>
 		</div>
 	</div>
-	
+    @if (PlayerBase.GetLocal().Inventory.targetStorage != null)
+    {
+        <LootSlots Storage=@PlayerBase.GetLocal().Inventory.targetStorage />
+    }
 </root>
 
 @code {
+   
+
 	public static Inventory Instance { get; private set; }
 
 	public Inventory() => Instance = this;

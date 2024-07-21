@@ -1,0 +1,22 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "skybox_map",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "skybox_map",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "rustextended.terrain_blend_a#43398",
+        "apetavern.wlb_asphalt_01#45081"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/skybox_map.vmap"
+      }
+    }
+  }
+}

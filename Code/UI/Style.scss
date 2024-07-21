@@ -12,26 +12,26 @@ $box-shadow-sm: 4px 4px 2px black;
 $text-shadow-sm: 3px 3px 0px black;
 
 $fullscreen-blur: blur( 20px );
-$fullscreen-bg: rgba(30, 30, 30, 0.7);
-$grey-bg: rgba(70, 70, 70, 0.5);
+$fullscreen-bg: rgba(20, 20, 20, 0.7);
+$grey-bg: rgba(50, 50, 50, 1);
 $black-bg: #000000d4;
 $whire-bg: rgba(150, 150, 150, 0.5);
 
 .stxt {
-    font-family: Arial, sans-serif;
+   // font-family: Arial, sans-serif;
     color: white;
     font-size: 16px;
     text-shadow: 2px 1px 4px white;
 }
 .txt {
-    font-family: Arial, sans-serif;
+   // font-family: Arial, sans-serif;
     font-size: 24px;
     color: white;
     font-weight: 500;
     text-shadow: 2px 1px 4px white;
 }
 .ttl {
-    font-family: Arial, sans-serif;
+  //  font-family: Arial, sans-serif;
     font-size: 32px;
     color: white;
     font-weight: 500;

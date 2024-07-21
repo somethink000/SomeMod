@@ -21,6 +21,7 @@ public class CameraMovement : Component
 	{
 		if ( IsProxy ) return;
 
+	
 		// Rotate the head based on mouse movement
 		var eyeAngles = Player.EyeAngles;
 
@@ -68,5 +69,6 @@ public class CameraMovement : Component
 			Player.Camera.Transform.Position = camPos;
 			Player.Camera.Transform.Rotation = eyeAngles.ToRotation();
 		}
+	
 	}
 }

@@ -1,0 +1,25 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "untitled_2",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "untitled_2",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "apetavern.wlb_asphalt_01#45081",
+        "facepunch.floor_asphalt_dirt_blend#18640",
+        "evilinc.forest_4_grass#48937",
+        "rustextended.terrain_blend_a#43398",
+        "evilinc.ah_super_large_pine002#48323"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/construct_forest.vmap"
+      }
+    }
+  }
+}

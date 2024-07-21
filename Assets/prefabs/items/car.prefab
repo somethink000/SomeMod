@@ -10,7 +10,7 @@
         "__type": "Sandbox.ModelCollider",
         "__guid": "d6899696-c482-490d-a4dc-7f9f85f88e87",
         "IsTrigger": false,
-        "Model": "cars/digby_voyager/models/digby_voyager.vmdl",
+        "Model": "cars/niva/niva2329.vmdl",
         "Static": false,
         "Surface": "data/physics/car.surface"
       },
@@ -18,9 +18,9 @@
         "__type": "Sandbox.ModelRenderer",
         "__guid": "05fdf2b6-c72c-4d6a-b3eb-a3fe9c901e14",
         "BodyGroups": 18446744073709551615,
-        "Model": "cars/digby_voyager/models/digby_voyager.vmdl",
+        "Model": "cars/niva/niva2329.vmdl",
         "RenderType": "On",
-        "Tint": "0.3814,0.47419,1,1"
+        "Tint": "1,1,1,1"
       },
       {
         "__type": "Sandbox.Rigidbody",
@@ -39,8 +39,38 @@
         "__guid": "58b1049a-4c5c-4ff7-adef-f9f9bbf05cac"
       },
       {
+        "__type": "GeneralGame.VehicleCamera",
+        "__guid": "eb81742b-baa6-4938-850b-526e2728d64f",
+        "Car": {
+          "_type": "component",
+          "component_id": "d22ead39-dd6b-45b4-8ef1-1fc87838947a",
+          "go": "64e6d012-6c20-4ee3-87f2-d8c31c433a28",
+          "component_type": "Vehicle"
+        },
+        "Distance": 256,
+        "Height": 32,
+        "LookSensitivity": 5,
+        "PivotRate": 90,
+        "PositionSensitivity": 5,
+        "PullbackRange": "0.00,800.00,1",
+        "PullbackRate": 0.05,
+        "ResetDebounce": 3,
+        "ResetLerpTime": 2.5,
+        "RotationSensitivity": 5,
+        "Target": {
+          "_type": "gameobject",
+          "go": "83d4a371-8329-4b6b-81c1-06de8c4e987b"
+        }
+      },
+      {
         "__type": "GeneralGame.Vehicle",
         "__guid": "d22ead39-dd6b-45b4-8ef1-1fc87838947a",
+        "CameraController": {
+          "_type": "component",
+          "component_id": "eb81742b-baa6-4938-850b-526e2728d64f",
+          "go": "64e6d012-6c20-4ee3-87f2-d8c31c433a28",
+          "component_type": "VehicleCamera"
+        },
         "DriverSeat": {
           "_type": "gameobject",
           "go": "2205d0bb-02c0-4226-9aba-c8b7928171ba"
@@ -79,21 +109,23 @@
         "__guid": "83d4a371-8329-4b6b-81c1-06de8c4e987b",
         "Flags": 0,
         "Name": "Camera Target",
-        "Position": "0,0,16",
+        "Position": "32,-2,64",
+        "Rotation": "0,0,1,-0.00000004371139",
         "Enabled": true
       },
       {
         "__guid": "c928337f-caaf-4047-b70f-510d3e7114cb",
         "Flags": 0,
         "Name": "Front Axle",
-        "Position": "33.61161,0.000001907349,0",
+        "Position": "-46,-9.999982,-12",
+        "Rotation": "0,0,1,0.0000001947072",
         "Enabled": true,
         "Children": [
           {
             "__guid": "e5a1b3cb-b59d-4018-94f9-33fa5d045c18",
             "Flags": 0,
             "Name": "Front Right Wheel",
-            "Position": "0,-25,-17.06138",
+            "Position": "3.000017,-43.99998,-17",
             "Enabled": true,
             "Components": [
               {
@@ -117,7 +149,7 @@
                 },
                 "SuspensionDamping": 100,
                 "SuspensionStiffness": 5000,
-                "WheelRadius": 10
+                "WheelRadius": 12
               }
             ],
             "Children": [
@@ -126,7 +158,6 @@
                 "Flags": 0,
                 "Name": "Model",
                 "Position": "0,0,0",
-                "Rotation": "0.000000000001987302,-0.0000000003439105,1,-0.0000006397578",
                 "Scale": "0.75,0.75,0.75",
                 "Enabled": true,
                 "Components": [
@@ -134,7 +165,7 @@
                     "__type": "Sandbox.ModelRenderer",
                     "__guid": "69b795d0-53a8-44d3-9db9-dff0266b502f",
                     "BodyGroups": 18446744073709551615,
-                    "Model": "cars/digby_voyager/models/digby_voyager_wheel.vmdl",
+                    "Model": "cars/niva/ofroad_wheels.vmdl",
                     "RenderType": "On",
                     "Tint": "1,1,1,1"
                   },
@@ -158,7 +189,7 @@
             "__guid": "723b0b5d-0ec1-40fc-a2ee-ad1d8029b7b6",
             "Flags": 0,
             "Name": "Front Left Wheel",
-            "Position": "-0.0004806519,25,-17.06138",
+            "Position": "2.999991,23.00002,-17",
             "Enabled": true,
             "Components": [
               {
@@ -182,7 +213,7 @@
                 },
                 "SuspensionDamping": 100,
                 "SuspensionStiffness": 5000,
-                "WheelRadius": 10
+                "WheelRadius": 12
               }
             ],
             "Children": [
@@ -191,6 +222,7 @@
                 "Flags": 0,
                 "Name": "Model",
                 "Position": "0,0,0",
+                "Rotation": "-0,0,-1,-0.00000004371139",
                 "Scale": "0.75,0.75,0.75",
                 "Enabled": true,
                 "Components": [
@@ -198,7 +230,7 @@
                     "__type": "Sandbox.ModelRenderer",
                     "__guid": "3bdc36c1-42fb-45cf-8e34-5cac093b676a",
                     "BodyGroups": 18446744073709551615,
-                    "Model": "cars/digby_voyager/models/digby_voyager_wheel.vmdl",
+                    "Model": "cars/niva/ofroad_wheels.vmdl",
                     "RenderType": "On",
                     "Tint": "1,1,1,1"
                   },
@@ -224,14 +256,15 @@
         "__guid": "98e6243c-6526-4e02-b9de-bc66aeea459d",
         "Flags": 0,
         "Name": "Rear Axle",
-        "Position": "-33.57894,-0.000004768372,0",
+        "Position": "69.99999,-12.00003,-12",
+        "Rotation": "0,0,1,0.0000001947072",
         "Enabled": true,
         "Children": [
           {
             "__guid": "e7b14f5f-c0f0-4e87-aa2c-887214112637",
             "Flags": 0,
             "Name": "Back Right Wheel",
-            "Position": "0.0003318787,-25,-17.06138",
+            "Position": "2.00001,-46.00003,-17",
             "Enabled": true,
             "Components": [
               {
@@ -255,7 +288,7 @@
                 },
                 "SuspensionDamping": 100,
                 "SuspensionStiffness": 5000,
-                "WheelRadius": 10
+                "WheelRadius": 12
               }
             ],
             "Children": [
@@ -264,7 +297,6 @@
                 "Flags": 0,
                 "Name": "Model",
                 "Position": "0,0,0",
-                "Rotation": "0.000000000001987302,-0.0000000003439105,1,-0.0000006397578",
                 "Scale": "0.75,0.75,0.75",
                 "Enabled": true,
                 "Components": [
@@ -272,7 +304,7 @@
                     "__type": "Sandbox.ModelRenderer",
                     "__guid": "0e91d6a1-42a9-4dbc-a4c9-f5e16b650d27",
                     "BodyGroups": 18446744073709551615,
-                    "Model": "cars/digby_voyager/models/digby_voyager_wheel.vmdl",
+                    "Model": "cars/niva/ofroad_wheels.vmdl",
                     "RenderType": "On",
                     "Tint": "1,1,1,1"
                   },
@@ -296,7 +328,7 @@
             "__guid": "fcb121a3-127e-4c1a-bb34-0141fd8b8fdf",
             "Flags": 0,
             "Name": "Back Left Wheel",
-            "Position": "0.0003356934,25,-17.06138",
+            "Position": "0.9999842,20.99997,-17",
             "Enabled": true,
             "Components": [
               {
@@ -320,7 +352,7 @@
                 },
                 "SuspensionDamping": 100,
                 "SuspensionStiffness": 5000,
-                "WheelRadius": 10
+                "WheelRadius": 12
               }
             ],
             "Children": [
@@ -329,6 +361,7 @@
                 "Flags": 0,
                 "Name": "Model",
                 "Position": "0,0,0",
+                "Rotation": "0,-0,-1,-0.00000004371139",
                 "Scale": "0.75,0.75,0.75",
                 "Enabled": true,
                 "Components": [
@@ -336,7 +369,7 @@
                     "__type": "Sandbox.ModelRenderer",
                     "__guid": "517bc404-3ba0-44c9-af32-dc51bc2d0ed4",
                     "BodyGroups": 18446744073709551615,
-                    "Model": "cars/digby_voyager/models/digby_voyager_wheel.vmdl",
+                    "Model": "cars/niva/ofroad_wheels.vmdl",
                     "RenderType": "On",
                     "Tint": "1,1,1,1"
                   },
@@ -362,6 +395,7 @@
         "__guid": "8df33c11-0ede-4fed-bae3-ac277adbe740",
         "Flags": 0,
         "Name": "Car Envmap",
+        "Position": "2,-2,0",
         "Rotation": "0,0,0,0",
         "Enabled": true,
         "Components": [
@@ -390,8 +424,55 @@
         "__guid": "2205d0bb-02c0-4226-9aba-c8b7928171ba",
         "Flags": 0,
         "Name": "Seat",
-        "Position": "-48,0,0",
+        "Position": "50,-2.000019,0",
+        "Rotation": "0,0,1,0.0000001947072",
         "Enabled": true
+      },
+      {
+        "__guid": "7145c52d-eb96-4c9c-9fbe-f01112fdff73",
+        "Flags": 0,
+        "Name": "Spot Light (1)",
+        "Position": "-76,-28,-9",
+        "Rotation": "0,0,-0.9914449,-0.130526",
+        "Tags": "light_spot,light",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SpotLight",
+            "__guid": "b95c14fa-a6ad-4da0-bfd4-64bf90abeebf",
+            "Attenuation": 0.92,
+            "ConeInner": 66.16,
+            "ConeOuter": 71.52,
+            "FogMode": "Enabled",
+            "FogStrength": 1,
+            "LightColor": "1,0.73597,0.3907,1",
+            "Radius": 1000,
+            "Shadows": true
+          }
+        ]
+      },
+      {
+        "__guid": "dee1b20f-9014-4112-8af9-4261edb50279",
+        "Flags": 0,
+        "Name": "Spot Light (2)",
+        "Position": "-76,26,-9",
+        "Rotation": "0,0,-0.9914449,-0.130526",
+        "Tags": "light_spot,light",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SpotLight",
+            "__guid": "47a80a0a-0483-43f2-ad2b-06def268f6bd",
+            "Attenuation": 0.92,
+            "ConeInner": 66.16,
+            "ConeOuter": 71.52,
+            "FogMode": "Enabled",
+            "FogStrength": 1,
+            "LightColor": "1,0.73597,0.3907,1",
+            "Radius": 1000,
+            "Shadows": true
+          }
+        ]
       }
     ],
     "__variables": []

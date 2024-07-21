@@ -31,7 +31,7 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IPlayerBas
 	}
 
 	Guid IPlayerBase.Id { get => GameObject.Id; }
-	CameraMovement cameraMovement;
+	public CameraMovement cameraMovement;
 
 	protected override void OnAwake()
 	{

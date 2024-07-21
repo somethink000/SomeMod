@@ -10,12 +10,20 @@ InteractionHint {
     .content {
         flex-direction: column;
         transition: all 0.5s ease-in-out;
-       
-        .dopinfo{
+
+        .dopinfo {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-around;
-         
+        }
+
+        .lootó {
+            flex-wrap: wrap;
+            width: 500px;
+
+            .selected {
+                background-color: $whire-bg;
+            }
         }
     }
 
@@ -25,7 +33,6 @@ InteractionHint {
         padding: 10px;
         padding-left: 20px;
         min-width: 200px;
-
     }
 
 
@@ -38,7 +45,7 @@ InteractionHint {
     .interactions {
         padding: 5px;
         gap: 10px;
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .interaction {

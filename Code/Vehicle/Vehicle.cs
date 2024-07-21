@@ -5,6 +5,7 @@ namespace GeneralGame;
 public sealed class Vehicle : Component
 {
 	[RequireComponent] public Rigidbody Rigidbody { get; set; }
+	[Property] public VehicleCamera CameraController { get; set; }
 
 	[Property] public float Torque { get; set; } = 20000f;
 
@@ -57,7 +58,7 @@ public sealed class Vehicle : Component
 		float lerpRate = isBraking ? 5.0f : 1.0f; // Brake applies quicker
 
 		_currentTorque = _currentTorque.LerpTo( targetTorque, lerpRate * Time.Delta );
-		_currentTorque = _currentTorque.Clamp( 0, float.MaxValue );
+		_currentTorque = _currentTorque.Clamp( -50000, float.MaxValue );
 
 		
 		foreach ( Wheel wheel in _wheels )
@@ -82,9 +83,10 @@ public sealed class Vehicle : Component
 	{
 		ply.Vehicle = this;
 		Driver = ply;
-
+		
 		ply.Body.Components.Get<CapsuleCollider>( FindMode.InSelf ).Enabled = false;
 		ply.GameObject.Parent = this.GameObject;
+		ply.cameraMovement.Distance = 300;
 		ply.GameObject.Transform.Position = DriverSeat.Transform.Position;
 	}
 
@@ -93,9 +95,9 @@ public sealed class Vehicle : Component
 		
 		
 		ply.GameObject.Parent = null;
-		
+		//ply.Camera.GameObject.Parent = ply.GameObject;
 		ply.GameObject.Transform.Position = this.GameObject.Transform.Position + Vector3.Up * 30;
-
+		ply.cameraMovement.Distance = 0;
 		ply.Body.Components.Get<CapsuleCollider>( FindMode.InSelf ).Enabled = true;
 
 		ply.Vehicle = null;
