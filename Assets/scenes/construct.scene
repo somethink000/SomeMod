@@ -282,7 +282,7 @@
       "__guid": "40e2041b-759b-4cb2-b863-3759e3f3c2e3",
       "Flags": 0,
       "Name": "Object",
-      "Position": "-306.4916,-2493.705,-1008",
+      "Position": "-306.4916,-2493.705,-976",
       "Enabled": true,
       "Components": [
         {
@@ -316,6 +316,54 @@
             "prefabs/items/ammo_pistol.prefab",
             "prefabs/items/ammo_pistol.prefab"
           ]
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "d3015133-889e-49d5-94ca-510a7562db47",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "f0baa2b9-49bf-4ec3-8853-5ace6961806c",
+      "Flags": 0,
+      "Name": "Example",
+      "Position": "-544,-2532.298,-976",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "6002069c-6cd6-4fa6-91f7-b8c7ed171e53",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/empty.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "10fc8558-7c95-4258-834c-a59dcee634dd",
+          "IsTrigger": false,
+          "Model": "models/empty.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "2e7afc5f-3e0c-452f-a311-a2ac5b846d5c",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
         }
       ]
     }

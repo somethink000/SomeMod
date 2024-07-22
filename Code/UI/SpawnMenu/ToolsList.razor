@@ -1,0 +1,27 @@
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+<root class="page">
+
+
+
+    @foreach (var entry in GlobalGameNamespace.TypeLibrary.GetTypes<BaseTool>())
+    {
+        <div class="button" onclick=@(() => ChangeTool(entry.ClassName))>@entry.Name</div>
+    }
+   
+</root>
+
+@code {
+
+    //public List<BaseTool> toolList { get; set; }
+
+    public void ChangeTool(string id) 
+    {
+        Log.Info("efefe");
+        PlayerBase.GetLocal().Inventory.ActivateToolgun();
+        PlayerBase.GetLocal().toolgun.SetTool(id);
+    }
+   
+}

@@ -6,16 +6,17 @@ public partial class Inventory
 {
 	[Property] public GameObject WeaponBone { get; set; }
 
-	public Weapon Deployed; 
+	public Weapon Deployed;
+
+	private bool toolgunActive = false;
 	public EquipSlot CurrentWeaponSlot { get; set; } = EquipSlot.FirstWeapon;
 
 	public void DeployCurrent()
 	{
+
 		var item = _equippedItems[(int)CurrentWeaponSlot];
 
 		if (item == null) return;
-
-
 
 		if (item.GameObject.Components.GetInDescendantsOrSelf<Weapon>(true) != null)
 		{
@@ -29,8 +30,19 @@ public partial class Inventory
 		}
 
 	}
-
 	
+	public void ActivateToolgun()
+	{
+		if ( toolgunActive ) return;
+		Player.toolgun.Deploy( Player );
+		toolgunActive = true;
+	}
+	public void OffToolgun()
+	{
+		Player.toolgun.Holster();
+		toolgunActive = false;
+	}
+
 
 	public void UpdateWeaponSlot()
 	{
@@ -38,7 +50,7 @@ public partial class Inventory
 		//if ( activeItem is null || !activeItem.CanCarryStop() ) return;
 		if ( Input.Pressed( InputButtonHelper.Slot1 ) ) Next();
 		else if ( Input.Pressed( InputButtonHelper.Slot2 ) ) Next();
-		//else if ( Input.Pressed( InputButtonHelper.Slot3 ) ) SwitchItem( 3 );
+		else if ( Input.Pressed( InputButtonHelper.Slot3 ) ) ActivateToolgun();
 		else if ( Input.MouseWheel.y > 0 ) Next();
 		else if ( Input.MouseWheel.y < 0 ) Next();
 	}
@@ -59,7 +71,7 @@ public partial class Inventory
 	
 	public void Next()
 	{
-		
+		if ( toolgunActive ) OffToolgun();
 		Deployed?.Holster();
 		Deployed = null;
 

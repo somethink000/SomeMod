@@ -153,7 +153,7 @@
         StateHasChanged();
         throw new Exception( "EquipSlotIndex or BackpackSlotIndex needs to be provided to InventorySlot!" );
     }
-
+    
     /// Is mouse inside the slot bounding box?
     public bool IsHoveredByMouse() => Box.Rect.IsInside( Mouse.Position );
 

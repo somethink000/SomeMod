@@ -89,6 +89,12 @@
           "component_type": "Hud"
         },
         "RunSpeed": 290,
+        "toolgun": {
+          "_type": "component",
+          "component_id": "1a826540-b989-4419-85dc-bd1527b1e289",
+          "go": "312d5b13-143d-4311-92ea-98eee7b47b4a",
+          "component_type": "ToolGun"
+        },
         "WalkSpeed": 160
       },
       {
@@ -99,8 +105,7 @@
           "component_id": "3e1e96c5-b788-4483-9ffd-7b59b02df678",
           "go": "bf0f959a-8e13-4133-8fc5-edc7aa3d1b0c",
           "component_type": "DemoPlayer"
-        },
-        "TestAmmo": "prefabs/items/ammo_pistol.prefab"
+        }
       }
     ],
     "Children": [
@@ -1071,6 +1076,79 @@
           {
             "__type": "GeneralGame.UI.Hud",
             "__guid": "0e3f9d49-8cb4-4185-9f56-e0ab85438134"
+          }
+        ]
+      },
+      {
+        "__guid": "312d5b13-143d-4311-92ea-98eee7b47b4a",
+        "Flags": 0,
+        "Name": "Toolgun",
+        "Position": "46.17806,25.10507,-21.3214",
+        "Components": [
+          {
+            "__type": "GeneralGame.ToolGun",
+            "__guid": "1a826540-b989-4419-85dc-bd1527b1e289",
+            "AnimSpeed": 1,
+            "CurrentTool": {
+              "_type": "component",
+              "component_id": "394034ff-3051-40d0-9ffc-a8581c0dc16c",
+              "go": "312d5b13-143d-4311-92ea-98eee7b47b4a",
+              "component_type": "PhysGun"
+            },
+            "FOV": 70,
+            "HoldType": "Pistol",
+            "PrimaryTime": 1,
+            "ReloadTime": 1,
+            "RunAnimData": {},
+            "SeccondaryTime": 1,
+            "ViewModel": "weapons/coolt/view/v_m1911.vmdl",
+            "ViewModelHands": "weapons/handes/pmm_ref_hand_blue.vmdl",
+            "WorldModel": "weapons/coolt/world/w_m1911.vmdl"
+          },
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "06a0de8f-9c6b-4a7b-8366-fecdddb9076e",
+            "BodyGroups": 18446744073709551615,
+            "CreateBoneObjects": false,
+            "Model": "weapons/coolt/world/w_m1911.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
+          },
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "fdc5a07f-b042-4ef9-8f17-2af85dc275e9",
+            "__enabled": false,
+            "IsTrigger": false,
+            "Model": "weapons/coolt/world/w_m1911.vmdl",
+            "Static": false
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "466741aa-7137-4aef-b0bf-e6b52d6fbf1d",
+            "__enabled": false,
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          },
+          {
+            "__type": "GeneralGame.PhysGun",
+            "__guid": "394034ff-3051-40d0-9ffc-a8581c0dc16c",
+            "__enabled": false,
+            "AngularDampingRatio": 1,
+            "AngularFrequency": 20,
+            "LinearDampingRatio": 1,
+            "LinearFrequency": 20,
+            "MaxTargetDistance": 10000,
+            "MinTargetDistance": 0,
+            "RotateSnapAt": 45,
+            "RotateSpeed": 0.125,
+            "TargetDistanceSpeed": 25
           }
         ]
       }

@@ -3,34 +3,36 @@
 @attribute [StyleSheet]
 @inherits Panel
 
+
+
+@if (PlayerBase.GetLocal() is null)
+    return;
+
+
 <root>
+
+    <div class="spawnWindow">
    
-    <div class="categories txt">
+        <div class="categories txt" @ref=_header>
+        
 
-        <div class="button" onclick=@( () => ChangeCategory(SpawnMenuCategories.Props) )>
-            <text>Props</text>
         </div>
 
-        <div class="button" onclick=@( () => ChangeCategory(SpawnMenuCategories.Entities) )>
-            <text>Entities</text>
-        </div>
+        <div class="content" @ref=_body =>
+     
 
+        </div>
     </div>
 
-    <div class="content">
-     
-        @switch (ActiveCategory)
-        {
-            case SpawnMenuCategories.Entities:
-                <SpawnList/>
-                break;
-            case SpawnMenuCategories.Props:
-                <PropList/>
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
+    <div class="toolWindow">
 
+        <div class="toolsHeader" @ref=_toolHeader =>
+
+        </div>
+
+        <div class="tools" @ref=_toolBody =>
+
+        </div>
     </div>
 
 
@@ -38,17 +40,47 @@
 
 @code {
 
-    private SpawnMenuCategories ActiveCategory { get; set; } = SpawnMenuCategories.Entities;
+    Panel _header;
+    Panel _body;
+    Panel _toolHeader;
+    Panel _toolBody;
 
-    public void ChangeCategory(SpawnMenuCategories category)
+    public static SpawnMenu Instance { get; private set; }
+
+    public SpawnMenu() => Instance = this;
+
+
+    protected override void OnAfterTreeRender(bool firstTime)
     {
-        ActiveCategory = category;
-        PlayerBase.GetLocal().ActiveSpawnCategory = category;
+        base.OnAfterTreeRender(firstTime);
+
+        if (!firstTime) return;
+        
+        //Spawnlist
+        var tabs = _header.AddChild<ButtonGroup>();
+        tabs.AddClass("tabs");
+
+
+        var ents = _body.AddChild<SpawnList>();
+        tabs.SelectedButton = tabs.AddButtonActive("Entities", (b) => ents.SetClass("active", b));
+
+        var props = _body.AddChild<PropList>();
+        tabs.AddButtonActive("Cloud", (b) => props.SetClass("active", b));
+
+
+        //Toolgun
+        var toolTabs = _toolHeader.AddChild<ButtonGroup>();
+        tabs.AddClass("tabs");
+
+
+        var tools = _toolBody.AddChild<ToolsList>();
+        toolTabs.SelectedButton = toolTabs.AddButtonActive("Toolgun", (b) => tools.SetClass("active", b));
+
     }
 
-    public SpawnMenu() 
-    {
-        ActiveCategory = PlayerBase.GetLocal().ActiveSpawnCategory;
-    }
 
+    
+
+
+    
 }

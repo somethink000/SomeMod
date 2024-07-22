@@ -1,8 +1,5 @@
 ﻿
 
-using Sandbox;
-using static Sandbox.Clothing;
-
 namespace GeneralGame;
 
 public partial class BaseInventory : Component

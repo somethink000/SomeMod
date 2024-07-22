@@ -653,7 +653,7 @@
 				}
 			}
 			m_bAdditive = true
-			m_hTexture = resource:"materials/particles/electrical/electrical_arc03b.vtex"
+			m_hTexture = resource:"materials/particles/beam_hotwhite_alpha.vtex"
 			m_vecColorScale = 
 			{
 				m_nType = "PVEC_TYPE_LITERAL_COLOR"
@@ -1309,13 +1309,7 @@
 				}
 			}
 			m_bAdditive = true
-			m_hTexture = resource:"materials/particles/electrical/electrical_arc03b.vtex"
-		},
-	]
-	m_Children = 
-	[
-		{
-			m_ChildRef = resource:"particles/physgun_start.vpcf"
+			m_hTexture = resource:"materials/particles/beam_hotwhite_alpha.vtex"
 		},
 	]
 }

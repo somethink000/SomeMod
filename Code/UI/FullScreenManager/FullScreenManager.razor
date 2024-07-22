@@ -2,6 +2,9 @@
 @attribute [StyleSheet]
 @inherits Panel
 
+@if (PlayerBase.GetLocal() is null)
+    return;
+
 <root>
 	
 		@switch ( ActivePanel )

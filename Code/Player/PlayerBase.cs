@@ -10,6 +10,7 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IPlayerBas
 	[Property] public GameObject Head { get; set; }
 	[Property] public GameObject Body { get; set; }
 	[Property] public SkinnedModelRenderer BodyRenderer { get; set; }
+	[Property] public ToolGun toolgun { get; set; }
 	[Property] public CameraComponent Camera { get; set; }
 	[Property] public PanelComponent RootDisplay { get; set; }
     [Property] public Inventory Inventory { get; set; }

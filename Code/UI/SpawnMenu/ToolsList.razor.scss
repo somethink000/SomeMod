@@ -1,0 +1,25 @@
+
+@import "../Style.scss";
+
+ToolsList {
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    .button {
+        margin: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        background-color: $fullscreen-bg;
+        padding: 6px;
+
+        &:hover {
+            background-color: $whire-bg;
+        }
+
+        &:active {
+            background-color: $whire-bg;
+        }
+    }
+}

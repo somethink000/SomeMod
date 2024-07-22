@@ -2,25 +2,19 @@
 @attribute [StyleSheet]
 @inherits Panel
 
-<root>
-    @* @foreach (EntityInfo iteminfo in _EntitiesRepository)
-    {
-
-      
-    } *@
-
+<root class="page">
+ 
     @for (var index = 0; index < _EntitiesRepository.Count; index++)
     {
          EntityInfo info = _EntitiesRepository[index];
-        @* <EntityIcon entInfo=@info /> *@
-
+      
         <div class="ent" onclick=@(() => SpawnEnt(info))>
             <div class="background" />
             <div class="item">
                 <img src=@info.Icon.ResourcePath />
             </div>
 
-            @* <text class="name">@(info.Name)</text> *@
+            
             <text class="name">@(info.Name)</text>
         </div>
     }
@@ -29,7 +23,7 @@
 @code {
 
    
-   public List<EntityInfo> _EntitiesRepository { get; set; }
+    public List<EntityInfo> _EntitiesRepository { get; set; }
 
     public void SpawnEnt(EntityInfo info)
     {
