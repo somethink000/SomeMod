@@ -9,10 +9,10 @@ public partial class PlayerBase
 	public GameObject TargetedGameObject { get; private set; }
 	public SceneTraceResult InteractionTrace { get; private set; }
 	public BBox? InteractionBounds { get; private set; }
-
+	
 	private void UpdateInteractions()
 	{
-
+		if ( Vehicle != null ) return;
 		var thinTrace = Scene.Trace.Ray(ViewRay, INTERACTION_DISTANCE )
 					.Size( INTERACTION_SIZE )
 					.IgnoreGameObjectHierarchy(GameObject.Root)

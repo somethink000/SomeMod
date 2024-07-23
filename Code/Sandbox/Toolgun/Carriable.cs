@@ -65,6 +65,7 @@ public partial class Carriable : Component
 
 		if ( IsProxy ) return;
 
+		
 	}
 
 	[Broadcast]
@@ -84,8 +85,8 @@ public partial class Carriable : Component
 			ViewModelHandler = null;
 			ViewModelRenderer = null;
 			ViewModelHandsRenderer = null;
-
 			
+
 		}
 		
 		Owner = null;
@@ -203,8 +204,9 @@ public partial class Carriable : Component
 	{
 		if ( Owner == null ) return;
 
-		UpdateModels();
 		Owner.AnimationHelper.HoldType = HoldType;
+		UpdateModels();
+		
 
 
 

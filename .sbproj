@@ -218,6 +218,12 @@
           "KeyboardCode": "Z",
           "GamepadCode": "None",
           "GroupName": "Other"
+        },
+        {
+          "Name": "ChatLocal",
+          "KeyboardCode": "Y",
+          "GamepadCode": "None",
+          "GroupName": "Other"
         }
       ],
       "__guid": "24003099-00eb-450b-b1b4-4b1faa85eeb1"

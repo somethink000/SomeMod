@@ -1149,6 +1149,26 @@
             "RotateSnapAt": 45,
             "RotateSpeed": 0.125,
             "TargetDistanceSpeed": 25
+          },
+          {
+            "__type": "GeneralGame.Beam",
+            "__guid": "aa31e21b-b078-4f67-bb46-4558f5c047de",
+            "Base": "0,0,0",
+            "EffectCurve1": {
+              "rangex": "0,0",
+              "rangey": "0,0"
+            },
+            "EffectCurve2": {
+              "rangex": "0,0",
+              "rangey": "0,0"
+            },
+            "EffectStart": true,
+            "enabled": false,
+            "Noise": 1,
+            "pointDistance": 10,
+            "RunBySelf": false,
+            "Scale": 1,
+            "StartParticle": "particles/physgun_start.vpcf"
           }
         ]
       }

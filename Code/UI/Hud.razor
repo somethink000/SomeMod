@@ -3,7 +3,11 @@
 @attribute [StyleSheet]
 @inherits PanelComponent
 
+@if (IsProxy)
+    return;
+
 <root>
+    
 	<FullScreenManager />
 </root>
 

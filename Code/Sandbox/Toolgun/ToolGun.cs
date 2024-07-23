@@ -20,7 +20,9 @@ public class ToolGun : Carriable
 		
 		CurrentTool.OnClear();
 		CurrentTool.Destroy();
-		CurrentTool = GlobalGameNamespace.TypeLibrary.Create<BaseTool>( name );
+		var tool = GlobalGameNamespace.TypeLibrary.GetType( name );
+		GameObject.Components.Create( tool, GameObject.Enabled );
+		CurrentTool = Components.Get<BaseTool>();
 		CurrentTool.parentToolgun = this;
 	}
 

@@ -72,8 +72,10 @@
           "component_type": "VehicleCamera"
         },
         "DriverSeat": {
-          "_type": "gameobject",
-          "go": "2205d0bb-02c0-4226-9aba-c8b7928171ba"
+          "_type": "component",
+          "component_id": "890fdcd8-0073-4550-927b-1270b1583c7d",
+          "go": "2205d0bb-02c0-4226-9aba-c8b7928171ba",
+          "component_type": "VehicleSeat"
         },
         "frontWheels": [
           {
@@ -424,9 +426,29 @@
         "__guid": "2205d0bb-02c0-4226-9aba-c8b7928171ba",
         "Flags": 0,
         "Name": "Seat",
-        "Position": "50,-2.000019,0",
-        "Rotation": "0,0,1,0.0000001947072",
-        "Enabled": true
+        "Position": "10,-18,-28",
+        "Rotation": "-0,0,-1,-0.00000004371139",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "GeneralGame.VehicleSeat",
+            "__guid": "890fdcd8-0073-4550-927b-1270b1583c7d",
+            "ExitPoint": {
+              "_type": "gameobject",
+              "go": "acca7747-0ed2-46aa-8f2f-198c7f54e6e4"
+            }
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "acca7747-0ed2-46aa-8f2f-198c7f54e6e4",
+            "Flags": 0,
+            "Name": "exit1",
+            "Position": "17.99999,74,20",
+            "Rotation": "0,0,1,-0.00000004371139",
+            "Enabled": true
+          }
+        ]
       },
       {
         "__guid": "7145c52d-eb96-4c9c-9fbe-f01112fdff73",

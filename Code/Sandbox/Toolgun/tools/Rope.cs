@@ -1,10 +1,10 @@
-﻿namespace GeneralGame;
+﻿/*namespace GeneralGame;
 
 public partial class RopeTool : BaseTool
 {
 
 
-	/*private PhysicsBody targetBody;
+	private PhysicsBody targetBody;
 	private int targetBone;
 	private Vector3 localOrigin1;
 	private Vector3 globalOrigin1;
@@ -123,5 +123,6 @@ public partial class RopeTool : BaseTool
 		base.Deactivate();
 
 		Reset();
-	}*/
+	}
 }
+*/

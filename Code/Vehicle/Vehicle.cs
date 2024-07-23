@@ -13,7 +13,7 @@ public sealed class Vehicle : Component
 
 	[Property] public List<GameObject> frontWheels { get; set; }
 	[Property] public List<GameObject> PasangerSeats { get; set; }
-	[Property] public GameObject DriverSeat { get; set; }
+	[Property] public BaseSeat DriverSeat { get; set; }
 	[Property] public float MaxSteeringAngle { get; set; } = 20f;
 	[Property] public float SteeringSmoothness { get; set; } = 10f;
 	public PlayerBase Driver { get; set; }
@@ -42,6 +42,8 @@ public sealed class Vehicle : Component
 			Disabled = () => Driver != null,
 			ShowWhenDisabled = () => true,
 			Accessibility = AccessibleFrom.World,
+			Cooldown = true,
+
 		} );
 	}
 
@@ -81,24 +83,17 @@ public sealed class Vehicle : Component
 
 	public void PlayerEnter( PlayerBase ply )
 	{
+		DriverSeat.AttachOwner(ply);
+
 		ply.Vehicle = this;
 		Driver = ply;
-		
-		ply.Body.Components.Get<CapsuleCollider>( FindMode.InSelf ).Enabled = false;
-		ply.GameObject.Parent = this.GameObject;
-		ply.cameraMovement.Distance = 300;
-		ply.GameObject.Transform.Position = DriverSeat.Transform.Position;
 	}
 
 	public void PlayerExit( PlayerBase ply )
 	{
 		
 		
-		ply.GameObject.Parent = null;
-		//ply.Camera.GameObject.Parent = ply.GameObject;
-		ply.GameObject.Transform.Position = this.GameObject.Transform.Position + Vector3.Up * 30;
-		ply.cameraMovement.Distance = 0;
-		ply.Body.Components.Get<CapsuleCollider>( FindMode.InSelf ).Enabled = true;
+		DriverSeat.DetachOwner( );
 
 		ply.Vehicle = null;
 		Driver = null;

@@ -41,18 +41,21 @@ public partial class PlayerBase
 
 	void OnMovementUpdate()
 	{
-		if ( !IsProxy )
+		if ( Vehicle == null )
 		{
-			IsRunning = Input.Down( InputButtonHelper.Run );
+			if ( !IsProxy )
+			{
+				IsRunning = Input.Down( InputButtonHelper.Run );
 
-			if ( Input.Pressed( InputButtonHelper.Jump ) )
-				Jump();
+				if ( Input.Pressed( InputButtonHelper.Jump ) )
+					Jump();
 
-			UpdateCrouch();
+				UpdateCrouch();
+			}
+
+			RotateBody();
+			UpdateAnimations();
 		}
-
-		RotateBody();
-		UpdateAnimations();
 	}
 
 	void OnMovementFixedUpdate()
@@ -66,8 +69,9 @@ public partial class PlayerBase
 	{
 		if ( Vehicle != null) 
 		{
-			Vehicle.SteerCarUpdate();	
-		} else { 
+			Vehicle.SteerCarUpdate();
+		}
+		else { 
 
 			WishVelocity = 0;
 
@@ -149,6 +153,8 @@ public partial class PlayerBase
 		AnimationHelper.WithLook( EyeAngles.ToRotation().Forward, 1f, 0.75f, 0.5f );
 		AnimationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
 		AnimationHelper.DuckLevel = IsCrouching ? 1 : 0;
+
+		
 	}
 
 	void UpdateCrouch()

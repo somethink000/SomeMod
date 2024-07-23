@@ -37,6 +37,13 @@ public class PhysGun : BaseTool
 	public Vector3 GrabbedPos { get; set; }
 	bool rotating;
 	public Ray ViewRay => new( Owner.EyePos, Owner.Camera.Transform.Rotation.Forward );
+	
+	
+	Beam beam;
+	protected override void OnStart()
+	{
+		beam = Components.Get<Beam>();
+	}
 
 	public override void OnPrimaryPressed()
 	{
@@ -79,19 +86,19 @@ public class PhysGun : BaseTool
 
 
 		var attachment = parentToolgun.ViewModelRenderer.SceneModel.GetAttachment( "muzzle" );
-		using ( Gizmo.Scope( "physlol" ) )
-		{
-			Gizmo.Draw.Color = Color.Cyan;
-			Gizmo.Draw.LineThickness = 4f;
-			Gizmo.Draw.Line( attachment.Value.Position, tr.EndPosition );
-		}
 
+		beam.enabled = true;
+		beam.CreateEffect( attachment.Value.Position, tr.EndPosition, attachment.Value.Forward );
+		beam.Base = attachment.Value.Position;
+			
+			//if ( GrabbedObjectHighlight == null ) GrabbedObjectHighlight = GrabbedObject.Components.Get<HighlightOutline>( true );
+		
 
 	}
 
 	public override void OnPrimaryUnPressed()
 	{
-		
+		beam.enabled = false;
 		GrabEnd();
 	}
 
@@ -180,7 +187,6 @@ public class PhysGun : BaseTool
 			.IgnoreGameObjectHierarchy( Owner.GameObject.Root )
 				.WithoutTags( "world" )
 				.Run();
-
 
 
 

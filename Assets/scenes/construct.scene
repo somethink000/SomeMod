@@ -2,66 +2,35 @@
   "__guid": "0e3e9aa5-96e4-4c92-8dda-dd910cd4aa96",
   "GameObjects": [
     {
-      "__guid": "8b3cd142-6acb-47f1-b4e0-6b00f75f7355",
+      "__guid": "c1695ec7-e53a-4d5e-af92-d5a920f18dc7",
       "Flags": 0,
-      "Name": "WeaponRegistry",
-      "Position": "901.0312,-78.56091,-1814.607",
+      "Name": "car",
+      "Position": "1821.292,-2285.43,-945.3773",
+      "Rotation": "0,0,-0.258819,0.9659257",
+      "Tags": "localcar",
       "Enabled": true,
-      "NetworkMode": 1,
-      "Components": [
-        {
-          "__type": "GeneralGame.WeaponRegistry",
-          "__guid": "f328f8ca-7b21-4aa6-9bdd-e7bee1635e5e",
-          "WeaponPrefabs": []
-        },
-        {
-          "__type": "GeneralGame.WeaponSettings",
-          "__guid": "48a4c454-4b38-44d3-9b1b-c1750fa5441f",
-          "AutoReload": true,
-          "Customization": true
-        },
-        {
-          "__type": "GeneralGame.PrefabInitializer",
-          "__guid": "d6defc57-ba33-4862-a195-c8483ca27ec4"
-        }
-      ]
-    },
-    {
-      "__guid": "c988658d-a998-405a-b169-e1711fe59578",
-      "Flags": 0,
-      "Name": "ExampleNetworkManager",
-      "Position": "879.7043,309.5533,-4559.393",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "GeneralGame.DemoNetworkManager",
-          "__guid": "e2d36775-e195-461c-9fa6-154ca128be43",
-          "PlayerPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/player.prefab"
-          }
-        }
-      ]
+      "__Prefab": "prefabs/items/car.prefab",
+      "__PrefabVariables": {}
     },
     {
       "__guid": "90eec9cd-4cbd-4768-869a-bc00c70ebf95",
       "Flags": 0,
       "Name": "MapObjects",
-      "Position": "26.48608,-1635.871,-1695.696",
+      "Position": "2349.583,-1154.071,-1695.696",
       "Enabled": true,
       "Children": [
         {
           "__guid": "759629fa-ac1e-41d8-be90-ac659883fc3e",
           "Flags": 0,
           "Name": "Logic",
-          "Position": "16,16,-25.42383",
+          "Position": "658.4167,-701.929,1375.696",
           "Enabled": true,
           "Children": [
             {
               "__guid": "e0fbc366-1843-4b91-9a36-fecf36e72425",
               "Flags": 0,
               "Name": "Gradient Fog",
-              "Position": "-485.7117,-1109.282,937.4238",
+              "Position": "0,0,0",
               "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
               "Enabled": true,
               "Components": [
@@ -82,7 +51,7 @@
               "__guid": "44599370-eab6-4d58-8834-575447b160ae",
               "Flags": 0,
               "Name": "Sound",
-              "Position": "-485.7117,-1109.282,937.4238",
+              "Position": "0,0,0",
               "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
               "Enabled": true,
               "Components": [
@@ -98,49 +67,11 @@
               ]
             },
             {
-              "__guid": "33ffdd5b-83b0-42b5-a12a-ed5033f9f644",
-              "Flags": 0,
-              "Name": "Sound",
-              "Position": "-485.7117,-1109.282,937.4238",
-              "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.SoundscapeTrigger",
-                  "__guid": "8740e9d5-4d78-4141-a7f3-54b5c86e6b47",
-                  "BoxSize": "50,50,50",
-                  "Radius": 5000,
-                  "Soundscape": "sounds/ambient/construct_outside.sndscape",
-                  "StayActiveOnExit": true,
-                  "Type": "Sphere"
-                }
-              ]
-            },
-            {
-              "__guid": "878778bc-f969-45ef-b943-48ffbaa50bfc",
-              "Flags": 0,
-              "Name": "Sound",
-              "Position": "-485.7117,-1109.282,937.4238",
-              "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.SoundscapeTrigger",
-                  "__guid": "6e4a8239-0450-466a-8105-e89a1d24caaa",
-                  "BoxSize": "50,50,50",
-                  "Radius": 5000,
-                  "Soundscape": "sounds/ambient/construct_outside.sndscape",
-                  "StayActiveOnExit": true,
-                  "Type": "Sphere"
-                }
-              ]
-            },
-            {
               "__guid": "4f7db652-3fe6-4a19-b76b-67dd14df30be",
               "Flags": 0,
               "Name": "Sun",
-              "Position": "-485.7117,-1109.282,937.4237",
-              "Rotation": "-0.3044173,-0.3044173,0.6382242,-0.6382242",
+              "Position": "0,0,0",
+              "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
               "Tags": "light_directional,light",
               "Enabled": true,
               "Components": [
@@ -149,140 +80,109 @@
                   "__guid": "86920de1-dec8-4acf-bd34-51aed89ee1cd",
                   "FogMode": "Enabled",
                   "FogStrength": 1,
-                  "LightColor": "0,0,0,1",
+                  "LightColor": "1,0.81116,0.59535,1",
                   "Shadows": true,
-                  "SkyColor": "0.68837,0.68837,0.68837,0.27"
+                  "SkyColor": "0,0,0,0"
                 }
               ]
+            },
+            {
+              "__guid": "7b507888-48d8-48ba-af9f-bab745768d22",
+              "Flags": 0,
+              "Name": "Envmap",
+              "Position": "0,0,0",
+              "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.EnvmapProbe",
+                  "__guid": "9988890c-542b-4803-9d43-369c393bf7a5",
+                  "Texture": "textures/cubemaps/default2.vtex",
+                  "Bounds": {
+                    "Mins": "-16384,-16384,-16384",
+                    "Maxs": "16384,16384,16384"
+                  },
+                  "DelayBetweenUpdates": 0.1,
+                  "Feathering": 0.02,
+                  "FrameInterval": 5,
+                  "MaxDistance": 16384,
+                  "Projection": "Sphere",
+                  "RenderDynamically": true,
+                  "TintColor": "1,1,1,1",
+                  "UpdateStrategy": "OnEnabled",
+                  "ZFar": 16384,
+                  "ZNear": 16
+                }
+              ]
+            },
+            {
+              "__guid": "8b3cd142-6acb-47f1-b4e0-6b00f75f7355",
+              "Flags": 0,
+              "Name": "WeaponRegistry",
+              "Position": "0,0,0",
+              "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
+              "Enabled": true,
+              "NetworkMode": 1,
+              "Components": [
+                {
+                  "__type": "GeneralGame.WeaponRegistry",
+                  "__guid": "f328f8ca-7b21-4aa6-9bdd-e7bee1635e5e",
+                  "WeaponPrefabs": []
+                },
+                {
+                  "__type": "GeneralGame.WeaponSettings",
+                  "__guid": "48a4c454-4b38-44d3-9b1b-c1750fa5441f",
+                  "AutoReload": true,
+                  "Customization": true
+                },
+                {
+                  "__type": "GeneralGame.PrefabInitializer",
+                  "__guid": "d6defc57-ba33-4862-a195-c8483ca27ec4"
+                }
+              ]
+            },
+            {
+              "__guid": "c988658d-a998-405a-b169-e1711fe59578",
+              "Flags": 0,
+              "Name": "ExampleNetworkManager",
+              "Position": "0,0,0",
+              "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "GeneralGame.DemoNetworkManager",
+                  "__guid": "e2d36775-e195-461c-9fa6-154ca128be43",
+                  "PlayerPrefab": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/player.prefab"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "e9c2da28-6b39-4f04-92b7-23be7a7df969",
+          "Flags": 0,
+          "Name": "Spawn",
+          "Position": "-349.584,-829.9292,693.6905",
+          "Rotation": "0,0,0.965926,-0.2588189",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "0bd98830-fbd6-4a77-ad5f-d6a56b26481c",
+              "Color": "0.8902,0.31765,0.05098,1"
             }
           ]
         }
       ]
     },
     {
-      "__guid": "e9c2da28-6b39-4f04-92b7-23be7a7df969",
-      "Flags": 0,
-      "Name": "Spawn",
-      "Position": "-182.7744,-2366.847,-1002.006",
-      "Rotation": "0,0,0.7071067,0.7071068",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "0bd98830-fbd6-4a77-ad5f-d6a56b26481c",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "724783a0-5ad8-45fc-9278-2144344dec2e",
-      "Flags": 0,
-      "Name": "ammo_pistol",
-      "Position": "-344.9152,-2386.288,-955.0463",
-      "Rotation": "-0.0008586794,0.002144158,0.3714533,0.9284487",
-      "Enabled": true,
-      "__Prefab": "prefabs/items/ammo_pistol.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "a7586c32-8390-4b02-bdd2-a90d9aa61657",
-      "Flags": 0,
-      "Name": "ammo_rifle",
-      "Position": "-339.9513,-2414.706,-956.6093",
-      "Rotation": "-0.0008586794,0.002144158,0.3714533,0.9284487",
-      "Enabled": true,
-      "__Prefab": "prefabs/items/ammo_rifle.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "5bd0dbed-6389-4ddf-af56-3c2255e541fa",
-      "Flags": 0,
-      "Name": "ammo_sniper",
-      "Position": "-335.7875,-2408.096,-989.2045",
-      "Rotation": "0,0,0.8598986,0.5104648",
-      "Enabled": true,
-      "__Prefab": "prefabs/items/ammo_sniper.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "8fa21eb6-2176-4872-9619-47fbb92ae9ed",
-      "Flags": 0,
-      "Name": "ammo_shotgun",
-      "Position": "-317.536,-2413.219,-989.2045",
-      "Rotation": "0,0,0.8598986,0.5104648",
-      "Enabled": true,
-      "__Prefab": "prefabs/items/ammo_shotgun.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "7b507888-48d8-48ba-af9f-bab745768d22",
-      "Flags": 0,
-      "Name": "Envmap",
-      "Position": "43.22559,-1606.847,-800.3036",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.EnvmapProbe",
-          "__guid": "9988890c-542b-4803-9d43-369c393bf7a5",
-          "Texture": "textures/cubemaps/default2.vtex",
-          "Bounds": {
-            "Mins": "-16384,-16384,-16384",
-            "Maxs": "16384,16384,16384"
-          },
-          "DelayBetweenUpdates": 0.1,
-          "Feathering": 0.02,
-          "FrameInterval": 5,
-          "MaxDistance": 16384,
-          "Projection": "Sphere",
-          "RenderDynamically": true,
-          "TintColor": "1,1,1,1",
-          "UpdateStrategy": "OnEnabled",
-          "ZFar": 16384,
-          "ZNear": 16
-        }
-      ]
-    },
-    {
-      "__guid": "c1695ec7-e53a-4d5e-af92-d5a920f18dc7",
-      "Flags": 0,
-      "Name": "car",
-      "Position": "-427.2256,-2681.153,-945.3773",
-      "Rotation": "0,0,-0.5,0.8660254",
-      "Tags": "localcar",
-      "Enabled": true,
-      "__Prefab": "prefabs/items/car.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "47c3d00a-f407-4084-9a4d-33f8b0de1502",
-      "Flags": 0,
-      "Name": "Object",
-      "Position": "-835.4176,-1122.328,906.6937",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.MapInstance",
-          "__guid": "6bdc8c8b-8ff8-4e5c-9220-eb0f740c6510",
-          "__version": 1,
-          "MapName": "maps/construct_forest.vmap",
-          "NoOrigin": false,
-          "UseMapFromLaunch": false
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "cfc4ff4e-9563-4d98-9aac-62d379778b07",
-      "Flags": 0,
-      "Name": "Object",
-      "Position": "-3184,14512,-6288",
-      "Enabled": true
-    },
-    {
       "__guid": "40e2041b-759b-4cb2-b863-3759e3f3c2e3",
       "Flags": 0,
       "Name": "Object",
-      "Position": "-306.4916,-2493.705,-976",
+      "Position": "1728,-1952,-928",
       "Enabled": true,
       "Components": [
         {
@@ -332,38 +232,148 @@
       ]
     },
     {
-      "__guid": "f0baa2b9-49bf-4ec3-8853-5ace6961806c",
+      "__guid": "47c3d00a-f407-4084-9a4d-33f8b0de1502",
       "Flags": 0,
-      "Name": "Example",
-      "Position": "-544,-2532.298,-976",
+      "Name": "Object",
+      "Position": "-835.4176,-1122.328,906.6937",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "6002069c-6cd6-4fa6-91f7-b8c7ed171e53",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/empty.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
+          "__type": "Sandbox.MapInstance",
+          "__guid": "6bdc8c8b-8ff8-4e5c-9220-eb0f740c6510",
+          "__version": 1,
+          "MapName": "maps/construct_forest.vmap",
+          "NoOrigin": false,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "468f2ce6-ec6a-44f2-9f66-4d44f71756ae",
+      "Flags": 0,
+      "Name": "Box",
+      "Position": "1729.89,-2717.807,-1960.131",
+      "Tags": "world",
+      "Enabled": true,
+      "Components": [
         {
-          "__type": "Sandbox.ModelCollider",
-          "__guid": "10fc8558-7c95-4258-834c-a59dcee634dd",
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "3360a27f-5e1e-45ac-bd22-567705018fb3",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "HideInGame": false,
           "IsTrigger": false,
-          "Model": "models/empty.vmdl",
-          "Static": false
-        },
-        {
-          "__type": "Sandbox.Rigidbody",
-          "__guid": "2e7afc5f-3e0c-452f-a311-a2ac5b846d5c",
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {},
-          "MassOverride": 0,
-          "MotionEnabled": true,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Positions": [
+              "-2638.11,-1106.193,928",
+              "2638.11,-1106.193,928",
+              "2638.11,1106.193,928",
+              "-2638.11,1106.193,928",
+              "-2638.11,1106.193,-928",
+              "2638.11,1106.193,-928",
+              "2638.11,-1106.193,-928",
+              "-2638.11,-1106.193,-928"
+            ],
+            "TextureCoord": [
+              "20.61024,8.64213",
+              "-20.61024,-7.25",
+              "20.61024,-8.64213",
+              "-8.64213,-7.25",
+              "-20.61024,-8.64213",
+              "-20.61024,-7.25",
+              "-20.61024,8.64213",
+              "-8.64213,-7.25",
+              "20.61024,-8.64213",
+              "20.61024,7.25",
+              "20.61024,8.64213",
+              "8.64213,7.25",
+              "-20.61024,8.64213",
+              "20.61024,7.25",
+              "-20.61024,-8.64213",
+              "8.64213,7.25",
+              "8.64213,-7.25",
+              "-20.61024,7.25",
+              "-8.64213,7.25",
+              "20.61024,-7.25",
+              "-8.64213,7.25",
+              "20.61024,-7.25",
+              "8.64213,-7.25",
+              "-20.61024,7.25"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,-0",
+              "0,-1,0",
+              "0,1,0",
+              "-1,0,0",
+              "1,-0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "-0,0,-1",
+              "0,0,-1",
+              "-0,0,-1"
+            ],
+            "TextureScale": [
+              "0.2499999,0.2500001",
+              "0.2499999,0.2500001",
+              "0.2500001,0.25",
+              "0.2500001,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
+            ],
+            "TextureOffset": [
+              "248.438,392.7773",
+              "248.438,392.7769",
+              "392.7769,351.4756",
+              "119.2231,351.4756",
+              "263.5586,351.4766",
+              "248.4414,351.4761"
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
+          },
+          "SmoothingAngle": 40,
+          "Static": true
         }
       ]
     }

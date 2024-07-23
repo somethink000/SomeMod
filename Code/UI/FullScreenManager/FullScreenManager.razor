@@ -6,7 +6,9 @@
     return;
 
 <root>
-	
+	    <Chat/>
+
+
 		@switch ( ActivePanel )
 		{
 			case FullScreenPanel.InGameHud:
@@ -16,7 +18,9 @@
 				<Inventory/>
 				break;
             case FullScreenPanel.SpawnMenu:
-				<SpawnMenu/>
+                <SpawnMenu/>
+                break;
+            case FullScreenPanel.Chat:
 				break;
 			default:
 				throw new ArgumentOutOfRangeException();
@@ -34,6 +38,7 @@
         Inventory,
         PauseMenu,
         SpawnMenu,
+        Chat,
     }
 
     public FullScreenPanel ActivePanel { get; private set; } = FullScreenPanel.InGameHud;
@@ -53,8 +58,13 @@
     public override void Tick()
     {
 
-      
+     
+        if (Input.Pressed(InputButtonHelper.Chat) || Input.Pressed(InputButtonHelper.ChatLocal))
+        {
+            Toggle(FullScreenPanel.Chat);
+            Chat.Instance.Toggle();
 
+        }
 		if (Input.Pressed(InputButtonHelper.Inventory))
 		{
 			Toggle( FullScreenPanel.Inventory );

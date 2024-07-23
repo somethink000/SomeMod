@@ -26,8 +26,8 @@ public enum AccessibleFrom
 {
 	None = 0,
 	World = 1 << 0,
-	Hands = 1 << 1,
-	All = World | Hands,
+	Vehicle = 1 << 1,
+	All = World | Vehicle,
 }
 
 public class Interaction
