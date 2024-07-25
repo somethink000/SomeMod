@@ -57,7 +57,11 @@
 
     public override void Tick()
     {
+        if (Input.EscapePressed)
+        {
+            Toggle(FullScreenPanel.InGameHud);
 
+        }
      
         if (Input.Pressed(InputButtonHelper.Chat) || Input.Pressed(InputButtonHelper.ChatLocal))
         {

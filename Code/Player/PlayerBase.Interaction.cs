@@ -16,7 +16,7 @@ public partial class PlayerBase
 		var thinTrace = Scene.Trace.Ray(ViewRay, INTERACTION_DISTANCE )
 					.Size( INTERACTION_SIZE )
 					.IgnoreGameObjectHierarchy(GameObject.Root)
-					.WithoutTags( "world" )
+					//.WithoutTags( "world" )
 					.Run();
 
 		if ( thinTrace.GameObject != null && thinTrace.GameObject.GetInteractions() != null )
@@ -42,7 +42,7 @@ public partial class PlayerBase
 			InteractionTrace = Scene.Trace.Ray( ViewRay, INTERACTION_DISTANCE )
 						.Size( INTERACTION_SIZE )
 						.IgnoreGameObject( GameObject )
-						.WithoutTags( "world" )
+						//.WithoutTags( "world" )
 						.Run();
 			var obj = InteractionTrace.GameObject;
 			obj = obj?.GetInteractions() == null ? null : obj;

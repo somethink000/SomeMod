@@ -4,7 +4,7 @@ namespace GeneralGame;
 public partial class Inventory : BaseInventory
 {
 	[Property] public PlayerBase Player { get; set; }
-
+	
 	public LootItem targetStorage { get; set; }
 
 	public int MAX_WEIGHT_IN_GRAMS = 30000;

@@ -45,7 +45,10 @@ public class LootItem : BaseInventory
 
 	public void OpenLoot( PlayerBase ply )
 	{
+
 		ply.Inventory.targetStorage = this;
+		UI.FullScreenManager.Instance.Display( UI.FullScreenManager.FullScreenPanel.Inventory );
+	
 	}
 
 

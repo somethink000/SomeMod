@@ -1,0 +1,23 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "construct_forest (1)",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "construct_forest1",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "apetavern.wlb_asphalt_01#45081",
+        "evilinc.ah_super_large_pine002#48323",
+        "rustextended.terrain_blend_a#43398"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/construct_forest (1).vmap"
+      }
+    }
+  }
+}

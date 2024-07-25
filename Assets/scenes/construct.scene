@@ -5,10 +5,9 @@
       "__guid": "c1695ec7-e53a-4d5e-af92-d5a920f18dc7",
       "Flags": 0,
       "Name": "car",
-      "Position": "1821.292,-2285.43,-945.3773",
+      "Position": "11955.11,11962.32,-8801.529",
       "Rotation": "0,0,-0.258819,0.9659257",
       "Tags": "localcar",
-      "Enabled": true,
       "__Prefab": "prefabs/items/car.prefab",
       "__PrefabVariables": {}
     },
@@ -16,7 +15,7 @@
       "__guid": "90eec9cd-4cbd-4768-869a-bc00c70ebf95",
       "Flags": 0,
       "Name": "MapObjects",
-      "Position": "2349.583,-1154.071,-1695.696",
+      "Position": "12483.39,13093.68,-9551.848",
       "Enabled": true,
       "Children": [
         {
@@ -37,9 +36,8 @@
                 {
                   "__type": "Sandbox.GradientFog",
                   "__guid": "21913479-ab86-4fd1-9a59-104fd7896971",
-                  "__enabled": false,
-                  "Color": "0.7814,0.7814,1,1",
-                  "EndDistance": 20000,
+                  "Color": "0.7814,0.7814,1,0.17",
+                  "EndDistance": 30000,
                   "FalloffExponent": 1,
                   "Height": 120000,
                   "StartDistance": 5004,
@@ -71,7 +69,7 @@
               "Flags": 0,
               "Name": "Sun",
               "Position": "0,0,0",
-              "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
+              "Rotation": "-0.388815,-0.214811,0.6635731,-0.6019551",
               "Tags": "light_directional,light",
               "Enabled": true,
               "Components": [
@@ -82,7 +80,7 @@
                   "FogStrength": 1,
                   "LightColor": "1,0.81116,0.59535,1",
                   "Shadows": true,
-                  "SkyColor": "0,0,0,0"
+                  "SkyColor": "0.29767,0.29767,0.29767,0"
                 }
               ]
             },
@@ -158,20 +156,36 @@
                   }
                 }
               ]
+            },
+            {
+              "__guid": "d74f755b-b470-462a-bcf2-988314f90bfa",
+              "Flags": 0,
+              "Name": "2D Skybox",
+              "Position": "0,0,0",
+              "Tags": "skybox",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.SkyBox2D",
+                  "__guid": "440f3719-3ce8-4e08-82e4-9dfbb5afa586",
+                  "SkyMaterial": "materials/sky/atmosphere_sky.vmat",
+                  "Tint": "1,1,1,1"
+                }
+              ]
             }
           ]
         },
         {
-          "__guid": "e9c2da28-6b39-4f04-92b7-23be7a7df969",
+          "__guid": "6035dcd5-3c6c-4aa2-b619-19bda4bca5d3",
           "Flags": 0,
           "Name": "Spawn",
-          "Position": "-349.584,-829.9292,693.6905",
+          "Position": "-931.3896,-1637.68,735.8496",
           "Rotation": "0,0,0.965926,-0.2588189",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.SpawnPoint",
-              "__guid": "0bd98830-fbd6-4a77-ad5f-d6a56b26481c",
+              "__guid": "6cb486f3-8811-42f9-adfb-eb5af657c944",
               "Color": "0.8902,0.31765,0.05098,1"
             }
           ]
@@ -182,7 +196,7 @@
       "__guid": "40e2041b-759b-4cb2-b863-3759e3f3c2e3",
       "Flags": 0,
       "Name": "Object",
-      "Position": "1728,-1952,-928",
+      "Position": "11861.82,12295.75,-8768",
       "Enabled": true,
       "Components": [
         {
@@ -232,34 +246,15 @@
       ]
     },
     {
-      "__guid": "47c3d00a-f407-4084-9a4d-33f8b0de1502",
-      "Flags": 0,
-      "Name": "Object",
-      "Position": "-835.4176,-1122.328,906.6937",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.MapInstance",
-          "__guid": "6bdc8c8b-8ff8-4e5c-9220-eb0f740c6510",
-          "__version": 1,
-          "MapName": "maps/construct_forest.vmap",
-          "NoOrigin": false,
-          "UseMapFromLaunch": false
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "468f2ce6-ec6a-44f2-9f66-4d44f71756ae",
+      "__guid": "f75095c1-0190-4884-aa01-de199ab7ac98",
       "Flags": 0,
       "Name": "Box",
-      "Position": "1729.89,-2717.807,-1960.131",
-      "Tags": "world",
+      "Position": "11680,11984,-8877.27",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.MeshComponent",
-          "__guid": "3360a27f-5e1e-45ac-bd22-567705018fb3",
+          "__guid": "59b7230b-6788-46a3-8df6-d6cfab594b3c",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
           "HideInGame": false,
@@ -267,40 +262,40 @@
           "Mesh": {
             "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
             "Positions": [
-              "-2638.11,-1106.193,928",
-              "2638.11,-1106.193,928",
-              "2638.11,1106.193,928",
-              "-2638.11,1106.193,928",
-              "-2638.11,1106.193,-928",
-              "2638.11,1106.193,-928",
-              "2638.11,-1106.193,-928",
-              "-2638.11,-1106.193,-928"
+              "-4847.741,-9306.76,24",
+              "4847.741,-9306.76,24",
+              "4847.741,9306.76,24",
+              "-4847.741,9306.76,24",
+              "-4847.741,9306.76,-24",
+              "4847.741,9306.76,-24",
+              "4847.741,-9306.76,-24",
+              "-4847.741,-9306.76,-24"
             ],
             "TextureCoord": [
-              "20.61024,8.64213",
-              "-20.61024,-7.25",
-              "20.61024,-8.64213",
-              "-8.64213,-7.25",
-              "-20.61024,-8.64213",
-              "-20.61024,-7.25",
-              "-20.61024,8.64213",
-              "-8.64213,-7.25",
-              "20.61024,-8.64213",
-              "20.61024,7.25",
-              "20.61024,8.64213",
-              "8.64213,7.25",
-              "-20.61024,8.64213",
-              "20.61024,7.25",
-              "-20.61024,-8.64213",
-              "8.64213,7.25",
-              "8.64213,-7.25",
-              "-20.61024,7.25",
-              "-8.64213,7.25",
-              "20.61024,-7.25",
-              "-8.64213,7.25",
-              "20.61024,-7.25",
-              "8.64213,-7.25",
-              "-20.61024,7.25"
+              "2.1875,1.75",
+              "-2.1875,-0.1875",
+              "2.1875,-1.75",
+              "-1.75,-0.1875",
+              "-2.1875,-1.75",
+              "-2.1875,-0.1875",
+              "-2.1875,1.75",
+              "-1.75,-0.1875",
+              "2.1875,-1.75",
+              "2.1875,0.1875",
+              "2.1875,1.75",
+              "1.75,0.1875",
+              "-2.1875,1.75",
+              "2.1875,0.1875",
+              "-2.1875,-1.75",
+              "1.75,0.1875",
+              "1.75,-0.1875",
+              "-2.1875,0.1875",
+              "-1.75,0.1875",
+              "2.1875,-0.1875",
+              "-1.75,0.1875",
+              "2.1875,-0.1875",
+              "1.75,-0.1875",
+              "-2.1875,0.1875"
             ],
             "TextureUAxis": [
               "1,0,0",
@@ -319,20 +314,20 @@
               "-0,0,-1"
             ],
             "TextureScale": [
-              "0.2499999,0.2500001",
-              "0.2499999,0.2500001",
-              "0.2500001,0.25",
-              "0.2500001,0.25",
-              "0.25,0.25",
-              "0.25,0.25"
+              "4.328341,10.38701",
+              "4.328341,10.38701",
+              "10.38701,0.25",
+              "10.38701,0.25",
+              "4.328341,0.25",
+              "4.328341,0.25"
             ],
             "TextureOffset": [
-              "248.438,392.7773",
-              "248.438,392.7769",
-              "392.7769,351.4756",
-              "119.2231,351.4756",
-              "263.5586,351.4766",
-              "248.4414,351.4761"
+              "373.5062,129.7489",
+              "373.5062,129.749",
+              "129.7488,330.9258",
+              "382.2512,330.9258",
+              "138.4937,330.9219",
+              "373.5063,330.9219"
             ],
             "MaterialIndex": [
               0,
@@ -376,6 +371,24 @@
           "Static": true
         }
       ]
+    },
+    {
+      "__guid": "bada6e77-0ae1-4ffd-bf93-652bba20a9fd",
+      "Flags": 0,
+      "Name": "Object",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MapInstance",
+          "__guid": "77e7528d-b054-4c23-a31e-4ff1cb7933b0",
+          "__version": 1,
+          "EnableCollision": true,
+          "MapName": "maps/construct_forest (1).vmap",
+          "NoOrigin": false,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
