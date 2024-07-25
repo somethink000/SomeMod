@@ -38,7 +38,7 @@ public partial class BaseSeat : Component
 	public virtual void DetachOwner( )
 	{
 		Owner.GameObject.Parent = null;
-		Owner.cameraMovement.Distance = 0;
+		Owner.Distance = 0;
 		Owner.Body.Components.Get<CapsuleCollider>( FindMode.InSelf ).Enabled = true;
 
 		Owner.AnimationHelper.IsSitting = false;

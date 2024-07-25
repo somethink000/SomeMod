@@ -4,6 +4,7 @@ public partial class Weapon
 {
 	public virtual void Reload()
 	{
+		
 		if ( IsReloading || InBoltBack || IsShooting() )
 			return;
 

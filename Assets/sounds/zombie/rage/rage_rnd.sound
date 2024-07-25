@@ -5,7 +5,11 @@
   "Decibels": 70,
   "SelectionMode": "Random",
   "Sounds": [
-    "sounds/zombie/rage/rage_61.vsnd"
+    "sounds/zombie/rage/rage_61.vsnd",
+    "sounds/zombie/rage/rage_62.vsnd",
+    "sounds/zombie/rage/rage_64.vsnd",
+    "sounds/zombie/rage/rage_65.vsnd",
+    "sounds/zombie/rage/rage_66.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,

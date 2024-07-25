@@ -6,7 +6,7 @@ namespace GeneralGame;
 
 public partial class Weapon : Component
 {
-	public IPlayerBase Owner { get; set; }
+	public PlayerBase Owner { get; set; }
 	public ViewModelHandler ViewModelHandler { get; private set; }
 	public SkinnedModelRenderer ViewModelRenderer { get; private set; }
 	public SkinnedModelRenderer ViewModelHandsRenderer { get; private set; }

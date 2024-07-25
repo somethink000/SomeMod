@@ -31,7 +31,7 @@
           "Angle": "-0.4,0.12,-1",
           "Pos": "-2.393,0,0.738"
         },
-        "AimFOV": 35,
+        "AimFOV": 20,
         "AimInFOVSpeed": 1,
         "AimOutFOVSpeed": 1,
         "AimPlayerFOV": -1,
@@ -56,7 +56,6 @@
         "DrawEmptyTime": -1,
         "DrawTime": 0.4,
         "EmptyState": "b_empty",
-        "FOV": 65,
         "HoldType": "Pistol",
         "Icon": "weapons/swb/colt/colt.png",
         "Primary": {

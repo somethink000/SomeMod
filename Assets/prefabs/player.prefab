@@ -58,6 +58,7 @@
           "component_type": "CameraComponent"
         },
         "CrouchSpeed": 90,
+        "Distance": 0,
         "GroundControl": 4,
         "Head": {
           "_type": "gameobject",
@@ -1030,31 +1031,6 @@
             "Viewport": "0,0,1,1",
             "ZFar": 100000,
             "ZNear": 0.1
-          },
-          {
-            "__type": "GeneralGame.CameraMovement",
-            "__guid": "3b62213b-05a6-455e-8160-8a7cd124a395",
-            "Body": {
-              "_type": "gameobject",
-              "go": "55559241-6791-4c24-9635-07aceee3d8a4"
-            },
-            "BodyRenderer": {
-              "_type": "component",
-              "component_id": "fc51159a-2082-4de0-8c3e-5f44d049ed23",
-              "go": "55559241-6791-4c24-9635-07aceee3d8a4",
-              "component_type": "SkinnedModelRenderer"
-            },
-            "Distance": 0,
-            "Head": {
-              "_type": "gameobject",
-              "go": "d8a09f79-a5a4-41e7-9522-ff9d3a8df4e8"
-            },
-            "Player": {
-              "_type": "component",
-              "component_id": "3e1e96c5-b788-4483-9ffd-7b59b02df678",
-              "go": "bf0f959a-8e13-4133-8fc5-edc7aa3d1b0c",
-              "component_type": "DemoPlayer"
-            }
           }
         ]
       },
@@ -1154,14 +1130,18 @@
             "__type": "GeneralGame.Beam",
             "__guid": "aa31e21b-b078-4f67-bb46-4558f5c047de",
             "Base": "0,0,0",
-            "EffectCurve1": {
-              "rangex": "0,0",
-              "rangey": "0,0"
-            },
-            "EffectCurve2": {
-              "rangex": "0,0",
-              "rangey": "0,0"
-            },
+            "EffectCurve1": [
+              {
+                "x": 0.5,
+                "y": 0.5
+              }
+            ],
+            "EffectCurve2": [
+              {
+                "x": 0.5,
+                "y": 0.5
+              }
+            ],
             "EffectStart": true,
             "enabled": false,
             "Noise": 1,

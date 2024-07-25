@@ -19,26 +19,14 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IPlayerBas
 	public int MaxCarryWeight { get; set; }
 	public bool IsEncumbered => Inventory.Weight > MaxCarryWeight;
 
-	public bool IsFirstPerson => cameraMovement.IsFirstPerson;
-	public float InputSensitivity
-	{
-		get { return cameraMovement.InputSensitivity; }
-		set { cameraMovement.InputSensitivity = value; }
-	}
-	public Angles EyeAnglesOffset
-	{
-		get { return cameraMovement.EyeAnglesOffset; }
-		set { cameraMovement.EyeAnglesOffset = value; }
-	}
-
+	
 	Guid IPlayerBase.Id { get => GameObject.Id; }
-	public CameraMovement cameraMovement;
+
 
 	protected override void OnAwake()
 	{
 
-		cameraMovement = Components.GetInChildren<CameraMovement>();
-
+		OnCameraAwake();
 		OnMovementAwake();
 	}
 
@@ -119,15 +107,16 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IPlayerBas
 	
 	protected override void OnUpdate()
 	{
-
-
-		if ( IsAlive ) { 
-			OnMovementUpdate();
-		}
-
+		
+		OnCameraUpdate();
 		HandleFlinch();
 		UpdateClothes();
 		SpawnMenuUpdate();
+
+		if ( IsAlive )
+		{
+			OnMovementUpdate();
+		}
 	}
 
 	protected override void OnFixedUpdate()

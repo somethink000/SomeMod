@@ -11,7 +11,7 @@ namespace GeneralGame;
 public class ReflexSightBG : SightAttachment
 {
 	public override string Name => "Walther MRS Reflex";
-	public override string IconPath => "attachments/swb/sight/reflex/ui/icon.png";
+	public override string IconPath => "ui/hud/sightmark.png";
 	public override string BodyGroup { get; set; } = "sight";
 	public override int BodyGroupChoice { get; set; } = 1;
 	public override int BodyGroupDefault { get; set; } = 0;
@@ -21,32 +21,11 @@ public class ReflexSightBG : SightAttachment
 	public override float AimSensitivity { get; set; } = 0.5f;
 }
 
-[Title( "Hunter Scope" )]
-public class HunterScope2DBG : Scope2DAttachment
-{
-	public override string Name => "Hunter Scope x12";
-	public override string IconPath => "attachments/swb/sight/scope_hunter/ui/icon.png";
-	public override string BodyGroup { get; set; } = "sight";
-	public override int BodyGroupChoice { get; set; } = 2;
-	public override int BodyGroupDefault { get; set; } = 0;
-
-	// Scope
-	public override ScopeInfo ScopeInfo { get; set; } = new()
-	{
-		LensTexture = "materials/swb/scopes/swb_lens_hunter.png",
-		ScopeTexture = "materials/swb/scopes/swb_scope_hunter.png",
-		ScopeInDelay = 0.2f,
-		ScopeInSound = ResourceLibrary.Get<SoundEvent>( "sounds/swb/scope/swb_sniper.zoom_in.sound" ),
-		FOV = 8f,
-		AimSensitivity = 0.25f
-	};
-}
-
 [Title( "Silencer (sniper)" )]
 public class SniperSilencerBG : SilencerAttachment
 {
 	public override string Name => "ATS5 Silencer";
-	public override string IconPath => "attachments/swb/muzzle/silencer_sniper/ui/icon.png";
+	public override string IconPath => "ui/hud/supressor.png";
 	public override string BodyGroup { get; set; } = "muzzle";
 	public override int BodyGroupChoice { get; set; } = 1;
 	public override int BodyGroupDefault { get; set; } = 0;
@@ -60,21 +39,21 @@ public class SniperSilencerBG : SilencerAttachment
 public class RifleSilencerBG : SniperSilencerBG
 {
 	public override string Name => "ATS4 Silencer";
-	public override string IconPath => "attachments/swb/muzzle/silencer_rifle/ui/icon.png";
+	public override string IconPath => "ui/hud/supressor.png";
 }
 
 [Title( "Silencer (shotgun)" )]
 public class ShotgunSilencerBG : SniperSilencerBG
 {
 	public override string Name => "Salvo 12G Silencer";
-	public override string IconPath => "attachments/swb/muzzle/silencer_shotgun/ui/icon.png";
+	public override string IconPath => "ui/hud/supressor.png";
 }
 
 [Title( "Silencer (pistol)" )]
 public class PistolSilencerBG : SniperSilencerBG
 {
 	public override string Name => "SR8 Silencer";
-	public override string IconPath => "attachments/swb/muzzle/silencer_pistol/ui/icon.png";
+	public override string IconPath => "ui/hud/supressor.png";
 }
 
 [Title( "Medium Laser" )]

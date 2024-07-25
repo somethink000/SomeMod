@@ -1,5 +1,6 @@
 ﻿
 using System;
+using static Sandbox.CursorSettings;
 
 namespace GeneralGame;
 
@@ -16,7 +17,7 @@ public class ViewModelHandler : Component
 	public AngPos EditorOffset { get; set; }
 	public float EditorFOV { get; set; }
 
-	IPlayerBase player => Weapon.Owner;
+	PlayerBase player => Weapon.Owner;
 
 	float animSpeed = 1;
 	float playerFOVSpeed = 1;
@@ -24,14 +25,12 @@ public class ViewModelHandler : Component
 	// Target animation values
 	Vector3 targetVectorPos;
 	Vector3 targetVectorRot;
-	float targetPlayerFOV = -1;
-	float targetWeaponFOV = -1;
+	float targetPlayerFOV = Preferences.FieldOfView;
 
 	// Finalized animation values
 	Vector3 finalVectorPos;
 	Vector3 finalVectorRot;
-	float finalPlayerFOV;
-	float finalWeaponFOV;
+	float finalPlayerFOV = Preferences.FieldOfView;
 
 	// Sway
 	Rotation lastEyeRot;
@@ -49,15 +48,9 @@ public class ViewModelHandler : Component
 
 	public void OnHolster()
 	{
-		Camera.FieldOfView = Screen.CreateVerticalFieldOfView( Preferences.FieldOfView );
-		
+		player.CurFOV = Preferences.FieldOfView;
 		Destroy();
-	}
-
-	protected override void OnDisabled()
-	{
-		// Reinitialize all target values when enabled
-		targetWeaponFOV = -1;
+		
 	}
 
 	protected override void OnUpdate()
@@ -82,43 +75,35 @@ public class ViewModelHandler : Component
 		Camera.Transform.Position = Scene.Camera.Transform.Position;
 		Camera.Transform.Rotation = Scene.Camera.Transform.Rotation;
 
-		if ( targetWeaponFOV == -1 )
-		{
-			targetPlayerFOV = Preferences.FieldOfView;
-			finalPlayerFOV = Preferences.FieldOfView;
-			targetWeaponFOV = Weapon.FOV;
-			finalWeaponFOV = Weapon.FOV;
-		}
-
 		Transform.Position = Camera.Transform.Position;
 		Transform.Rotation = Camera.Transform.Rotation;
 
 		// Smoothly transition the vectors with the target values
 		finalVectorPos = finalVectorPos.LerpTo( targetVectorPos, animSpeed * RealTime.Delta );
 		finalVectorRot = finalVectorRot.LerpTo( targetVectorRot, animSpeed * RealTime.Delta );
+
 		finalPlayerFOV = MathX.LerpTo( finalPlayerFOV, targetPlayerFOV, playerFOVSpeed * animSpeed * RealTime.Delta );
-		finalWeaponFOV = MathX.LerpTo( finalWeaponFOV, targetWeaponFOV, playerFOVSpeed * animSpeed * RealTime.Delta );
+		
 		animSpeed = 10 * Weapon.AnimSpeed;
 
 		// Change the angles and positions of the viewmodel with the new vectors
 		Transform.Rotation *= Rotation.From( finalVectorRot.x, finalVectorRot.y, finalVectorRot.z );
 		// Position has to be set after rotation!
 		Transform.Position += finalVectorPos.z * Transform.Rotation.Up + finalVectorPos.y * Transform.Rotation.Forward + finalVectorPos.x * Transform.Rotation.Right;
-		Camera.FieldOfView = Screen.CreateVerticalFieldOfView( finalWeaponFOV );
-		player.Camera.FieldOfView = Screen.CreateVerticalFieldOfView( finalPlayerFOV );
-
+		player.CurFOV = finalPlayerFOV;
+		
 		// Initialize the target vectors for this frame
 		targetVectorPos = Vector3.Zero;
 		targetVectorRot = Vector3.Zero;
+		
 		targetPlayerFOV = Preferences.FieldOfView;
-		targetWeaponFOV = Weapon.FOV;
 
 		// Editor mode
 		if ( EditorMode )
 		{
 			targetVectorRot += MathUtil.ToVector3( EditorOffset.Angle );
 			targetVectorPos += EditorOffset.Pos;
-			targetWeaponFOV = EditorFOV;
+			targetPlayerFOV = EditorFOV;
 			return;
 		}
 
@@ -254,14 +239,14 @@ public class ViewModelHandler : Component
 				targetPlayerFOV = Weapon.ScopeInfo.FOV;
 
 			if ( Weapon.AimFOV > 0 )
-				targetWeaponFOV = Weapon.AimFOV;
+				targetPlayerFOV = Preferences.FieldOfView - Weapon.AimFOV;
 
 			playerFOVSpeed = Weapon.AimInFOVSpeed;
 		}
 		else
 		{
 			aimTime = 0;
-			targetWeaponFOV = Weapon.FOV;
+			targetPlayerFOV = Preferences.FieldOfView;
 
 			if ( finalPlayerFOV != Weapon.AimPlayerFOV )
 			{

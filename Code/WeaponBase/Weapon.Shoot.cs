@@ -15,19 +15,22 @@ public partial class Weapon
 	/// <returns></returns>
 	public virtual bool CanShoot( ShootInfo shootInfo, TimeSince lastAttackTime, string inputButton )
 	{
+		
 		if ( (IsReloading && !ShellReloading) || (IsReloading && ShellReloading && !ShellReloadingShootCancel) || InBoltBack ) return false;
 		if ( shootInfo is null || !Owner.IsValid() || !Input.Down( inputButton ) || (IsRunning && Secondary is null) ) return false;
-
+		
 		if ( !HasAmmo() )
 		{
 			if ( Input.Pressed( inputButton ) )
 			{
+				
 				// Check for auto reloading
-				if ( Settings.AutoReload && lastAttackTime > GetRealRPM( shootInfo.RPM ) )
+				if ( lastAttackTime > GetRealRPM( shootInfo.RPM ) )
 				{
+					
 					TimeSincePrimaryShoot = 999;
 					TimeSinceSecondaryShoot = 999;
-
+					
 					if ( ShellReloading )
 						OnShellReload();
 					else

@@ -1,4 +1,6 @@
 ﻿
+using Sandbox;
+
 namespace GeneralGame;
 
 public enum SpawnMenuCategories
@@ -57,6 +59,8 @@ public partial class PlayerBase
 
 		var package = await Package.FetchAsync( ident, false );
 		await package.MountAsync();
+		Log.Info( package.Thumb );
+
 
 		var mins = package.GetMeta( "RenderMins", Vector3.Zero );
 		var maxs = package.GetMeta( "RenderMaxs", Vector3.Zero );

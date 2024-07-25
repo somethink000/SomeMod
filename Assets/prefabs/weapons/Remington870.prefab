@@ -13,7 +13,7 @@
           "Angle": "-0.45,0.09,0",
           "Pos": "-1.883,0,1.432"
         },
-        "AimFOV": 35,
+        "AimFOV": 20,
         "AimInFOVSpeed": 1,
         "AimOutFOVSpeed": 1,
         "AimPlayerFOV": -1,
@@ -38,7 +38,6 @@
         "DrawEmptyTime": -1,
         "DrawTime": 0.7,
         "EmptyState": "b_empty",
-        "FOV": 65,
         "HoldType": "Shotgun",
         "Primary": {
           "_type": "component",

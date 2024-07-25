@@ -46,7 +46,7 @@ public partial class OffsetEditor
 		if ( !firstTime ) return;
 
 		DragModeLabel.Text = "x/z";
-		FOV = weapon.FOV;
+		FOV = Preferences.FieldOfView;
 	}
 
 	public virtual void OnReset()
@@ -57,7 +57,7 @@ public partial class OffsetEditor
 		Pitch = 0;
 		Yaw = 0;
 		Roll = 0;
-		FOV = weapon.FOV;
+		FOV = Preferences.FieldOfView;
 	}
 
 	public virtual void OnPrint()
@@ -98,7 +98,7 @@ public partial class OffsetEditor
 		Pitch = angPos.Angle.pitch;
 		Yaw = angPos.Angle.yaw;
 		Roll = angPos.Angle.roll;
-		this.FOV = weapon.FOV;
+		this.FOV = Preferences.FieldOfView;
 	}
 
 	protected override void OnMouseMove( MousePanelEvent e )

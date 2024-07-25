@@ -5,7 +5,10 @@
   "Decibels": 70,
   "SelectionMode": "Random",
   "Sounds": [
-    "sounds/zombie/hit/hit_punch_01.vsnd"
+    "sounds/zombie/hit/hit_punch_01.vsnd",
+    "sounds/zombie/hit/hit_punch_02.vsnd",
+    "sounds/zombie/hit/hit_punch_03.vsnd",
+    "sounds/zombie/hit/hit_punch_04.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,

@@ -10,7 +10,7 @@ public class VehicleSeat : BaseSeat
 		//	Owner.AnimationHelper.AimBodyWeight = 0.2f;
 		//Log.Info( Transform.Rotation.Forward );
 		Owner.AnimationHelper.WithLook( Transform.Rotation.Forward, 1f, 0.75f, 0.5f );
-		Owner.cameraMovement.Distance = 200;
+		Owner.Distance = 200;
 	}
 
 
@@ -18,6 +18,6 @@ public class VehicleSeat : BaseSeat
 	{
 		base.OnExit();
 		Owner.GameObject.Transform.Position = ExitPoint.Transform.Position;
-		Owner.cameraMovement.Distance = 0;
+		Owner.Distance = 0;
 	}
 }

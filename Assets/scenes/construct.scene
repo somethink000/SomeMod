@@ -5,188 +5,165 @@
       "__guid": "c1695ec7-e53a-4d5e-af92-d5a920f18dc7",
       "Flags": 0,
       "Name": "car",
-      "Position": "11955.11,11962.32,-8801.529",
+      "Position": "16576,11104,1230.68",
       "Rotation": "0,0,-0.258819,0.9659257",
       "Tags": "localcar",
+      "Enabled": true,
       "__Prefab": "prefabs/items/car.prefab",
       "__PrefabVariables": {}
     },
     {
-      "__guid": "90eec9cd-4cbd-4768-869a-bc00c70ebf95",
+      "__guid": "759629fa-ac1e-41d8-be90-ac659883fc3e",
       "Flags": 0,
-      "Name": "MapObjects",
-      "Position": "12483.39,13093.68,-9551.848",
+      "Name": "Logic",
+      "Position": "7551.998,9008.003,12670.68",
       "Enabled": true,
       "Children": [
         {
-          "__guid": "759629fa-ac1e-41d8-be90-ac659883fc3e",
+          "__guid": "e0fbc366-1843-4b91-9a36-fecf36e72425",
           "Flags": 0,
-          "Name": "Logic",
-          "Position": "658.4167,-701.929,1375.696",
+          "Name": "Gradient Fog",
+          "Position": "0,0,0",
+          "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
           "Enabled": true,
-          "Children": [
+          "Components": [
             {
-              "__guid": "e0fbc366-1843-4b91-9a36-fecf36e72425",
-              "Flags": 0,
-              "Name": "Gradient Fog",
-              "Position": "0,0,0",
-              "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.GradientFog",
-                  "__guid": "21913479-ab86-4fd1-9a59-104fd7896971",
-                  "Color": "0.7814,0.7814,1,0.17",
-                  "EndDistance": 30000,
-                  "FalloffExponent": 1,
-                  "Height": 120000,
-                  "StartDistance": 5004,
-                  "VerticalFalloffExponent": 2
-                }
-              ]
-            },
-            {
-              "__guid": "44599370-eab6-4d58-8834-575447b160ae",
-              "Flags": 0,
-              "Name": "Sound",
-              "Position": "0,0,0",
-              "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.SoundscapeTrigger",
-                  "__guid": "76319fe7-6e09-481e-8b2e-c190988bbdd0",
-                  "BoxSize": "50,50,50",
-                  "Radius": 5000,
-                  "Soundscape": "sounds/ambient/construct_outside.sndscape",
-                  "StayActiveOnExit": true,
-                  "Type": "Sphere"
-                }
-              ]
-            },
-            {
-              "__guid": "4f7db652-3fe6-4a19-b76b-67dd14df30be",
-              "Flags": 0,
-              "Name": "Sun",
-              "Position": "0,0,0",
-              "Rotation": "-0.388815,-0.214811,0.6635731,-0.6019551",
-              "Tags": "light_directional,light",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.DirectionalLight",
-                  "__guid": "86920de1-dec8-4acf-bd34-51aed89ee1cd",
-                  "FogMode": "Enabled",
-                  "FogStrength": 1,
-                  "LightColor": "1,0.81116,0.59535,1",
-                  "Shadows": true,
-                  "SkyColor": "0.29767,0.29767,0.29767,0"
-                }
-              ]
-            },
-            {
-              "__guid": "7b507888-48d8-48ba-af9f-bab745768d22",
-              "Flags": 0,
-              "Name": "Envmap",
-              "Position": "0,0,0",
-              "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.EnvmapProbe",
-                  "__guid": "9988890c-542b-4803-9d43-369c393bf7a5",
-                  "Texture": "textures/cubemaps/default2.vtex",
-                  "Bounds": {
-                    "Mins": "-16384,-16384,-16384",
-                    "Maxs": "16384,16384,16384"
-                  },
-                  "DelayBetweenUpdates": 0.1,
-                  "Feathering": 0.02,
-                  "FrameInterval": 5,
-                  "MaxDistance": 16384,
-                  "Projection": "Sphere",
-                  "RenderDynamically": true,
-                  "TintColor": "1,1,1,1",
-                  "UpdateStrategy": "OnEnabled",
-                  "ZFar": 16384,
-                  "ZNear": 16
-                }
-              ]
-            },
-            {
-              "__guid": "8b3cd142-6acb-47f1-b4e0-6b00f75f7355",
-              "Flags": 0,
-              "Name": "WeaponRegistry",
-              "Position": "0,0,0",
-              "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
-              "Enabled": true,
-              "NetworkMode": 1,
-              "Components": [
-                {
-                  "__type": "GeneralGame.WeaponRegistry",
-                  "__guid": "f328f8ca-7b21-4aa6-9bdd-e7bee1635e5e",
-                  "WeaponPrefabs": []
-                },
-                {
-                  "__type": "GeneralGame.WeaponSettings",
-                  "__guid": "48a4c454-4b38-44d3-9b1b-c1750fa5441f",
-                  "AutoReload": true,
-                  "Customization": true
-                },
-                {
-                  "__type": "GeneralGame.PrefabInitializer",
-                  "__guid": "d6defc57-ba33-4862-a195-c8483ca27ec4"
-                }
-              ]
-            },
-            {
-              "__guid": "c988658d-a998-405a-b169-e1711fe59578",
-              "Flags": 0,
-              "Name": "ExampleNetworkManager",
-              "Position": "0,0,0",
-              "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "GeneralGame.DemoNetworkManager",
-                  "__guid": "e2d36775-e195-461c-9fa6-154ca128be43",
-                  "PlayerPrefab": {
-                    "_type": "gameobject",
-                    "prefab": "prefabs/player.prefab"
-                  }
-                }
-              ]
-            },
-            {
-              "__guid": "d74f755b-b470-462a-bcf2-988314f90bfa",
-              "Flags": 0,
-              "Name": "2D Skybox",
-              "Position": "0,0,0",
-              "Tags": "skybox",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.SkyBox2D",
-                  "__guid": "440f3719-3ce8-4e08-82e4-9dfbb5afa586",
-                  "SkyMaterial": "materials/sky/atmosphere_sky.vmat",
-                  "Tint": "1,1,1,1"
-                }
-              ]
+              "__type": "Sandbox.GradientFog",
+              "__guid": "21913479-ab86-4fd1-9a59-104fd7896971",
+              "Color": "0.7814,0.7814,1,0.17",
+              "EndDistance": 30000,
+              "FalloffExponent": 1,
+              "Height": 120000,
+              "StartDistance": 5004,
+              "VerticalFalloffExponent": 2
             }
           ]
         },
         {
-          "__guid": "6035dcd5-3c6c-4aa2-b619-19bda4bca5d3",
+          "__guid": "44599370-eab6-4d58-8834-575447b160ae",
           "Flags": 0,
-          "Name": "Spawn",
-          "Position": "-931.3896,-1637.68,735.8496",
-          "Rotation": "0,0,0.965926,-0.2588189",
+          "Name": "Sound",
+          "Position": "0,0,0",
+          "Rotation": "0.3210197,-0.3851179,0.5930297,-0.6300368",
           "Enabled": true,
           "Components": [
             {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "6cb486f3-8811-42f9-adfb-eb5af657c944",
-              "Color": "0.8902,0.31765,0.05098,1"
+              "__type": "Sandbox.SoundscapeTrigger",
+              "__guid": "76319fe7-6e09-481e-8b2e-c190988bbdd0",
+              "BoxSize": "50,50,50",
+              "Radius": 5000,
+              "Soundscape": "sounds/ambient/construct_outside.sndscape",
+              "StayActiveOnExit": true,
+              "Type": "Sphere"
+            }
+          ]
+        },
+        {
+          "__guid": "4f7db652-3fe6-4a19-b76b-67dd14df30be",
+          "Flags": 0,
+          "Name": "Sun",
+          "Position": "0,0,0",
+          "Rotation": "-0.09621769,-0.6003372,0.7935398,-0.02514023",
+          "Tags": "light_directional,light",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "86920de1-dec8-4acf-bd34-51aed89ee1cd",
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "1,0.80465,0.5814,1",
+              "Shadows": true,
+              "SkyColor": "1,1,1,0.3"
+            }
+          ]
+        },
+        {
+          "__guid": "7b507888-48d8-48ba-af9f-bab745768d22",
+          "Flags": 0,
+          "Name": "Envmap",
+          "Position": "0,0,0",
+          "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.EnvmapProbe",
+              "__guid": "9988890c-542b-4803-9d43-369c393bf7a5",
+              "Texture": "textures/cubemaps/default2.vtex",
+              "Bounds": {
+                "Mins": "-16384,-16384,-16384",
+                "Maxs": "16384,16384,16384"
+              },
+              "DelayBetweenUpdates": 0.1,
+              "Feathering": 0.02,
+              "FrameInterval": 5,
+              "MaxDistance": 16384,
+              "Projection": "Sphere",
+              "RenderDynamically": true,
+              "TintColor": "1,1,1,1",
+              "UpdateStrategy": "OnEnabled",
+              "ZFar": 16384,
+              "ZNear": 16
+            }
+          ]
+        },
+        {
+          "__guid": "8b3cd142-6acb-47f1-b4e0-6b00f75f7355",
+          "Flags": 0,
+          "Name": "WeaponRegistry",
+          "Position": "0,0,0",
+          "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
+          "Enabled": true,
+          "NetworkMode": 1,
+          "Components": [
+            {
+              "__type": "GeneralGame.WeaponRegistry",
+              "__guid": "f328f8ca-7b21-4aa6-9bdd-e7bee1635e5e",
+              "WeaponPrefabs": []
+            },
+            {
+              "__type": "GeneralGame.WeaponSettings",
+              "__guid": "48a4c454-4b38-44d3-9b1b-c1750fa5441f",
+              "AutoReload": true,
+              "Customization": true
+            },
+            {
+              "__type": "GeneralGame.PrefabInitializer",
+              "__guid": "d6defc57-ba33-4862-a195-c8483ca27ec4"
+            }
+          ]
+        },
+        {
+          "__guid": "c988658d-a998-405a-b169-e1711fe59578",
+          "Flags": 0,
+          "Name": "ExampleNetworkManager",
+          "Position": "0,0,0",
+          "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "GeneralGame.DemoNetworkManager",
+              "__guid": "e2d36775-e195-461c-9fa6-154ca128be43",
+              "PlayerPrefab": {
+                "_type": "gameobject",
+                "prefab": "prefabs/player.prefab"
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "d74f755b-b470-462a-bcf2-988314f90bfa",
+          "Flags": 0,
+          "Name": "2D Skybox",
+          "Position": "0,0,0",
+          "Tags": "skybox",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkyBox2D",
+              "__guid": "440f3719-3ce8-4e08-82e4-9dfbb5afa586",
+              "SkyMaterial": "materials/sky/atmosphere_sky.vmat",
+              "Tint": "0.9907,0.9907,0.9907,1"
             }
           ]
         }
@@ -196,7 +173,7 @@
       "__guid": "40e2041b-759b-4cb2-b863-3759e3f3c2e3",
       "Flags": 0,
       "Name": "Object",
-      "Position": "11861.82,12295.75,-8768",
+      "Position": "16624,11264,1190.6",
       "Enabled": true,
       "Components": [
         {
@@ -246,15 +223,49 @@
       ]
     },
     {
-      "__guid": "f75095c1-0190-4884-aa01-de199ab7ac98",
+      "__guid": "6035dcd5-3c6c-4aa2-b619-19bda4bca5d3",
+      "Flags": 0,
+      "Name": "Spawn",
+      "Position": "16768,11296,1182.68",
+      "Rotation": "0,0,0.965926,-0.2588189",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "6cb486f3-8811-42f9-adfb-eb5af657c944",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "bada6e77-0ae1-4ffd-bf93-652bba20a9fd",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "-0.001953125,0.002929688,11518.68",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MapInstance",
+          "__guid": "77e7528d-b054-4c23-a31e-4ff1cb7933b0",
+          "__version": 1,
+          "EnableCollision": true,
+          "MapName": "maps/construct_forest (1).vmap",
+          "NoOrigin": false,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "1184a521-46d9-47a7-8595-495425a585c4",
       "Flags": 0,
       "Name": "Box",
-      "Position": "11680,11984,-8877.27",
+      "Position": "16937.17,11294.78,1153.319",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.MeshComponent",
-          "__guid": "59b7230b-6788-46a3-8df6-d6cfab594b3c",
+          "__guid": "f0dc6852-b505-4489-805d-6e93a5c51ad5",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
           "HideInGame": false,
@@ -262,40 +273,40 @@
           "Mesh": {
             "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
             "Positions": [
-              "-4847.741,-9306.76,24",
-              "4847.741,-9306.76,24",
-              "4847.741,9306.76,24",
-              "-4847.741,9306.76,24",
-              "-4847.741,9306.76,-24",
-              "4847.741,9306.76,-24",
-              "4847.741,-9306.76,-24",
-              "-4847.741,-9306.76,-24"
+              "-630.832,-849.2188,24",
+              "630.832,-849.2188,24",
+              "630.832,849.2188,24",
+              "-630.832,849.2188,24",
+              "-630.832,849.2188,-24",
+              "630.832,849.2188,-24",
+              "630.832,-849.2188,-24",
+              "-630.832,-849.2188,-24"
             ],
             "TextureCoord": [
-              "2.1875,1.75",
-              "-2.1875,-0.1875",
-              "2.1875,-1.75",
-              "-1.75,-0.1875",
-              "-2.1875,-1.75",
-              "-2.1875,-0.1875",
-              "-2.1875,1.75",
-              "-1.75,-0.1875",
-              "2.1875,-1.75",
-              "2.1875,0.1875",
-              "2.1875,1.75",
-              "1.75,0.1875",
-              "-2.1875,1.75",
-              "2.1875,0.1875",
-              "-2.1875,-1.75",
-              "1.75,0.1875",
-              "1.75,-0.1875",
-              "-2.1875,0.1875",
-              "-1.75,0.1875",
-              "2.1875,-0.1875",
-              "-1.75,0.1875",
-              "2.1875,-0.1875",
-              "1.75,-0.1875",
-              "-2.1875,0.1875"
+              "4.928375,6.634521",
+              "-4.928375,-0.1875",
+              "4.928375,-6.634521",
+              "-6.634521,-0.1875",
+              "-4.928375,-6.634521",
+              "-4.928375,-0.1875",
+              "-4.928375,6.634521",
+              "-6.634521,-0.1875",
+              "4.928375,-6.634521",
+              "4.928375,0.1875",
+              "4.928375,6.634521",
+              "6.634521,0.1875",
+              "-4.928375,6.634521",
+              "4.928375,0.1875",
+              "-4.928375,-6.634521",
+              "6.634521,0.1875",
+              "6.634521,-0.1875",
+              "-4.928375,0.1875",
+              "-6.634521,0.1875",
+              "4.928375,-0.1875",
+              "-6.634521,0.1875",
+              "4.928375,-0.1875",
+              "6.634521,-0.1875",
+              "-4.928375,0.1875"
             ],
             "TextureUAxis": [
               "1,0,0",
@@ -314,20 +325,20 @@
               "-0,0,-1"
             ],
             "TextureScale": [
-              "4.328341,10.38701",
-              "4.328341,10.38701",
-              "10.38701,0.25",
-              "10.38701,0.25",
-              "4.328341,0.25",
-              "4.328341,0.25"
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
             ],
             "TextureOffset": [
-              "373.5062,129.7489",
-              "373.5062,129.749",
-              "129.7488,330.9258",
-              "382.2512,330.9258",
-              "138.4937,330.9219",
-              "373.5063,330.9219"
+              "347.3284,123.1208",
+              "347.3284,123.1213",
+              "123.1174,5.276367",
+              "388.8826,5.276367",
+              "164.6721,5.275879",
+              "347.3279,5.275879"
             ],
             "MaterialIndex": [
               0,
@@ -371,24 +382,6 @@
           "Static": true
         }
       ]
-    },
-    {
-      "__guid": "bada6e77-0ae1-4ffd-bf93-652bba20a9fd",
-      "Flags": 0,
-      "Name": "Object",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.MapInstance",
-          "__guid": "77e7528d-b054-4c23-a31e-4ff1cb7933b0",
-          "__version": 1,
-          "EnableCollision": true,
-          "MapName": "maps/construct_forest (1).vmap",
-          "NoOrigin": false,
-          "UseMapFromLaunch": false
-        }
-      ],
-      "Children": []
     }
   ],
   "SceneProperties": {
