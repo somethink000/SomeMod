@@ -1,0 +1,687 @@
+{
+  "__guid": "0e3e9aa5-96e4-4c92-8dda-dd910cd4aa96",
+  "GameObjects": [
+    {
+      "__guid": "759629fa-ac1e-41d8-be90-ac659883fc3e",
+      "Flags": 0,
+      "Name": "Logic",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "e0fbc366-1843-4b91-9a36-fecf36e72425",
+          "Flags": 0,
+          "Name": "Gradient Fog",
+          "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.GradientFog",
+              "__guid": "21913479-ab86-4fd1-9a59-104fd7896971",
+              "Color": "0.7814,0.7814,1,0.17",
+              "EndDistance": 30000,
+              "FalloffExponent": 1,
+              "Height": 120000,
+              "StartDistance": 5004,
+              "VerticalFalloffExponent": 2
+            }
+          ]
+        },
+        {
+          "__guid": "44599370-eab6-4d58-8834-575447b160ae",
+          "Flags": 0,
+          "Name": "Sound",
+          "Rotation": "0.3210197,-0.3851179,0.5930297,-0.6300368",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SoundscapeTrigger",
+              "__guid": "76319fe7-6e09-481e-8b2e-c190988bbdd0",
+              "BoxSize": "50,50,50",
+              "Radius": 5000,
+              "Soundscape": "sounds/ambient/construct_outside.sndscape",
+              "StayActiveOnExit": true,
+              "Type": "Sphere"
+            }
+          ]
+        },
+        {
+          "__guid": "4f7db652-3fe6-4a19-b76b-67dd14df30be",
+          "Flags": 0,
+          "Name": "Sun",
+          "Rotation": "-0.09621769,-0.6003372,0.7935398,-0.02514023",
+          "Tags": "light_directional,light",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "86920de1-dec8-4acf-bd34-51aed89ee1cd",
+              "__enabled": false,
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.7907,0.68429,0.56268,1",
+              "Shadows": true,
+              "SkyColor": "1,1,1,0.3"
+            }
+          ]
+        },
+        {
+          "__guid": "7b507888-48d8-48ba-af9f-bab745768d22",
+          "Flags": 0,
+          "Name": "Envmap",
+          "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.EnvmapProbe",
+              "__guid": "9988890c-542b-4803-9d43-369c393bf7a5",
+              "Texture": "textures/cubemaps/default2.vtex",
+              "Bounds": {
+                "Mins": "-16384,-16384,-16384",
+                "Maxs": "16384,16384,16384"
+              },
+              "DelayBetweenUpdates": 0.1,
+              "Feathering": 0.02,
+              "FrameInterval": 5,
+              "MaxDistance": 16384,
+              "Projection": "Sphere",
+              "RenderDynamically": true,
+              "TintColor": "1,1,1,1",
+              "UpdateStrategy": "OnEnabled",
+              "ZFar": 16384,
+              "ZNear": 16
+            }
+          ]
+        },
+        {
+          "__guid": "8b3cd142-6acb-47f1-b4e0-6b00f75f7355",
+          "Flags": 0,
+          "Name": "WeaponRegistry",
+          "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
+          "Enabled": true,
+          "NetworkMode": 1,
+          "Components": [
+            {
+              "__type": "GeneralGame.WeaponRegistry",
+              "__guid": "f328f8ca-7b21-4aa6-9bdd-e7bee1635e5e",
+              "WeaponPrefabs": []
+            },
+            {
+              "__type": "GeneralGame.WeaponSettings",
+              "__guid": "48a4c454-4b38-44d3-9b1b-c1750fa5441f",
+              "AutoReload": true,
+              "Customization": true
+            },
+            {
+              "__type": "GeneralGame.PrefabInitializer",
+              "__guid": "d6defc57-ba33-4862-a195-c8483ca27ec4"
+            }
+          ]
+        },
+        {
+          "__guid": "c988658d-a998-405a-b169-e1711fe59578",
+          "Flags": 0,
+          "Name": "ExampleNetworkManager",
+          "Rotation": "-0.03700712,-0.03700712,0.7061377,-0.7061377",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "GeneralGame.DemoNetworkManager",
+              "__guid": "e2d36775-e195-461c-9fa6-154ca128be43",
+              "PlayerPrefab": {
+                "_type": "gameobject",
+                "prefab": "prefabs/player.prefab"
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "d74f755b-b470-462a-bcf2-988314f90bfa",
+          "Flags": 0,
+          "Name": "2D Skybox",
+          "Tags": "skybox",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkyBox2D",
+              "__guid": "440f3719-3ce8-4e08-82e4-9dfbb5afa586",
+              "SkyMaterial": "materials/sky/atmosphere_sky.vmat",
+              "Tint": "0.9907,0.9907,0.9907,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "40e2041b-759b-4cb2-b863-3759e3f3c2e3",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "-138,-47,8",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "a0b3e506-1d30-4fd2-bcd9-f11fb67335a3",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/empty.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "5081f618-ddfd-42d4-8a8a-49049c41a317",
+          "IsTrigger": false,
+          "Model": "models/empty.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "GeneralGame.LootItem",
+          "__guid": "af534cbe-7e1a-4973-a2e9-a129ad0e9bcb",
+          "StartItems": [
+            "prefabs/weapons/colt.prefab",
+            "prefabs/weapons/ak400.prefab",
+            "prefabs/weapons/geagelol.prefab",
+            "prefabs/weapons/remington870.prefab",
+            "prefabs/items/ammo_rifle.prefab",
+            "prefabs/items/ammo_rifle.prefab",
+            "prefabs/items/ammo_rifle.prefab",
+            "prefabs/items/ammo_shotgun.prefab",
+            "prefabs/items/ammo_shotgun.prefab",
+            "prefabs/items/ammo_pistol.prefab",
+            "prefabs/items/ammo_pistol.prefab"
+          ]
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "d3015133-889e-49d5-94ca-510a7562db47",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "6035dcd5-3c6c-4aa2-b619-19bda4bca5d3",
+      "Flags": 0,
+      "Name": "Spawn",
+      "Position": "-215.7722,-123.639,0.0000100513",
+      "Rotation": "0,0,-0.3826832,-0.9238799",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "6cb486f3-8811-42f9-adfb-eb5af657c944",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "aa5203dc-8cce-4adc-a896-0278204d6df5",
+      "Flags": 0,
+      "Name": "Map",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "7583434c-e633-4a2f-833d-b71189e8c04c",
+          "Flags": 0,
+          "Name": "niva2329",
+          "Position": "-82.00005,67.99994,48",
+          "Rotation": "0,0,-0.0000003894144,-1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "9924167f-91a0-4427-8e03-caf122b42e8f",
+              "BodyGroups": 18446744073709551615,
+              "Model": "cars/niva/niva2329.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "9c5070d9-bc61-422d-859b-08825273255c",
+              "IsTrigger": false,
+              "Model": "cars/niva/niva2329.vmdl",
+              "Static": false
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "9fc717f2-c424-4efd-8076-002ce6f35f30",
+              "Flags": 0,
+              "Name": "ofroad_wheels",
+              "Position": "-49.00006,32,-32",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "69e641da-d90d-427d-a0f9-a0633b0f6196",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "cars/niva/ofroad_wheels.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "abb69c04-0652-48f8-9c80-3e4d933822d8",
+              "Flags": 0,
+              "Name": "ofroad_wheels",
+              "Position": "68.99992,31.99999,-32",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "ec9764e7-6175-41bc-bb4d-8a4247e410bb",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "cars/niva/ofroad_wheels.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "2ab74282-763b-43ae-9c67-4df804d1785c",
+              "Flags": 0,
+              "Name": "ofroad_wheels",
+              "Position": "-49.00008,-32,-32",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "04064fd8-f363-4392-a790-49c4fe38cd36",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "cars/niva/ofroad_wheels.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "5970d990-4e66-4e4a-aad6-ef049f20a327",
+              "Flags": 0,
+              "Name": "ofroad_wheels",
+              "Position": "68.99992,-32.00001,-32",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "d126644b-a562-4a7e-907f-b185dfcafb92",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "cars/niva/ofroad_wheels.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "4aab33a7-0cc2-407f-a8cd-f69421830cd4",
+          "Flags": 0,
+          "Name": "Box",
+          "Position": "-6.243896,-55.99996,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.MeshComponent",
+              "__guid": "ac1ba3fd-9813-4890-b61b-644cd18d61f3",
+              "Collision": "Mesh",
+              "Color": "1,1,1,1",
+              "HideInGame": false,
+              "IsTrigger": false,
+              "Mesh": {
+                "Topology": "H4sIAAAAAAAACs2UyQ7CMAxES0PpkbJ\u002BQ7mBxHIrEpSd//8dmCdNpdyAA9BIozaL7Xgy9jRJkrtQCGuhFiphLjw\u002BHEvZnISdcBGOwlnoGKkQD\u002BIFr/Pter05W/ufvUzoeT/12SrymUd\u002Bg8/Ofe7TPNo2RsphIhyc20AYm2t4\u002Bff92j6G4mhmXfat9VJYWD/fjl841tJ6DNZm9mZ83nrlesK\u002BsK/S\u002BaCHjTURotrKf6R/\u002BN2aY/JJXZvchfp9ZY\u002B298LN\u002BeCPt8In9ugf7dNTml4S9wbypxbggHzhAa6u5hh7bInDnC99iZj4YE5s1tjHHls45z70kqYvwitvx/473OD3CeE81fVkBQAA",
+                "Positions": [
+                  "-585.7561,-264.0001,0",
+                  "262.2439,-264,0",
+                  "262.2438,295.9999,0",
+                  "-585.7561,295.9998,0",
+                  "262.2439,216,192",
+                  "262.2439,-216,192",
+                  "-409.7561,215.9999,192",
+                  "262.2439,216,192",
+                  "262.2439,-216,192",
+                  "-409.7561,-216.0001,192",
+                  "-409.7561,-216.0001,192",
+                  "-409.7561,215.9999,192",
+                  "262.2439,216,192",
+                  "-409.7561,215.9999,192",
+                  "-409.7561,215.9999,192",
+                  "262.2439,216,192",
+                  "-585.7561,295.9998,240",
+                  "-585.7561,-264.0001,240",
+                  "262.2438,295.9999,240",
+                  "262.2439,-264,240",
+                  "-585.7561,5.999886,368",
+                  "262.2438,5.999992,368"
+                ],
+                "TextureCoord": [
+                  "2.000001,3.444445",
+                  "5.625,0",
+                  "2.000001,-1.740744",
+                  "3.5,0",
+                  "-4.467262,-1.740743",
+                  "2,0",
+                  "-4.467263,3.444446",
+                  "1.875,0",
+                  "-1.25,-1.5",
+                  "0,0",
+                  "-1.25,0",
+                  "0,0",
+                  "2.125,-1.5",
+                  "0,0",
+                  "-2.25,-1.5",
+                  "0,0",
+                  "-2.25,0",
+                  "0,0",
+                  "3,-1.5",
+                  "0,0",
+                  "-1,-1.875",
+                  "-4.625,2.500001",
+                  "-1,0",
+                  "0,0",
+                  "4.25,-1.5",
+                  "0,0",
+                  "-2.125,-1.5",
+                  "0,0",
+                  "-2.125,0",
+                  "0,0",
+                  "1.25,-1.5",
+                  "0,0",
+                  "2,-1.25",
+                  "0,0",
+                  "2,2.125",
+                  "0,0",
+                  "-3.25,-1.25",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "2,-1.875",
+                  "-4.625,-1.875",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "1.875,-1.875",
+                  "-4.625,0",
+                  "0,0",
+                  "0,0",
+                  "-0.3906245,-2.875",
+                  "-4.624999,-1.874999",
+                  "5.625,-1.875",
+                  "-2.5,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "2,-1.875",
+                  "-0.8749996,0",
+                  "0,0",
+                  "0,0",
+                  "2,0.3906249",
+                  "-0.8749996,-1.875",
+                  "3.5,-1.875",
+                  "-1,0",
+                  "-2.5,-1.875",
+                  "-4.625,0.3906258",
+                  "2,2.5",
+                  "1.390625,-2.875",
+                  "1.999999,0.3906248",
+                  "-4.624999,0.3906257"
+                ],
+                "TextureUAxis": [
+                  "1,0.0000001634871,0",
+                  "0.0000001634871,-1,0",
+                  "1,0.0000001439509,0",
+                  "-1,-0.0000001079631,0",
+                  "0,1,0",
+                  "1,0.0000000198117,-0.00000004179031",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "1,0.00000002347132,0.00000005317719"
+                ],
+                "TextureVAxis": [
+                  "-0.00000004385988,-1,-0",
+                  "0,0,-1",
+                  "-0,0,-1",
+                  "0,0,-1",
+                  "0,0,-1",
+                  "-0.00000006175221,-0.9036015,-0.428374",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "0,0,0",
+                  "-0.0000000256559,-0.9148492,0.4037957"
+                ],
+                "TextureScale": [
+                  "0.2560975,0.2109373",
+                  "0.25,0.25",
+                  "0.25,0.25",
+                  "0.25,0.25",
+                  "0.2499999,0.25",
+                  "0.25,0.2766706",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0.25,0.273269"
+                ],
+                "TextureOffset": [
+                  "24.38123,246.5175",
+                  "511.9999,0",
+                  "0.0001220703,0",
+                  "511.9998,0",
+                  "0.0006103516,0",
+                  "0,94.48193",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0,0",
+                  "0.0003051758,0.8353271"
+                ],
+                "MaterialIndex": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "EdgeFlags": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "Materials": [
+                  "materials/dev/reflectivity_30.vmat"
+                ]
+              },
+              "SmoothingAngle": 40,
+              "Static": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "1aa5012e-9988-4167-b341-76b3b00ad2d6",
+      "Flags": 0,
+      "Name": "Point Light",
+      "Position": "0,-36,264",
+      "Tags": "light_point,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.PointLight",
+          "__guid": "e1bb871f-3749-4e95-85b6-5f588e38aad0",
+          "Attenuation": 0.5,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "1,0.95814,0.74884,1",
+          "Radius": 1000,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "4faabea8-647b-4922-a60f-251a0cb7fa88",
+      "Flags": 0,
+      "Name": "Point Light (1)",
+      "Position": "-384,-36,264",
+      "Tags": "light_point,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.PointLight",
+          "__guid": "2ec95b9d-9005-4fec-84df-a7cc6d42e1b9",
+          "Attenuation": 0.5,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "1,0.95814,0.74884,1",
+          "Radius": 1000,
+          "Shadows": true
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": true,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": false,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "minimal",
+  "Description": "",
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

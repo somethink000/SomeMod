@@ -13,7 +13,7 @@ public partial class Inventory
 
 	public void DeployCurrent()
 	{
-		if ( toolgunActive ) OffToolgun();
+		
 		var item = _equippedItems[(int)CurrentWeaponSlot];
 
 		if (item == null) return;
@@ -30,22 +30,6 @@ public partial class Inventory
 		}
 
 	}
-	
-	public void ActivateToolgun()
-	{
-		if ( IsProxy ) return;
-		if ( toolgunActive ) return;
-		Deployed?.Holster();
-
-		Player.toolgun.Deploy( Player );
-		toolgunActive = true;
-	}
-	public void OffToolgun()
-	{
-		Player.toolgun.Holster();
-		toolgunActive = false;
-	}
-
 
 	public void UpdateWeaponSlot()
 	{
@@ -53,7 +37,6 @@ public partial class Inventory
 		//if ( activeItem is null || !activeItem.CanCarryStop() ) return;
 		if ( Input.Pressed( InputButtonHelper.Slot1 ) ) Next();
 		else if ( Input.Pressed( InputButtonHelper.Slot2 ) ) Next();
-		else if ( Input.Pressed( InputButtonHelper.Slot3 ) ) ActivateToolgun();
 		else if ( Input.MouseWheel.y > 0 ) Next();
 		else if ( Input.MouseWheel.y < 0 ) Next();
 	}

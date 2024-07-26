@@ -17,9 +17,6 @@
 			case FullScreenPanel.Inventory:
 				<Inventory/>
 				break;
-            case FullScreenPanel.SpawnMenu:
-                <SpawnMenu/>
-                break;
             case FullScreenPanel.Chat:
 				break;
 			default:
@@ -37,7 +34,6 @@
         InGameHud,
         Inventory,
         PauseMenu,
-        SpawnMenu,
         Chat,
     }
 
@@ -74,16 +70,7 @@
 			Toggle( FullScreenPanel.Inventory );
             
         }
-        if (Input.Down(InputButtonHelper.SpawnMenu) && ActivePanel != FullScreenPanel.SpawnMenu)
-        {
-             
-            Toggle(FullScreenPanel.SpawnMenu);
-
-        }
-        else if (!Input.Down(InputButtonHelper.SpawnMenu) && ActivePanel == FullScreenPanel.SpawnMenu)
-        {
-            Toggle(FullScreenPanel.SpawnMenu);
-        }
+     
         
     }
 

@@ -60,7 +60,7 @@
         "AttackCooldown": 1,
         "AttackRange": 80,
         "deathSounds": "sounds/zombie/death/death_rnd.sound",
-        "DetectRange": 448,
+        "DetectRange": 1024,
         "detectSounds": "sounds/zombie/alert/alert_rnd.sound",
         "EnemyTags": "player",
         "FaceTowardsVelocity": true,
@@ -89,7 +89,7 @@
         "ScaleStats": true,
         "shotedSounds": "sounds/zombie/shoted/shoted_rnd.sound",
         "Static": false,
-        "VisionRange": 1312,
+        "VisionRange": 784,
         "WalkingType": "Dumb",
         "WalkSpeed": 90,
         "Weight": "Middle"
