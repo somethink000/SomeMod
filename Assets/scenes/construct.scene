@@ -98,6 +98,7 @@
               "Feathering": 0.02,
               "FrameInterval": 5,
               "MaxDistance": 16384,
+              "MultiBounce": false,
               "Projection": "Sphere",
               "RenderDynamically": true,
               "TintColor": "1,1,1,1",
@@ -180,7 +181,13 @@
           "__type": "Sandbox.ModelRenderer",
           "__guid": "a0b3e506-1d30-4fd2-bcd9-f11fb67335a3",
           "BodyGroups": 18446744073709551615,
-          "Model": "models/empty.vmdl",
+          "Model": "models/dev/error.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
@@ -188,7 +195,7 @@
           "__type": "Sandbox.ModelCollider",
           "__guid": "5081f618-ddfd-42d4-8a8a-49049c41a317",
           "IsTrigger": false,
-          "Model": "models/empty.vmdl",
+          "Model": "models/dev/error.vmdl",
           "Static": false
         },
         {
@@ -215,8 +222,10 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassCenterOverride": "0,0,0",
           "MassOverride": 0,
           "MotionEnabled": true,
+          "OverrideMassCenter": false,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
@@ -251,10 +260,11 @@
           "EnableCollision": true,
           "MapName": "maps/construct_forest (1).vmap",
           "NoOrigin": false,
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
           "UseMapFromLaunch": false
         }
-      ],
-      "Children": []
+      ]
     },
     {
       "__guid": "1184a521-46d9-47a7-8595-495425a585c4",

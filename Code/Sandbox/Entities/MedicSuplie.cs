@@ -11,7 +11,7 @@ public class MedicSuplie : Component
 	{
 		if ( CurPockets <= 3 )
 		{
-			ply.Health = ply.MaxHealth;
+			/*ply.Health = ply.MaxHealth;*/
 
 			CurPockets += 1;
 			Model.SetBodyGroup( "pockets", CurPockets );

@@ -1,0 +1,15 @@
+{
+  "Title": "testaddon",
+  "Type": "library",
+  "Org": "evilinc",
+  "Ident": "testaddon",
+  "Schema": 1,
+  "IncludeSourceFiles": true,
+  "Resources": null,
+  "PackageReferences": [],
+  "EditorReferences": null,
+  "IsWhitelistDisabled": false,
+  "Metadata": {
+    "CsProjName": ""
+  }
+}

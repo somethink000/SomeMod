@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r689cFQ/OUcjbpiV5Uq4rmxOXas3m4T6fPQuky1CPGJD7IfQ5A5MXsYStHh4XeWXt7+5Ldaz8S908wZpLgMp+w==",
+  "dgSpecHash": "QQ+C6sLo252TcuaZ4+usDFVWwqVXokBqrxtJFjSoVPBXfYm0g2i9B6vjB77t3LWVr2bJ7zIzprN5NARmg7LkGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\susan\\Documents\\GitHub\\SomeMod\\Editor\\real_fps_base.editor.csproj",
+  "projectFilePath": "C:\\Users\\susan\\Documents\\GitHub\\SomeMod\\Libraries\\evilinc.testaddon\\Editor\\testaddon.editor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\susan\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
     "C:\\Users\\susan\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",

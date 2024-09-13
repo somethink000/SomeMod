@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("real_fps_base.editor")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("testaddon.unittest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1744705461ef3352a70e6ef4d2eee2d34605df2a")]
-[assembly: System.Reflection.AssemblyProductAttribute("real_fps_base.editor")]
-[assembly: System.Reflection.AssemblyTitleAttribute("real_fps_base.editor")]
+[assembly: System.Reflection.AssemblyProductAttribute("testaddon.unittest")]
+[assembly: System.Reflection.AssemblyTitleAttribute("testaddon.unittest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.

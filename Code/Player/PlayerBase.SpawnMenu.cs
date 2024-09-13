@@ -1,4 +1,5 @@
 ﻿
+using GeneralGame.UI;
 using Sandbox;
 
 namespace GeneralGame;
@@ -56,10 +57,10 @@ public partial class PlayerBase
 
 	public async void SpawnCloudModelAsync( string ident, Vector3 pos )
 	{
-
+		Log.Info( FileSystem.Mounted.FindFile( "/", "*", recursive: true ).ToArray().Length );
 		var package = await Package.FetchAsync( ident, false );
 		await package.MountAsync();
-		Log.Info( package.Thumb );
+		
 
 
 		var mins = package.GetMeta( "RenderMins", Vector3.Zero );
@@ -71,7 +72,7 @@ public partial class PlayerBase
 		physicsObj.NetworkMode = NetworkMode.Object;
 		physicsObj.NetworkSpawn();
 
-
+		
 		var model = Model.Load( package.GetMeta( "PrimaryAsset", "" ) );
 		var modelRenderer = physicsObj.Components.Get<ModelRenderer>();
 		if ( modelRenderer is not null )
@@ -84,6 +85,7 @@ public partial class PlayerBase
 			rb.Velocity = Vector3.Zero;
 
 		Undo.AddEntity( this, physicsObj, physicsObj.Name );
+		Log.Info( FileSystem.Mounted.FindFile( "/", "*", recursive: true ).ToArray().Length );
 	}
 
 

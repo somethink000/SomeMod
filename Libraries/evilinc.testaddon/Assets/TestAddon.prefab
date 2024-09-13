@@ -1,0 +1,160 @@
+{
+  "RootObject": {
+    "__guid": "cdef8d33-78aa-4ef8-9cfe-f111ab7ef02d",
+    "Flags": 0,
+    "Name": "testaddon",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "TestAddon.TestAddon",
+        "__guid": "71431e46-c805-40e1-9a04-7e537fc19835"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "12d9005b-8d3c-4311-bed7-1d911de966c1",
+        "Flags": 0,
+        "Name": "Cube",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "5e18c3e3-0f11-4f1a-8d89-70637e65daed",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/dev/box.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "d351bb72-671f-4206-a425-c34e72049f25",
+        "Flags": 0,
+        "Name": "Cube (5)",
+        "Position": "-45.94455,0,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "3ed49ebf-095d-46e7-8c12-5b64db0a9e5a",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/dev/box.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "dfb70d47-9557-48fc-9a18-e0343d6496d4",
+        "Flags": 0,
+        "Name": "Cube (4)",
+        "Position": "47.39891,0,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "aa428fec-5d90-4fd1-b4a1-c9632e0002dd",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/dev/box.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "e580bfdc-4051-4480-9b63-04a1b384072d",
+        "Flags": 0,
+        "Name": "Cube (1)",
+        "Position": "0,0,42.72213",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "05d07f96-d8e3-406a-a43a-b2aa380382bf",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/dev/box.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "3d94d3ea-4e7d-447b-b234-2adb718c71a9",
+        "Flags": 0,
+        "Name": "Cube (2)",
+        "Position": "0,0,87.44888",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "b2dc2add-b847-481f-a3be-29e68b37b1b3",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/dev/box.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "3b81eb4a-fa33-471f-9c5c-6bf64f857539",
+        "Flags": 0,
+        "Name": "Cube (3)",
+        "Position": "0,0,128.9017",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "1c9a6fb2-ae02-49fa-a86d-e50c5edce366",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/dev/box.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
